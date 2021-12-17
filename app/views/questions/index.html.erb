@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Questions</h1>
+
+<%= turbo_stream_from :questions %>
+<div id="questions">
+  <% @questions.each do |question| %>
+    <%= render question %>
+    <p>
+      <%= link_to "Show this question", question %>
+    </p>
+    <div x-data="{ count: 0 }">
+      <button class="rounded-lg bg-black text-white" @click="count++">Increment</button> <input type="text" x-model="count" />
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New question", new_question_path %>

@@ -6,6 +6,7 @@ class Question < ApplicationRecord
 
   before_validation :ensure_id
 
+  broadcasts
   broadcasts_to ->(_) { :questions }
 
   def self.hash_body(value)

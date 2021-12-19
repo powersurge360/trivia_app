@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://opentdb.com/api.php?amount=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 19 Dec 2021 01:01:40 GMT
+      Server:
+      - Apache
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - PHPSESSID=c5543a8dd816a7e6885595d0f4db3fb7; path=/
+      Upgrade:
+      - h2
+      Connection:
+      - Upgrade
+      Vary:
+      - User-Agent
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"response_code":0,"results":[{"category":"Entertainment: Film","type":"multiple","difficulty":"medium","question":"What
+        is the name of James Dean&#039;s character in the 1955 movie &quot;Rebel Without
+        a Cause&quot;?","correct_answer":"Jim Stark","incorrect_answers":["Ned Stark","Jim
+        Kane","Frank Stark"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"easy","question":"In
+        what year was the game &quot;Fallout&quot; released?","correct_answer":"1997","incorrect_answers":["1998","1999","1996"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"easy","question":"In what year
+        was Hearthstone released?","correct_answer":"2014","incorrect_answers":["2011","2013","2012"]},{"category":"Science
+        & Nature","type":"multiple","difficulty":"hard","question":"What genetic disease
+        is caused by having an extra Y chromosome (XYY)?","correct_answer":"Jacob&#039;s
+        Syndrome","incorrect_answers":["Klinefelter&#039;s Syndrome","Turner&#039;s
+        Syndrome","Down Syndrome"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"Which
+        of these is not a DLC vehicle in &quot;Mario Kart 8&quot;?","correct_answer":"Wild
+        Wiggler","incorrect_answers":["Bone Rattler","B Dasher","300 SL Roadster"]},{"category":"Politics","type":"multiple","difficulty":"medium","question":"What
+        was the personal nickname of the 40th Governor of the US State Louisiana,
+        Huey Long?","correct_answer":"The Kingfish","incorrect_answers":["The Champ","The
+        Hoot Owl","The Oracle"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"What
+        is the subtitle for Gran Turismo 3?","correct_answer":"A-Spec","incorrect_answers":["Championship","Drive","Nitro"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"hard","question":"In &quot;Need
+        for Speed III: Hot Pursuit&quot;, what is the name of the fictional car?","correct_answer":"El
+        Ni&ntilde;o","incorrect_answers":["R&aacute;pido","&Aacute;gil","La Ni&ntilde;a"]},{"category":"Science
+        & Nature","type":"multiple","difficulty":"medium","question":"Which of the
+        following spacecraft never touched the moon?","correct_answer":"Mariner 4","incorrect_answers":["Apollo
+        11","Luna 2","SMART-1"]},{"category":"Entertainment: Japanese Anime & Manga","type":"multiple","difficulty":"easy","question":"In
+        the Naruto manga, what is the last name of Tsunade?","correct_answer":"Senju","incorrect_answers":["Haruno","Uzumaki","Yamanaka"]}]}'
+  recorded_at: Sun, 19 Dec 2021 01:01:40 GMT
+recorded_with: VCR 6.0.0

@@ -37,8 +37,13 @@
   </div>
 
   <div>
+    <%= form.label :difficulty, style: "display: block" %>
+    <%= form.text_field :difficulty %>
+  </div>
+
+  <div>
     <%= form.label :correct_answer, style: "display: block" %>
-    <%= form.number_field :correct_answer %>
+    <%= form.text_field :correct_answer %>
   </div>
 
   <div>

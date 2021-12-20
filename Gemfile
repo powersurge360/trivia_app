@@ -44,7 +44,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem "cssbundling-rails"
+gem "tailwindcss-rails"
 gem "faraday"
 gem "faraday_middleware"
 

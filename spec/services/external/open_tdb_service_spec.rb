@@ -8,47 +8,51 @@ RSpec.describe External::OpenTdbService do
       it 'should retrieve a specified amount of questions', :vcr do
         questions_json = subject.questions.get(amount: 10)
 
-        expect(questions_json.count).to eql(10)
+        expect(questions_json.successful?).to be true
+        expect(questions_json.data.count).to eql(10)
       end
 
       describe 'has no results' do
         it 'should raise an exception', :vcr do
-          expect {
-            subject.questions.get(
-              amount: 50,
-              category: 19, # Math category
-              difficulty: :easy,
-              type: :boolean, # Boolean to reduce likely options
-            )
-          }.to raise_error(External::OpenTdbService::NoResultsError)
+          response = subject.questions.get(
+            amount: 50,
+            category: 19, # Math category
+            difficulty: :easy,
+            type: :boolean, # Boolean to reduce likely options
+          )
+
+          expect(response.successful?).to be false
+          expect(response.error).to be :no_results
         end
       end
 
       describe 'invalid token given' do
-        it 'should raise an exception', :vcr do
-          expect {
-            subject.questions.get(
-              amount: 50,
-              category: 19, # Math category
-              token: 'aslkdajsalkjfkalfjalskdjfaslkaf'
-            )
-          }.to raise_error(External::OpenTdbService::TokenNotFoundError)
+        it 'should raise have an invalid_token error', :vcr do
+          response = subject.questions.get(
+            amount: 50,
+            category: 19, # Math category
+            token: 'aslkdajsalkjfkalfjalskdjfaslkaf'
+          )
+
+          expect(response.successful?).to be false
+          expect(response.error).to be :token_not_found
         end
       end
 
       describe 'token exhausted' do
         it 'should raise an exception', :vcr do
-          token = subject.tokens.request
+          token = subject.tokens.request.data
 
-          expect {
-            subject.questions.get(
-              amount: 50,
-              category: 19, # Math category
-              difficulty: :easy,
-              type: :boolean, # Boolean to reduce likely options
-              token: token,
-            )
-          }.to raise_error(External::OpenTdbService::TokenEmptyError)
+          response = subject.questions.get(
+            amount: 50,
+            category: 19, # Math category
+            difficulty: :easy,
+            type: :boolean, # Boolean to reduce likely options
+            token: token,
+          )
+
+          expect(response.successful?).to be false
+          expect(response.error).to be :token_exhausted
         end
       end
     end
@@ -57,7 +61,7 @@ RSpec.describe External::OpenTdbService do
   describe '::TokensEndpoint' do
     describe '#request' do
       it 'should retrieve a token', :vcr do
-        response = subject.tokens.request
+        response = subject.tokens.request.data
 
         expect(response).to_not be_falsy
       end

@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 19 Dec 2021 01:01:42 GMT
+      - Mon, 20 Dec 2021 21:44:32 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +31,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=bf8afb162f29219c0e4707a43c93de91; path=/
+      - PHPSESSID=dad2608fe0f56b7c21a735c19b403240; path=/
       Upgrade:
       - h2
       Connection:
@@ -47,5 +47,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"response_code":3,"results":[]}'
-  recorded_at: Sun, 19 Dec 2021 01:01:42 GMT
+  recorded_at: Mon, 20 Dec 2021 21:44:32 GMT
 recorded_with: VCR 6.0.0

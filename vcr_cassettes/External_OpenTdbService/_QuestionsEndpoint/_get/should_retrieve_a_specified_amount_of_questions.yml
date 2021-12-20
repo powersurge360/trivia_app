@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 19 Dec 2021 01:01:40 GMT
+      - Mon, 20 Dec 2021 21:44:33 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +31,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=c5543a8dd816a7e6885595d0f4db3fb7; path=/
+      - PHPSESSID=959432958260d8152b2023fc35fc31eb; path=/
       Upgrade:
       - h2
       Connection:
@@ -46,29 +46,30 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"Entertainment: Film","type":"multiple","difficulty":"medium","question":"What
-        is the name of James Dean&#039;s character in the 1955 movie &quot;Rebel Without
-        a Cause&quot;?","correct_answer":"Jim Stark","incorrect_answers":["Ned Stark","Jim
-        Kane","Frank Stark"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"easy","question":"In
-        what year was the game &quot;Fallout&quot; released?","correct_answer":"1997","incorrect_answers":["1998","1999","1996"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"easy","question":"In what year
-        was Hearthstone released?","correct_answer":"2014","incorrect_answers":["2011","2013","2012"]},{"category":"Science
-        & Nature","type":"multiple","difficulty":"hard","question":"What genetic disease
-        is caused by having an extra Y chromosome (XYY)?","correct_answer":"Jacob&#039;s
-        Syndrome","incorrect_answers":["Klinefelter&#039;s Syndrome","Turner&#039;s
-        Syndrome","Down Syndrome"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"Which
-        of these is not a DLC vehicle in &quot;Mario Kart 8&quot;?","correct_answer":"Wild
-        Wiggler","incorrect_answers":["Bone Rattler","B Dasher","300 SL Roadster"]},{"category":"Politics","type":"multiple","difficulty":"medium","question":"What
-        was the personal nickname of the 40th Governor of the US State Louisiana,
-        Huey Long?","correct_answer":"The Kingfish","incorrect_answers":["The Champ","The
-        Hoot Owl","The Oracle"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"What
-        is the subtitle for Gran Turismo 3?","correct_answer":"A-Spec","incorrect_answers":["Championship","Drive","Nitro"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"hard","question":"In &quot;Need
-        for Speed III: Hot Pursuit&quot;, what is the name of the fictional car?","correct_answer":"El
-        Ni&ntilde;o","incorrect_answers":["R&aacute;pido","&Aacute;gil","La Ni&ntilde;a"]},{"category":"Science
-        & Nature","type":"multiple","difficulty":"medium","question":"Which of the
-        following spacecraft never touched the moon?","correct_answer":"Mariner 4","incorrect_answers":["Apollo
-        11","Luna 2","SMART-1"]},{"category":"Entertainment: Japanese Anime & Manga","type":"multiple","difficulty":"easy","question":"In
-        the Naruto manga, what is the last name of Tsunade?","correct_answer":"Senju","incorrect_answers":["Haruno","Uzumaki","Yamanaka"]}]}'
-  recorded_at: Sun, 19 Dec 2021 01:01:40 GMT
+      string: '{"response_code":0,"results":[{"category":"Entertainment: Film","type":"multiple","difficulty":"easy","question":"Daniel
+        Radcliffe became a global star in the film industry due to his performance
+        in which film franchise?","correct_answer":"Harry Potter","incorrect_answers":["Ted","Spy
+        Kids","Pirates of the Caribbean "]},{"category":"Entertainment: Music","type":"multiple","difficulty":"medium","question":"According
+        to a Beatles song, who kept her face in a jar by the door?","correct_answer":"Eleanor
+        Rigby","incorrect_answers":["Loretta Martin","Molly Jones","Lady Madonna"]},{"category":"Art","type":"multiple","difficulty":"medium","question":"Which
+        artist&rsquo;s studio was known as &#039;The Factory&#039;?","correct_answer":"Andy
+        Warhol","incorrect_answers":["Roy Lichtenstein","David Hockney","Peter Blake"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"easy","question":"&quot;Tomb
+        Raider&quot; icon Lara Croft was originally called...","correct_answer":"Laura
+        Cruz","incorrect_answers":["Laura Craft","Laura Croft","Lara Craft"]},{"category":"Animals","type":"boolean","difficulty":"easy","question":"Cats
+        have whiskers under their legs.","correct_answer":"True","incorrect_answers":["False"]},{"category":"General
+        Knowledge","type":"multiple","difficulty":"medium","question":"When was Hubba
+        Bubba first introduced?","correct_answer":"1979","incorrect_answers":["1984","1972","1980"]},{"category":"Entertainment:
+        Music","type":"multiple","difficulty":"medium","question":"Which of these
+        songs did Jimi Hendrix cover?","correct_answer":"All of these songs","incorrect_answers":["Sgt.
+        Pepper&#039;s Lonely Hearts Club Band","All Along the Watchtower","House of
+        the Rising Sun"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"In
+        the MMO RPG &quot;Realm of the Mad God&quot;, what class is known for having
+        the highest possible defense?","correct_answer":"The Knight","incorrect_answers":["The
+        Wizard","The Archer","The Warrior"]},{"category":"Art","type":"multiple","difficulty":"hard","question":"The
+        painting &quot;The Starry Night&quot; by Vincent van Gogh was part of which
+        art movement?","correct_answer":"Post-Impressionism","incorrect_answers":["Romanticism","Neoclassical","Impressionism"]},{"category":"Geography","type":"multiple","difficulty":"medium","question":"Which
+        of these countries is not a United Nations member state?","correct_answer":"Niue","incorrect_answers":["Tuvalu","South
+        Sudan","Montenegro"]}]}'
+  recorded_at: Mon, 20 Dec 2021 21:44:33 GMT
 recorded_with: VCR 6.0.0

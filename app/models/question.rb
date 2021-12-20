@@ -7,9 +7,6 @@ class Question < ApplicationRecord
 
   before_validation :ensure_id
 
-  broadcasts
-  broadcasts_to ->(_) { :questions }
-
   def self.from_api(question_json)
     if question_json["type"] == "multiple"
       answers = question_json["incorrect_answers"].append(question_json["correct_answer"]).shuffle

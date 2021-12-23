@@ -1,9 +1,9 @@
 class Question < ApplicationRecord
   validates :body, presence: :true
-  validates :answer_1, presence: :true
-  validates :answer_2, presence: :true
-  validates :correct_answer, presence: :true
-  validates :difficulty, presence: :true, inclusion: { in: ["easy", "medium", "hard"] }
+  validates :answer_1, presence: true
+  validates :answer_2, presence: true
+  validates :correct_answer, presence: true
+  validates :difficulty, presence: true, inclusion: { in: ["easy", "medium", "hard"] }
 
   before_validation :ensure_id
 

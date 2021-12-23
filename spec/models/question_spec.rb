@@ -57,11 +57,29 @@ RSpec.describe Question, type: :model do
     expect(question.id).to eql(Question.hash_body(question.body))
   end
 
-  it 'should not save invalid models' do
-    question = Question.create(invalid_attributes)
+  describe 'invalid attributes' do
+    subject { Question.create(invalid_attributes) }
 
-    expect(question.id).to be_nil
-    expect(question.valid?).to be false
+    it 'should not save invalid models' do
+      expect(subject.id).to be_nil
+      expect(subject.valid?).to be false
+    end
+
+    it 'should have an answer_1 error' do
+      expect(subject.errors).to include(:answer_1)
+    end
+
+    it 'should have an answer_2 error' do
+      expect(subject.errors).to include(:answer_2)
+    end
+
+    it 'should have a correct_answer error' do
+      expect(subject.errors).to include(:correct_answer)
+    end
+
+    it 'should have a difficulty error' do
+      expect(subject.errors).to include(:difficulty)
+    end
   end
 
   describe '#from_api' do

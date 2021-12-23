@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_21_020552) do
+ActiveRecord::Schema.define(version: 2021_12_23_225334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,15 @@ ActiveRecord::Schema.define(version: 2021_12_21_020552) do
     t.string "game_type"
     t.string "session_token"
     t.string "game_lifecycle", default: "pending", null: false
-    t.string "question_ids", array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "games_questions", id: false, force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "question_id", null: false
+    t.index ["game_id", "question_id"], name: "index_games_questions_on_game_id_and_question_id"
+    t.index ["question_id", "game_id"], name: "index_games_questions_on_question_id_and_game_id"
   end
 
   create_table "questions", id: :string, force: :cascade do |t|

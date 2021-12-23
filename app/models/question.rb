@@ -1,4 +1,6 @@
 class Question < ApplicationRecord
+  has_and_belongs_to_many :games
+
   validates :body, presence: :true
   validates :answer_1, presence: true
   validates :answer_2, presence: true

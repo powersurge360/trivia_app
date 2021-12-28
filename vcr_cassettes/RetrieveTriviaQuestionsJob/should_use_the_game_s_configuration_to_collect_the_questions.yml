@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://opentdb.com/api.php?amount=10&category&difficulty&game_type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Dec 2021 03:12:40 GMT
+      Server:
+      - Apache
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - PHPSESSID=21ef2e295623d836171046e57c63bc8b; path=/
+      Upgrade:
+      - h2
+      Connection:
+      - Upgrade
+      Vary:
+      - User-Agent
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"response_code":0,"results":[{"category":"Entertainment: Video Games","type":"multiple","difficulty":"easy","question":"Who
+        created the digital distribution platform Steam?","correct_answer":"Valve","incorrect_answers":["Pixeltail
+        Games","Ubisoft","Electronic Arts"]},{"category":"Sports","type":"multiple","difficulty":"medium","question":"What
+        cricketing term denotes a batsman being dismissed with a score of zero?","correct_answer":"Duck","incorrect_answers":["Bye","Beamer","Carry"]},{"category":"History","type":"boolean","difficulty":"easy","question":"The
+        United States Department of Homeland Security was formed in response to the
+        September 11th attacks.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Entertainment:
+        Film","type":"multiple","difficulty":"medium","question":"Which movie sequel
+        had improved box office results compared to its original film?","correct_answer":"Toy
+        Story 2","incorrect_answers":["Sin City: A Dame to Kill For","Speed 2: Cruise
+        Control","Son of the Mask"]},{"category":"Geography","type":"multiple","difficulty":"easy","question":"What
+        is the name of New Zealand&#039;s indigenous people?","correct_answer":"Maori","incorrect_answers":["Vikings","Polynesians","Samoans"]},{"category":"Entertainment:
+        Video Games","type":"boolean","difficulty":"medium","question":"&quot;Return
+        to Castle Wolfenstein&quot; was the only game of the Wolfenstein series where
+        you don&#039;t play as William &quot;B.J.&quot; Blazkowicz.","correct_answer":"False","incorrect_answers":["True"]},{"category":"Entertainment:
+        Music","type":"multiple","difficulty":"hard","question":"What is the official
+        name of Prince&#039;s backing band?","correct_answer":"The Revolution","incorrect_answers":["The
+        Paupers","The Wailers","The Heartbreakers"]},{"category":"Entertainment: Music","type":"multiple","difficulty":"easy","question":"What
+        is the name of Rivers Cuomo&#039;s wife?","correct_answer":"Kyoko Ito","incorrect_answers":["Yoko
+        Ono","Kyary Pamyu Pamyu","LiSA"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"How
+        many permanent companions are there in the base game version of Fallout: New
+        Vegas?","correct_answer":"8","incorrect_answers":["7","9","6"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"medium","question":"Which unlockable
+        character in Super Smash Bros. For Wii U and 3DS does not have to be fought
+        to be unlocked?","correct_answer":"Mii Fighters","incorrect_answers":["Ness","R.O.B.","Mewtwo"]}]}'
+  recorded_at: Tue, 28 Dec 2021 03:12:40 GMT
+recorded_with: VCR 6.0.0

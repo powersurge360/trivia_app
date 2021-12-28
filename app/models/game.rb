@@ -6,6 +6,23 @@ class Game < ApplicationRecord
   validates :category, inclusion: TRIVIA_CATEGORIES.keys
   validates :game_type, inclusion: [nil, 'boolean', 'multiple']
 
-  def retrieve_questions
+  def retrieve_trivia_questions
+    RetrieveTriviaQuestionsJob.perform_later(self)
+  end
+
+  def api_attributes
+    attrs = self.attributes.slice(
+      'difficulty',
+      'number_of_questions',
+      'category',
+      'game_type',
+    )
+
+    {
+      difficulty: attrs['difficulty'],
+      amount: attrs['number_of_questions'],
+      category: attrs['category'],
+      game_type: attrs['game_type']
+    }
   end
 end

@@ -2,6 +2,54 @@
 http_interactions:
 - request:
     method: get
+    uri: https://opentdb.com/api_token.php?command=request
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Dec 2021 20:18:30 GMT
+      Server:
+      - Apache
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - PHPSESSID=3c1949af5741fcffc0634ffaf32eddad; path=/
+      Upgrade:
+      - h2
+      Connection:
+      - Upgrade
+      Vary:
+      - User-Agent
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"6169af98865c5e4c9e7e33767a611d84d81fe766a5c222f4550ebc380a725f20"}'
+  recorded_at: Tue, 28 Dec 2021 20:18:30 GMT
+- request:
+    method: get
     uri: https://opentdb.com/api.php?amount=10&category&difficulty&game_type
     body:
       encoding: US-ASCII
@@ -19,7 +67,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 28 Dec 2021 03:12:40 GMT
+      - Tue, 28 Dec 2021 20:18:30 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +79,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=21ef2e295623d836171046e57c63bc8b; path=/
+      - PHPSESSID=b5164604536869a70b7adfadf9a668d1; path=/
       Upgrade:
       - h2
       Connection:
@@ -46,29 +94,30 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"Entertainment: Video Games","type":"multiple","difficulty":"easy","question":"Who
-        created the digital distribution platform Steam?","correct_answer":"Valve","incorrect_answers":["Pixeltail
-        Games","Ubisoft","Electronic Arts"]},{"category":"Sports","type":"multiple","difficulty":"medium","question":"What
-        cricketing term denotes a batsman being dismissed with a score of zero?","correct_answer":"Duck","incorrect_answers":["Bye","Beamer","Carry"]},{"category":"History","type":"boolean","difficulty":"easy","question":"The
-        United States Department of Homeland Security was formed in response to the
-        September 11th attacks.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Entertainment:
-        Film","type":"multiple","difficulty":"medium","question":"Which movie sequel
-        had improved box office results compared to its original film?","correct_answer":"Toy
-        Story 2","incorrect_answers":["Sin City: A Dame to Kill For","Speed 2: Cruise
-        Control","Son of the Mask"]},{"category":"Geography","type":"multiple","difficulty":"easy","question":"What
-        is the name of New Zealand&#039;s indigenous people?","correct_answer":"Maori","incorrect_answers":["Vikings","Polynesians","Samoans"]},{"category":"Entertainment:
-        Video Games","type":"boolean","difficulty":"medium","question":"&quot;Return
-        to Castle Wolfenstein&quot; was the only game of the Wolfenstein series where
-        you don&#039;t play as William &quot;B.J.&quot; Blazkowicz.","correct_answer":"False","incorrect_answers":["True"]},{"category":"Entertainment:
-        Music","type":"multiple","difficulty":"hard","question":"What is the official
-        name of Prince&#039;s backing band?","correct_answer":"The Revolution","incorrect_answers":["The
-        Paupers","The Wailers","The Heartbreakers"]},{"category":"Entertainment: Music","type":"multiple","difficulty":"easy","question":"What
-        is the name of Rivers Cuomo&#039;s wife?","correct_answer":"Kyoko Ito","incorrect_answers":["Yoko
-        Ono","Kyary Pamyu Pamyu","LiSA"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"How
-        many permanent companions are there in the base game version of Fallout: New
-        Vegas?","correct_answer":"8","incorrect_answers":["7","9","6"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"medium","question":"Which unlockable
-        character in Super Smash Bros. For Wii U and 3DS does not have to be fought
-        to be unlocked?","correct_answer":"Mii Fighters","incorrect_answers":["Ness","R.O.B.","Mewtwo"]}]}'
-  recorded_at: Tue, 28 Dec 2021 03:12:40 GMT
+      string: '{"response_code":0,"results":[{"category":"Entertainment: Board Games","type":"multiple","difficulty":"hard","question":"The
+        board game &quot;Monopoly&quot; is a variation of what board game?","correct_answer":"The
+        Landlord&#039;s Game","incorrect_answers":["Territorial Dispute","Property
+        Feud","The Monopolist&#039;s Game"]},{"category":"Entertainment: Music","type":"multiple","difficulty":"easy","question":"Which
+        of these songs by Skrillex features Fatman Scoop as a side artist?","correct_answer":"Recess","incorrect_answers":["All
+        is Fair in Love and Brostep","Rock N Roll (Will Take You to the Mountain)","Scary
+        Monsters and Nice Sprites"]},{"category":"General Knowledge","type":"boolean","difficulty":"medium","question":"Sitting
+        for more than three hours a day can cut two years off a person&#039;s life
+        expectancy.","correct_answer":"True","incorrect_answers":["False"]},{"category":"General
+        Knowledge","type":"multiple","difficulty":"easy","question":"What do the letters
+        in the GMT time zone stand for?","correct_answer":"Greenwich Mean Time","incorrect_answers":["Global
+        Meridian Time","General Median Time","Glasgow Man Time"]},{"category":"Science
+        & Nature","type":"multiple","difficulty":"hard","question":"What is the molecular
+        formula of Ozone?","correct_answer":"O3","incorrect_answers":["C6H2O6","N2O","SO4"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"easy","question":"In what year
+        was Garry&#039;s Mod released as a standalone title on Valve&#039;s Steam
+        distribution service?","correct_answer":"2006","incorrect_answers":["2007","2004","2003"]},{"category":"Entertainment:
+        Japanese Anime & Manga","type":"multiple","difficulty":"medium","question":"In
+        &quot;One Piece&quot;, which one of the following is NOT an Ancient Weapon?","correct_answer":"Jupiter","incorrect_answers":["Uranus","Poseidon","Pluton"]},{"category":"History","type":"multiple","difficulty":"hard","question":"How
+        long did the Warsaw Uprising during World War II last?","correct_answer":"63
+        Days","incorrect_answers":["20 Days","55 Days","224 Days"]},{"category":"Science:
+        Computers","type":"multiple","difficulty":"medium","question":"Approximately
+        how many Apple I personal computers were created?","correct_answer":"200","incorrect_answers":["100","500","1000"]},{"category":"Science:
+        Mathematics","type":"multiple","difficulty":"medium","question":"How many
+        books are in Euclid&#039;s Elements of Geometry?","correct_answer":"13","incorrect_answers":["8","10","17"]}]}'
+  recorded_at: Tue, 28 Dec 2021 20:18:30 GMT
 recorded_with: VCR 6.0.0

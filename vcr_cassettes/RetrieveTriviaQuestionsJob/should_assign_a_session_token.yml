@@ -1,0 +1,125 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://opentdb.com/api_token.php?command=request
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Dec 2021 20:18:31 GMT
+      Server:
+      - Apache
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - PHPSESSID=b5607b5811aaf67f26ead04f5aaf7d2e; path=/
+      Upgrade:
+      - h2
+      Connection:
+      - Upgrade
+      Vary:
+      - User-Agent
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"e774142bf74911e42c097f132ca3e0c48745c16285083cac7034ce45e0a05642"}'
+  recorded_at: Tue, 28 Dec 2021 20:18:31 GMT
+- request:
+    method: get
+    uri: https://opentdb.com/api.php?amount=10&category&difficulty&game_type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Dec 2021 20:18:31 GMT
+      Server:
+      - Apache
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - PHPSESSID=bfcb6d1ce13f18d036c6b7ca0b066917; path=/
+      Upgrade:
+      - h2
+      Connection:
+      - Upgrade
+      Vary:
+      - User-Agent
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"response_code":0,"results":[{"category":"Entertainment: Television","type":"multiple","difficulty":"easy","question":"Who
+        is the star of the AMC series Breaking Bad?","correct_answer":"Walter White","incorrect_answers":["Saul
+        Goodman","Jesse Pinkman","Skyler White"]},{"category":"Sports","type":"boolean","difficulty":"medium","question":"Soccer
+        player Cristiano Ronaldo opened a museum dedicated to himself.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Entertainment:
+        Books","type":"multiple","difficulty":"easy","question":"How many Harry Potter
+        books are there?","correct_answer":"7","incorrect_answers":["8","5","6"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"hard","question":"In the video
+        game &quot;Metal Gear Solid&quot;, what did Revolver Ocelot consider the greatest
+        handgun ever made?","correct_answer":"Colt Single Action Army","incorrect_answers":["Colt
+        Python","Colt M1892","Colt 1851 Navy Revolver"]},{"category":"Entertainment:
+        Cartoon & Animations","type":"multiple","difficulty":"easy","question":"In
+        the show &quot;Steven Universe&quot;, who are the main two employees of The
+        Big Donut?","correct_answer":"Sadie and Lars","incorrect_answers":["Steven
+        and James","Erik and Julie","Bob and May"]},{"category":"Entertainment: Video
+        Games","type":"multiple","difficulty":"medium","question":"In Terraria, which
+        of these items is NOT crafted at a Mythril Anvil?","correct_answer":"Ankh
+        Charm","incorrect_answers":["Venom Staff","Sky Fracture","Orichalcum Tools"]},{"category":"Entertainment:
+        Comics","type":"multiple","difficulty":"medium","question":"In the comics,
+        which Sonic character took command of the Dark Legion after Luger&#039;s assassination?","correct_answer":"Lien-Da","incorrect_answers":["Kragok","Dimitri","Remington"]},{"category":"Entertainment:
+        Television","type":"multiple","difficulty":"easy","question":"On the NBC show
+        Community, whose catch-phrase was &quot;Pop! Pop!&quot;?","correct_answer":"Magnitude","incorrect_answers":["Star
+        Burns","Leonard","Senoir Chang"]},{"category":"Politics","type":"multiple","difficulty":"easy","question":"Which
+        former US president was nicknamed &quot;Teddy&quot; after he refused to shoot
+        a defenseless black bear?","correct_answer":"Theodore Roosevelt","incorrect_answers":["Woodrow
+        Wilson","James F. Fielder","Andrew Jackson"]},{"category":"Entertainment:
+        Television","type":"multiple","difficulty":"medium","question":"The first
+        half-hour CGI cartoon, ReBoot, aired on which year?","correct_answer":"1994","incorrect_answers":["1993","1998","1999"]}]}'
+  recorded_at: Tue, 28 Dec 2021 20:18:31 GMT
+recorded_with: VCR 6.0.0

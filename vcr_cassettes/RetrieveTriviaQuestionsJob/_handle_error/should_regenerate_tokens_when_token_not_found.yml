@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://opentdb.com/api.php?amount=50&category=19&token=aslkdajsalkjfkalfjalskdjfaslkaf
+    uri: https://opentdb.com/api_token.php?command=request
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 20 Dec 2021 21:44:33 GMT
+      - Tue, 28 Dec 2021 20:18:51 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +31,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=6d642cd852c34112f078e27c7315dada; path=/
+      - PHPSESSID=4a23ab1ce09aca26569f49284af48388; path=/
       Upgrade:
       - h2
       Connection:
@@ -46,6 +46,6 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":3,"results":[]}'
-  recorded_at: Mon, 20 Dec 2021 21:44:33 GMT
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"1591020f7681e83dc5fb9d8d8fb1d98d234780ede4656837b94b47944c90eb27"}'
+  recorded_at: Tue, 28 Dec 2021 20:18:50 GMT
 recorded_with: VCR 6.0.0

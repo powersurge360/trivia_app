@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 20 Dec 2021 21:44:32 GMT
+      - Tue, 28 Dec 2021 20:18:32 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +31,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=e5cf742d60c980861b7938e4b64bc589; path=/
+      - PHPSESSID=0f990f4a215d7ac1b131cae5dbd5929f; path=/
       Upgrade:
       - h2
       Connection:
@@ -46,11 +46,11 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"22e2ce3520842b405b59a3e294d6702661f81a17ef82656b8d766909b5d635c3"}'
-  recorded_at: Mon, 20 Dec 2021 21:44:32 GMT
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"d242df20e4081c04bd984862b8c1f32002697a283e4b59bef5ed82c8d16f30ff"}'
+  recorded_at: Tue, 28 Dec 2021 20:18:31 GMT
 - request:
     method: get
-    uri: https://opentdb.com/api.php?amount=50&category=19&difficulty=easy&token=22e2ce3520842b405b59a3e294d6702661f81a17ef82656b8d766909b5d635c3&type=boolean
+    uri: https://opentdb.com/api.php?amount=50&category=19&difficulty=easy&token=d242df20e4081c04bd984862b8c1f32002697a283e4b59bef5ed82c8d16f30ff&type=boolean
     body:
       encoding: US-ASCII
       string: ''
@@ -67,7 +67,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 20 Dec 2021 21:44:32 GMT
+      - Tue, 28 Dec 2021 20:18:32 GMT
       Server:
       - Apache
       Expires:
@@ -79,7 +79,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=ca1c9ab2ad6a49223e144279afe328cb; path=/
+      - PHPSESSID=8166a13300197e3e3fed56127fa0b0c7; path=/
       Upgrade:
       - h2
       Connection:
@@ -95,5 +95,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"response_code":4,"results":[]}'
-  recorded_at: Mon, 20 Dec 2021 21:44:32 GMT
+  recorded_at: Tue, 28 Dec 2021 20:18:32 GMT
 recorded_with: VCR 6.0.0

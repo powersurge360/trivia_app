@@ -9,6 +9,8 @@ class External::OpenTdb::QuestionsResponse
 
   def successful?
     case self.response_code
+    when 0
+      self.error = nil
     when 1
       self.error = :no_results
     when 2
@@ -17,6 +19,8 @@ class External::OpenTdb::QuestionsResponse
       self.error = :token_not_found
     when 4
       self.error = :token_exhausted
+    else
+      self.error = :unknown
     end
 
     self.error.nil?

@@ -1,13 +1,31 @@
 class RetrieveTriviaQuestionsJob < ApplicationJob
+  attr_accessor :opentdb, :game
+
   queue_as :default
 
-  def perform(game)
-    opentdb = External::OpenTdbService.new
+  def logger
+    tagged_logger = super
 
-    question_response = opentdb.questions.get(**game.api_attributes)
+    if self.game&.id
+      tagged_logger.tagged("Game ID: #{self.game.id}")
+    else
+      tagged_logger
+    end
+  end
+
+  def perform(game)
+    self.game = game
+    self.opentdb = External::OpenTdbService.new
+
+    game.session_token = self.opentdb.tokens.request.data
+
+    question_response = self.opentdb.questions.get(**game.api_attributes)
+
+    logger.debug("Question response: #{question_response.data}")
 
     if !question_response.successful?
-      # TODO: Detect failures and if it can be recovered from
+      handle_error(question_response)
+
       return
     end
 
@@ -23,6 +41,31 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
 
     if questions.map(&:valid?).all?
       Question.upsert_all(questions.map(&:attributes))
+    end
+  end
+
+  def handle_error(question_response)
+    case question_response.response_code
+    when :no_token
+      logger.error('Bad token generated for game')
+
+      self.game.error_message = 'There was an error generating the game'
+    when :token_exhausted
+      logger.info('Token was exhausted')
+
+      self.game.error_message = 'All possible questions for these settings have been exhausted'
+    when :invalid_parameter
+      logger.error('An invalid parameter was passed')
+
+      self.game.error_message = 'An error occurred retrieving questions'
+    when :no_results
+      logger.info('Not enough questions for the current configuration')
+
+      self.game.error_message = 'Not enough questions for the current settings'
+    else
+      logger.error('No known cause for this error')
+
+      self.game.error_message = 'An error occurred retrieving questions'
     end
   end
 end

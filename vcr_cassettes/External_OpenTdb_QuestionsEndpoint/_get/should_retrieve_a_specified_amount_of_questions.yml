@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 20 Dec 2021 21:44:31 GMT
+      - Tue, 28 Dec 2021 20:18:31 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +31,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=77ee17378c052f401c3c2ce1d532334a; path=/
+      - PHPSESSID=fa24d129358bb3f75c2828f775087d94; path=/
       Upgrade:
       - h2
       Connection:
@@ -46,30 +46,33 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"Geography","type":"boolean","difficulty":"easy","question":"Greenland
-        is covered with grass and Iceland covered with ice.","correct_answer":"False","incorrect_answers":["True"]},{"category":"Science
-        & Nature","type":"multiple","difficulty":"medium","question":"What is the
-        atomic number of the element Strontium?","correct_answer":"38","incorrect_answers":["73","47","11"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"hard","question":"In Monster
-        Hunter Generations, which of these hunter arts are exclusive to the Longsword?","correct_answer":"Unhinged
-        Spirit","incorrect_answers":["Shoryugeki","Provoke","Demon Riot"]},{"category":"Entertainment:
-        Film","type":"multiple","difficulty":"easy","question":"In the movie Gremlins,
-        after what time of day should you not feed Mogwai?","correct_answer":"Midnight","incorrect_answers":["Evening","Morning","Afternoon"]},{"category":"Entertainment:
-        Japanese Anime & Manga","type":"multiple","difficulty":"hard","question":"In
-        &quot;One Piece&quot;, what does &quot;the Pirate King&quot; mean to the captain
-        of the Straw Hat Pirates?","correct_answer":"Freedom","incorrect_answers":["Promise","Adventure","Friendship"]},{"category":"Vehicles","type":"multiple","difficulty":"medium","question":"Which
-        car manufacturer created the &quot;Aventador&quot;?","correct_answer":"Lamborghini","incorrect_answers":["Ferrari","Pagani","Bugatti"]},{"category":"General
-        Knowledge","type":"multiple","difficulty":"medium","question":"In a 1994 CBS
-        interview, Microsoft co-founder Bill Gates performed what unusual trick on
-        camera?","correct_answer":"Jumping over an office chair","incorrect_answers":["Jumping
-        backwards over a desk","Standing on his head","Typing on a keyboard during
-        a handstand"]},{"category":"Entertainment: Video Games","type":"boolean","difficulty":"medium","question":"The
-        character that would eventually become Dr. Eggman was considered for the role
-        of Sega&#039;s new flagship mascot before Sonic was.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Politics","type":"multiple","difficulty":"medium","question":"What
-        was the personal nickname of the 40th Governor of the US State Louisiana,
-        Huey Long?","correct_answer":"The Kingfish","incorrect_answers":["The Champ","The
-        Hoot Owl","The Oracle"]},{"category":"Geography","type":"multiple","difficulty":"hard","question":"Into
-        which basin does the Jordan River flow into?","correct_answer":"Dead Sea","incorrect_answers":["Aral
-        Sea","Caspian Sea","Salton Sea"]}]}'
-  recorded_at: Mon, 20 Dec 2021 21:44:31 GMT
+      string: '{"response_code":0,"results":[{"category":"Entertainment: Cartoon &
+        Animations","type":"multiple","difficulty":"medium","question":"What is Scooby-Doo&#039;s
+        real name?","correct_answer":"Scoobert","incorrect_answers":["Scooter","Scrappy","Shooby"]},{"category":"Science
+        & Nature","type":"multiple","difficulty":"easy","question":"What name is given
+        to all baby marsupials?","correct_answer":"Joey","incorrect_answers":["Calf","Pup","Cub"]},{"category":"Entertainment:
+        Television","type":"multiple","difficulty":"medium","question":"Dee from &quot;It&#039;s
+        Always Sunny in Philadelphia&quot; has dated all of the following guys EXCEPT","correct_answer":"Matthew
+        &quot;Rickety Cricket&quot; Mara","incorrect_answers":["Colin the Thief","Ben
+        the Soldier","Kevin Gallagher aka Lil&#039; Kevin"]},{"category":"Entertainment:
+        Film","type":"multiple","difficulty":"easy","question":"Who in Pulp Fiction
+        says &quot;No, they got the metric system there, they wouldn&#039;t know what
+        the fuck a Quarter Pounder is.&quot;","correct_answer":"Vincent Vega","incorrect_answers":["Jules
+        Winnfield","Jimmie Dimmick","Butch Coolidge"]},{"category":"Animals","type":"multiple","difficulty":"easy","question":"What
+        is Grumpy Cat&#039;s real name?","correct_answer":"Tardar Sauce","incorrect_answers":["Sauce","Minnie","Broccoli"]},{"category":"Entertainment:
+        Television","type":"multiple","difficulty":"hard","question":"In Star Trek,
+        what is the name of Spock&#039;s father?","correct_answer":"Sarek","incorrect_answers":["Tuvok","T&#039;Pal","Surak"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"easy","question":"Valve Corporation
+        is an American video game developer located in which city?","correct_answer":"Bellevue,
+        Washington","incorrect_answers":["Austin, Texas","Seattle, Washington","San
+        Francisco, California"]},{"category":"History","type":"multiple","difficulty":"hard","question":"In
+        addition to his career as an astrologer and &quot;prophet&quot;, Nostradamus
+        published a 1555 treatise that included a section on what?","correct_answer":"Making
+        jams and jellies","incorrect_answers":["Teaching parrots to talk","Cheating
+        at card games","Digging graves"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"hard","question":"What
+        is the default name of the Vampire character in &quot;Shining Soul 2&quot;.","correct_answer":"Bloodstar","incorrect_answers":["Sachs","Dracuul","Alucard"]},{"category":"Entertainment:
+        Japanese Anime & Manga","type":"multiple","difficulty":"easy","question":"What
+        is the name of JoJo&#039;s Bizarre Adventure Part 5?","correct_answer":"Vento
+        Aureo","incorrect_answers":["Vento Oreo","Vanto Aureo","Vento Eureo"]}]}'
+  recorded_at: Tue, 28 Dec 2021 20:18:31 GMT
 recorded_with: VCR 6.0.0

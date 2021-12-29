@@ -8,20 +8,31 @@ RSpec.describe RetrieveTriviaQuestionsJob, type: :job do
   it 'should use the game\'s configuration to collect the questions', :vcr do
     expect(Question.count).to eql(0)
 
-    RetrieveTriviaQuestionsJob.new(game).perform_now
+    RetrieveTriviaQuestionsJob.perform_now(game)
 
     expect(Question.count).to eql(10)
   end
 
-  describe 'failure states' do
-    xit 'should regenerate tokens when token not found'
+  it 'should assign a session token', :vcr do
+    expect(game.session_token).to be_nil
+    RetrieveTriviaQuestionsJob.perform_now(game)
 
-    xit 'should regenerate tokens when token exhausted'
+    expect(game.session_token).to_not be_nil
+  end
 
-    xit 'should log an error when an invalid_parameter is found'
+  describe '#handle_error' do
+    let (:question_response) { instance_double(External::OpenTdb::QuestionsResponse) }
 
-    xit 'should move the game state to error when no results are found'
+    it 'populate an error message', :vcr do
+      allow(question_response).to receive(:response_code).and_return(:no_token)
 
-    xit 'should move the game state to error when an invalid parameter is logged'
+      job = RetrieveTriviaQuestionsJob.new
+      job.game = game
+      job.opentdb = External::OpenTdbService.new
+
+      expect(game.error_message).to be_nil
+      job.handle_error(question_response)
+      expect(game.error_message).to_not be_nil
+    end
   end
 end

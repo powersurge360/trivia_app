@@ -15,7 +15,7 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
 
   def perform(game)
     self.game = game
-    self.opentdb = ::External::OpenTdbService.new
+    self.opentdb = External::OpenTdbService.new
 
     game.session_token = self.opentdb.tokens.request.data
 
@@ -43,10 +43,15 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
       question_objs = Question.upsert_all(questions.map(&:attributes), returning: Arel.sql('id'))
 
       game.question_ids = question_objs.map { |res| res['id'] }
+      game.game_lifecycle = "ready"
     end
+
+    game.save
   end
 
   def handle_error(question_response)
+    self.game.game_lifecycle = 'error'
+
     case question_response.response_code
     when :no_token
       logger.error('Bad token generated for game')

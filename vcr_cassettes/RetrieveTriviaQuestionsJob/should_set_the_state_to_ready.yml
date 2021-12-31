@@ -1,0 +1,121 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://opentdb.com/api_token.php?command=request
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 31 Dec 2021 05:18:35 GMT
+      Server:
+      - Apache
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - PHPSESSID=e0f54851658db7fe197082b552ed1993; path=/
+      Upgrade:
+      - h2
+      Connection:
+      - Upgrade
+      Vary:
+      - User-Agent
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"9f6fcb02d958533b64fcecdb3799c73f45d574902162c3b88894abf1f46dfcb6"}'
+  recorded_at: Fri, 31 Dec 2021 05:18:35 GMT
+- request:
+    method: get
+    uri: https://opentdb.com/api.php?amount=10&category&difficulty&game_type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.8.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 31 Dec 2021 05:18:35 GMT
+      Server:
+      - Apache
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - PHPSESSID=e9cb0ac8879bc2375075f44650657f8e; path=/
+      Upgrade:
+      - h2
+      Connection:
+      - Upgrade
+      Vary:
+      - User-Agent
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"response_code":0,"results":[{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"What
+        is Solid Snake&#039;s real name?","correct_answer":"David","incorrect_answers":["Solid
+        Snake","John","Huey"]},{"category":"History","type":"multiple","difficulty":"hard","question":"What
+        year was Canada founded in?","correct_answer":"1867","incorrect_answers":["1798","1859","1668"]},{"category":"Science
+        & Nature","type":"multiple","difficulty":"medium","question":"How many officially
+        recognized dwarf planets in the solar system are named after Polynesian deities?","correct_answer":"2","incorrect_answers":["0","1","5"]},{"category":"General
+        Knowledge","type":"multiple","difficulty":"medium","question":"The term &quot;scientist&quot;
+        was coined in which year?","correct_answer":"1833","incorrect_answers":["1933","1942","1796"]},{"category":"Entertainment:
+        Comics","type":"multiple","difficulty":"medium","question":"In Calvin and
+        Hobbes, what is the name of the babysitter&#039;s boyfriend?","correct_answer":"Charlie","incorrect_answers":["Dave","Charles","Nathaniel"]},{"category":"Geography","type":"multiple","difficulty":"easy","question":"What
+        is the capital of South Korea?","correct_answer":"Seoul","incorrect_answers":["Pyongyang","Taegu","Kitakyushu"]},{"category":"Entertainment:
+        Film","type":"multiple","difficulty":"medium","question":"Who performed the
+        opening theme song for the James Bond 007 movie &quot;Goldfinger&quot;?","correct_answer":"Shirley
+        Basey","incorrect_answers":["Tom Jones","John Barry","Sheena Easton"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"hard","question":"In 2004, which
+        person(s) created &quot;Roblox&quot;?","correct_answer":"David Baszucki and
+        Erik Cassel","incorrect_answers":["Erik Cassel","Jonas Alto and Sarah Smith","James
+        Kolein"]},{"category":"Entertainment: Video Games","type":"boolean","difficulty":"medium","question":"The
+        game Garry&#039;s Mod originally took assets and codes from the popular Half
+        Life 2 mod JBmod.","correct_answer":"True","incorrect_answers":["False"]},{"category":"General
+        Knowledge","type":"multiple","difficulty":"easy","question":"Which country
+        has the union jack in its flag?","correct_answer":"New Zealand","incorrect_answers":["South
+        Africa","Canada","Hong Kong"]}]}'
+  recorded_at: Fri, 31 Dec 2021 05:18:35 GMT
+recorded_with: VCR 6.0.0

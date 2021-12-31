@@ -1,0 +1,10 @@
+<% if @game.game_lifecycle == "pending" %>
+  <div class="basis-11/12 flex flex-col justify-center text-center">
+    <p class="text-2xl">
+      Looking up some great questions...
+    </p>
+    <div class="flex flex-row justify-center">
+      <%= heroicon "book-open", options: { class: "animate-ping w-10 justify-center" } %>
+    </div>
+  </div>
+<% end %>

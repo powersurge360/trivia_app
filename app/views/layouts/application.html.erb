@@ -7,11 +7,12 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body class="text-amber-200 h-screen bg-gray-800">
-    <main class="sm:container mx-auto py-5 px-5 h-full flex flex-col justify-center">
+    <main class="sm:container mx-auto py-5 px-5 h-full flex flex-col">
       <%= yield %>
     </main>
   </body>

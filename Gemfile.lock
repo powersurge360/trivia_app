@@ -127,6 +127,8 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     hashdiff (1.0.1)
+    heroicon (0.4.0)
+      rails (>= 5.2)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.0.1)
@@ -294,6 +296,7 @@ DEPENDENCIES
   faraday_middleware
   guard
   guard-rspec
+  heroicon
   importmap-rails
   jbuilder
   pg

@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   root 'games#new'
 
-  resource :games, only: [:new, :show, :create]
+  resources :games, only: [:new, :show, :create]
 end

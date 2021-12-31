@@ -48,6 +48,7 @@ gem "tailwindcss-rails"
 gem "faraday"
 gem "faraday_middleware"
 gem "sidekiq"
+gem "heroicon"
 
 # Use Sass to process CSS
 # gem "sassc-rails"

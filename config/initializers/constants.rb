@@ -1,29 +1,36 @@
 # These are hard coded to avoid having to write a periodic job and having
 # to deal with cron jobs. We may one day decide to do that anyways
 TRIVIA_CATEGORIES = {
-  nil => nil, # Nil is interpretted as 'any' by the API
-  9 => "General Knowledge",
-  10 => "Entertainment: Books" ,
-  11 => "Entertainment: Film" ,
-  12 => "Entertainment: Music" ,
-  13 => "Entertainment: Musicals & Theatres" ,
-  14 => "Entertainment: Television" ,
-  15 => "Entertainment: Video Games" ,
-  16 => "Entertainment: Board Games" ,
-  17 => "Science & Nature" ,
-  18 => "Science: Computers" ,
-  19 => "Science: Mathematics" ,
-  20 => "Mythology" ,
-  21 => "Sports" ,
-  22 => "Geography" ,
-  23 => "History" ,
-  24 => "Politics" ,
-  25 => "Art" ,
-  26 => "Celebrities" ,
-  27 => "Animals" ,
-  28 => "Vehicles" ,
-  29 => "Entertainment: Comics" ,
-  30 => "Science: Gadgets" ,
-  31 => "Entertainment: Japanese Anime & Manga" ,
-  32 => "Entertainment: Cartoon & Animations"
+  "Any" => nil,
+  "General Knowledge" => 9,
+  "Entertainment: Books" => 10,
+  "Entertainment: Film" => 11,
+  "Entertainment: Music" => 12,
+  "Entertainment: Musicals & Theatres" => 13,
+  "Entertainment: Television" => 14,
+  "Entertainment: Video Games" => 15,
+  "Entertainment: Board Games" => 16,
+  "Science & Nature" => 17,
+  "Science: Computers" => 18,
+  "Science: Mathematics" => 19,
+  "Mythology" => 20,
+  "Sports" => 21,
+  "Geography" => 22,
+  "History" => 23,
+  "Politics" => 24,
+  "Art" => 25,
+  "Celebrities" => 26,
+  "Animals" => 27,
+  "Vehicles" => 28,
+  "Entertainment: Comics" => 29,
+  "Science: Gadgets" => 30,
+  "Entertainment: Japanese Anime & Manga"  => 31,
+  "Entertainment: Cartoon & Animations" => 32
 }.freeze
+
+DIFFICULTY_CHOICES = {
+  "Any" => nil,
+  "Easy" => "easy",
+  "Medium" => "medium",
+  "Hard" => "hard"
+}

@@ -15,7 +15,7 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
 
   def perform(game)
     self.game = game
-    self.opentdb = External::OpenTdbService.new
+    self.opentdb = ::External::OpenTdbService.new
 
     game.session_token = self.opentdb.tokens.request.data
 
@@ -40,7 +40,9 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
     end
 
     if questions.map(&:valid?).all?
-      Question.upsert_all(questions.map(&:attributes))
+      question_objs = Question.upsert_all(questions.map(&:attributes), returning: Arel.sql('id'))
+
+      game.question_ids = question_objs.map { |res| res['id'] }
     end
   end
 

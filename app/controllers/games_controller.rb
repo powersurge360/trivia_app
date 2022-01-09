@@ -22,6 +22,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:number_of_questions, :category, :difficulty)
+    params.require(:game).permit(:number_of_questions, :category, :difficulty, :game_type)
   end
 end

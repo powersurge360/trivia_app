@@ -23,5 +23,19 @@ RSpec.describe "Games", type: :request do
       expect(response).to redirect_to game_path(Game.last)
       expect(Game.count).to eql(1)
     end
+
+    describe "given bad input" do
+      it "should show errors" do
+        post games_path, params: {
+          game: {
+            number_of_questions: 0
+          }
+        }
+
+        expect(response).to be_unprocessable
+
+        expect(response.body).to match /Number of questions must be greater than 0/
+      end
+    end
   end
 end

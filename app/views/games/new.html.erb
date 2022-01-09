@@ -7,7 +7,7 @@
 
   <%= form_with model: @game, class: 'flex flex-col basis-2/3 justify-bottom' do |form| %>
     <%= form.label :number_of_questions, "How many questions per round?" %>
-    <%= form.number_field :number_of_questions, class: form_input_class%>
+    <%= form.number_field :number_of_questions, class: form_input_class, min: 1, max: 50 %>
     <% if @game.errors[:number_of_questions].any? %>
       <%= render "partials/form_error_list", errors: @game.errors.where(:number_of_questions) %>
     <% end %>

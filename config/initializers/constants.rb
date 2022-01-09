@@ -33,4 +33,10 @@ DIFFICULTY_CHOICES = {
   "Easy" => "easy",
   "Medium" => "medium",
   "Hard" => "hard"
-}
+}.freeze
+
+GAME_TYPES = {
+  "Any" => "",
+  "Multiple Choice" => "multiple",
+  "True / False" => "boolean"
+}.freeze

@@ -1,4 +1,4 @@
-<div class="flex flex-col h-full justify-center">
+<div class="flex flex-col grow justify-center">
   <div class="text-center basis-1/3 flex flex-col justify-center">
     <h1 class="text-accent text-3xl font-['Kavoon']">Monster Trivia</h1>
 
@@ -7,11 +7,29 @@
 
   <%= form_with model: @game, class: 'flex flex-col basis-2/3 justify-bottom' do |form| %>
     <%= form.label :number_of_questions, "How many questions per round?" %>
-    <%= form.number_field :number_of_questions, class: form_input_class, min: 1, max: 50 %>
+    <%= form.number_field :number_of_questions, class: form_input_class%>
+    <% if @game.errors[:number_of_questions].any? %>
+      <%= render "partials/form_error_list", errors: @game.errors.where(:number_of_questions) %>
+    <% end %>
+
     <%= form.label :category, "What category?" %>
     <%= form.select :category, options=TRIVIA_CATEGORIES, {}, class: form_input_class %>
+    <% if @game.errors[:category].any? %>
+      <%= render "partials/form_error_list", errors: @game.errors.where(:category) %>
+    <% end %>
+
     <%= form.label :difficulty, "What difficulty?" %>
     <%= form.select :difficulty, options=DIFFICULTY_CHOICES, {}, class: form_input_class %>
+    <% if @game.errors[:difficulty].any? %>
+      <%= render "partials/form_error_list", errors: @game.errors.where(:difficulty) %>
+    <% end %>
+
+    <%= form.label :game_type, "True / false or multiple choice?" %>
+    <%= form.select :game_type, options=GAME_TYPES, {}, class: form_input_class %>
+    <% if @game.errors[:game_type].any? %>
+      <%= render "partials/form_error_list", errors: @game.errors.where(:game_type) %>
+    <% end %>
+
     <%= form.submit "Start", class: submit_button_class %>
   <% end %>
 </div>

@@ -4,12 +4,14 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.create
+    @game = Game.create(game_params)
 
     if @game.valid?
       @game.retrieve_trivia_questions
 
       redirect_to @game
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 

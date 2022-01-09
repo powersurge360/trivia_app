@@ -29,7 +29,7 @@ TRIVIA_CATEGORIES = {
 }.freeze
 
 DIFFICULTY_CHOICES = {
-  "Any" => nil,
+  "Any" => "",
   "Easy" => "easy",
   "Medium" => "medium",
   "Hard" => "hard"

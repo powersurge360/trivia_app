@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.8.0
+      - Faraday v1.9.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 28 Dec 2021 20:18:30 GMT
+      - Sun, 09 Jan 2022 05:18:50 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +31,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=3c1949af5741fcffc0634ffaf32eddad; path=/
+      - PHPSESSID=2a0968b00b4b4075a01627cbb9700455; path=/
       Upgrade:
       - h2
       Connection:
@@ -46,17 +46,17 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"6169af98865c5e4c9e7e33767a611d84d81fe766a5c222f4550ebc380a725f20"}'
-  recorded_at: Tue, 28 Dec 2021 20:18:30 GMT
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"d05b872c4ebde2c0beee261242931a983fb45a116072e71e84fbc029594a5bc5"}'
+  recorded_at: Sun, 09 Jan 2022 05:18:50 GMT
 - request:
     method: get
-    uri: https://opentdb.com/api.php?amount=10&category&difficulty&game_type
+    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&game_type
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.8.0
+      - Faraday v1.9.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -67,7 +67,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 28 Dec 2021 20:18:30 GMT
+      - Sun, 09 Jan 2022 05:18:50 GMT
       Server:
       - Apache
       Expires:
@@ -79,7 +79,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=b5164604536869a70b7adfadf9a668d1; path=/
+      - PHPSESSID=0166ec141500cb0bdea20fb8d7e9da3e; path=/
       Upgrade:
       - h2
       Connection:
@@ -94,30 +94,32 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"Entertainment: Board Games","type":"multiple","difficulty":"hard","question":"The
-        board game &quot;Monopoly&quot; is a variation of what board game?","correct_answer":"The
-        Landlord&#039;s Game","incorrect_answers":["Territorial Dispute","Property
-        Feud","The Monopolist&#039;s Game"]},{"category":"Entertainment: Music","type":"multiple","difficulty":"easy","question":"Which
-        of these songs by Skrillex features Fatman Scoop as a side artist?","correct_answer":"Recess","incorrect_answers":["All
-        is Fair in Love and Brostep","Rock N Roll (Will Take You to the Mountain)","Scary
-        Monsters and Nice Sprites"]},{"category":"General Knowledge","type":"boolean","difficulty":"medium","question":"Sitting
-        for more than three hours a day can cut two years off a person&#039;s life
-        expectancy.","correct_answer":"True","incorrect_answers":["False"]},{"category":"General
-        Knowledge","type":"multiple","difficulty":"easy","question":"What do the letters
-        in the GMT time zone stand for?","correct_answer":"Greenwich Mean Time","incorrect_answers":["Global
-        Meridian Time","General Median Time","Glasgow Man Time"]},{"category":"Science
-        & Nature","type":"multiple","difficulty":"hard","question":"What is the molecular
-        formula of Ozone?","correct_answer":"O3","incorrect_answers":["C6H2O6","N2O","SO4"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"easy","question":"In what year
-        was Garry&#039;s Mod released as a standalone title on Valve&#039;s Steam
-        distribution service?","correct_answer":"2006","incorrect_answers":["2007","2004","2003"]},{"category":"Entertainment:
-        Japanese Anime & Manga","type":"multiple","difficulty":"medium","question":"In
-        &quot;One Piece&quot;, which one of the following is NOT an Ancient Weapon?","correct_answer":"Jupiter","incorrect_answers":["Uranus","Poseidon","Pluton"]},{"category":"History","type":"multiple","difficulty":"hard","question":"How
-        long did the Warsaw Uprising during World War II last?","correct_answer":"63
-        Days","incorrect_answers":["20 Days","55 Days","224 Days"]},{"category":"Science:
-        Computers","type":"multiple","difficulty":"medium","question":"Approximately
-        how many Apple I personal computers were created?","correct_answer":"200","incorrect_answers":["100","500","1000"]},{"category":"Science:
-        Mathematics","type":"multiple","difficulty":"medium","question":"How many
-        books are in Euclid&#039;s Elements of Geometry?","correct_answer":"13","incorrect_answers":["8","10","17"]}]}'
-  recorded_at: Tue, 28 Dec 2021 20:18:30 GMT
+      string: '{"response_code":0,"results":[{"category":"History","type":"multiple","difficulty":"medium","question":"America&#039;s
+        Strategic Defense System during the Cold War was nicknamed after this famous
+        movie.","correct_answer":"Star Wars","incorrect_answers":["Jaws","Blade Runner","Alien"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"easy","question":"Blinky, Pinky,
+        Inky and Clyde are characters from which classic video game?","correct_answer":"Pac-Man","incorrect_answers":["Gauntlet","Space
+        Invaders","Street Fighter"]},{"category":"Science & Nature","type":"boolean","difficulty":"medium","question":"Like
+        with the Neanderthals, Homo sapiens sapiens also interbred with the Denisovans.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Science
+        & Nature","type":"boolean","difficulty":"easy","question":"An atom contains
+        a nucleus.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"medium","question":"In the Portal
+        series, Aperture Science was founded under what name in the early 1940s?","correct_answer":"Aperture
+        Fixtures","incorrect_answers":["Aperture Lavatories","Aperture Science Innovators","Wheatley
+        Laboratories"]},{"category":"Entertainment: Music","type":"multiple","difficulty":"hard","question":"Which
+        of these songs is NOT included in the Suicide Squad OST?","correct_answer":"Skies
+        on Fire - AC\/DC","incorrect_answers":["Heathens - Twenty One Pilots","Without
+        Me - Eminem","Fortunate Son - Creedence Clearwater Revival"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"easy","question":"What is the
+        name of the 4-armed Chaos Witch from the 2016 video game &quot;Battleborn&quot;?","correct_answer":"Orendi","incorrect_answers":["Orendoo","Oranda","Randy"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"hard","question":"What is the
+        name of the alligator in Where&#039;s My Water?","correct_answer":"Swampy","incorrect_answers":["Cranky","Crocky","Justice"]},{"category":"Entertainment:
+        Music","type":"multiple","difficulty":"medium","question":"What was Raekwon
+        the Chefs debut solo album?","correct_answer":"Only Built 4 Cuban Linx","incorrect_answers":["Shaolin
+        vs Wu-Tang","The Wild","The Lex Diamond Story"]},{"category":"Entertainment:
+        Film","type":"multiple","difficulty":"medium","question":"In the Mad Max franchise,
+        what type of car is the Pursuit Special driven by Max?","correct_answer":"Ford
+        Falcon","incorrect_answers":["Holden Monaro","Chrysler Valiant Charger","Pontiac
+        Firebird"]}]}'
+  recorded_at: Sun, 09 Jan 2022 05:18:50 GMT
 recorded_with: VCR 6.0.0

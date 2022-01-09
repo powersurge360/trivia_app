@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.8.0
+      - Faraday v1.9.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 Dec 2021 05:17:00 GMT
+      - Sun, 09 Jan 2022 05:18:50 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +31,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=17feb90a5d762240d3bd60910aea7f10; path=/
+      - PHPSESSID=b168851e39a4176e1055b0038df468ee; path=/
       Upgrade:
       - h2
       Connection:
@@ -46,17 +46,17 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"47be776fe0c6dded3b25b10a61a05a590279cb8e0411b84d9bea3c75f35795cc"}'
-  recorded_at: Fri, 31 Dec 2021 05:17:00 GMT
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"d5923efed0090fb38daa92bfdc84a9e5600fe7047ff69860b0028c48a7036220"}'
+  recorded_at: Sun, 09 Jan 2022 05:18:50 GMT
 - request:
     method: get
-    uri: https://opentdb.com/api.php?amount=10&category&difficulty&game_type
+    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&game_type
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.8.0
+      - Faraday v1.9.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -67,7 +67,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 Dec 2021 05:17:00 GMT
+      - Sun, 09 Jan 2022 05:18:50 GMT
       Server:
       - Apache
       Expires:
@@ -79,7 +79,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=ade598e9e5d1f9e240e0054468564d83; path=/
+      - PHPSESSID=9570601f1a43fd4bccb42fe2f4d862e6; path=/
       Upgrade:
       - h2
       Connection:
@@ -94,30 +94,30 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"Entertainment: Music","type":"multiple","difficulty":"medium","question":"What
-        genre of EDM is the Dutch DJ, musician, and remixer Armin van Buuren most
-        well-known for?","correct_answer":"Trance","incorrect_answers":["House","Drum
-        and Bass","Dubstep"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"What
-        was the first interactive movie video game?","correct_answer":"Astron Belt","incorrect_answers":["Dragon&#039;s
-        Lair","Cube Quest","M.A.C.H. 3"]},{"category":"Art","type":"boolean","difficulty":"medium","question":"Pablo
-        Picasso is one of the founding fathers of &quot;Cubism.&quot;","correct_answer":"True","incorrect_answers":["False"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"medium","question":"If you play
-        the Super Mario RPG and nap in a rented hotel room, you will wake up next
-        to what familiar looking character?","correct_answer":"Link","incorrect_answers":["Wario","Q*bert","Solid
-        Snake"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"easy","question":"What
-        is the homeworld of the Elites from Halo?","correct_answer":"Sanghelios","incorrect_answers":["Te","Doisac","Eayn"]},{"category":"Celebrities","type":"multiple","difficulty":"hard","question":"The
-        eccentric natural philosopher Tycho Brahe kept what as a pet?","correct_answer":"Moose","incorrect_answers":["Dog","Bear","Goat"]},{"category":"Entertainment:
-        Cartoon & Animations","type":"multiple","difficulty":"hard","question":"What
-        was the name of Jonny&#039;s pet dog in The Adventures of Jonny Quest?","correct_answer":"Bandit","incorrect_answers":["Lucky","Rocky","Max"]},{"category":"Entertainment:
-        Japanese Anime & Manga","type":"multiple","difficulty":"medium","question":"Which
-        of these is not a world in the anime &quot;Buddyfight&quot;?","correct_answer":"Ancient
-        Dragon World","incorrect_answers":["Dragon World","Star Dragon World","Darkness
-        Dragon World"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"In
-        the co-op shooter Payday 2, which contact helps you break out Hoxton?","correct_answer":"The
-        Dentist","incorrect_answers":["Vlad","The Elephant","The Butcher"]},{"category":"Entertainment:
-        Music","type":"multiple","difficulty":"easy","question":"Which of the following
-        is an album by punk rock band Anti-Flag?","correct_answer":"For Blood And
-        Empire","incorrect_answers":["Infinity On High","21st Century Breakdown","No
-        Pads, No Helmets...Just Balls"]}]}'
-  recorded_at: Fri, 31 Dec 2021 05:17:00 GMT
+      string: '{"response_code":0,"results":[{"category":"Vehicles","type":"multiple","difficulty":"medium","question":"Which
+        of the following passenger jets is the longest?","correct_answer":"Boeing
+        747-8","incorrect_answers":["Airbus A350-1000","Airbus A330-200","Boeing 787-10"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"medium","question":"In Terraria,
+        which of the following items does the Martian Saucer mini-boss NOT drop?","correct_answer":"Drill
+        Containment Unit","incorrect_answers":["Anti-Gravity Hook","Influx Waver","Cosmic
+        Car Key"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"hard","question":"What
+        device allows Tracer to manipulate her own time in the game &quot;Overwatch&quot;?","correct_answer":"Chronal
+        Accelerator","incorrect_answers":["B.L.I.N.K","Spacial Displacement Manipulator","TMD
+        (Time Manipulation Device)"]},{"category":"Entertainment: Television","type":"multiple","difficulty":"easy","question":"What
+        is the name of the main character in &quot;The Flash&quot; TV series?","correct_answer":"Barry
+        Allen","incorrect_answers":["Oliver Queen","Bart Allen","Bruce Wayne"]},{"category":"Entertainment:
+        Books","type":"multiple","difficulty":"medium","question":"The book &quot;Fahrenheit
+        451&quot; was written by whom?","correct_answer":"Ray Bradbury","incorrect_answers":["R.
+        L. Stine","Wolfgang Amadeus Mozart","Stephen King"]},{"category":"Animals","type":"multiple","difficulty":"hard","question":"Which
+        of the following is another name for the &quot;Poecilotheria Metallica Tarantula&quot;?","correct_answer":"Gooty","incorrect_answers":["Hopper","Silver
+        Stripe","Woebegone"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"hard","question":"What
+        is the plane of existence in MicroProse&#039;s 1997 &quot;Magic the Gathering&quot;?","correct_answer":"Shandalar","incorrect_answers":["Theros","Ravnica","Amonkhet"]},{"category":"Geography","type":"multiple","difficulty":"medium","question":"Which
+        of the following is NOT a capital city?","correct_answer":"Sydney","incorrect_answers":["Cairo","Moscow","Beijing"]},{"category":"Entertainment:
+        Music","type":"multiple","difficulty":"easy","question":"Which music publication
+        is often abbreviated to NME?","correct_answer":"New Musical Express","incorrect_answers":["New
+        Metro Entertainment","Next Musical Enterprise","North Manchester Express"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"easy","question":"Which psychopath(s)
+        in Dead Rising 1 gave you the small chainsaw?","correct_answer":"Adam the
+        Clown","incorrect_answers":["Cliff Hudson","The convicts","Larry the butcher"]}]}'
+  recorded_at: Sun, 09 Jan 2022 05:18:50 GMT
 recorded_with: VCR 6.0.0

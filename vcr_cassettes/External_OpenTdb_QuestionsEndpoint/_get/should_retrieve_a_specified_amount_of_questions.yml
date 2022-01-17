@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.8.0
+      - Faraday v1.9.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 28 Dec 2021 20:18:31 GMT
+      - Mon, 17 Jan 2022 23:04:31 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +31,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=fa24d129358bb3f75c2828f775087d94; path=/
+      - PHPSESSID=ed8de3b42afd08a12b124e0f5e9524c2; path=/
       Upgrade:
       - h2
       Connection:
@@ -46,33 +46,32 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"Entertainment: Cartoon &
-        Animations","type":"multiple","difficulty":"medium","question":"What is Scooby-Doo&#039;s
-        real name?","correct_answer":"Scoobert","incorrect_answers":["Scooter","Scrappy","Shooby"]},{"category":"Science
-        & Nature","type":"multiple","difficulty":"easy","question":"What name is given
-        to all baby marsupials?","correct_answer":"Joey","incorrect_answers":["Calf","Pup","Cub"]},{"category":"Entertainment:
-        Television","type":"multiple","difficulty":"medium","question":"Dee from &quot;It&#039;s
-        Always Sunny in Philadelphia&quot; has dated all of the following guys EXCEPT","correct_answer":"Matthew
-        &quot;Rickety Cricket&quot; Mara","incorrect_answers":["Colin the Thief","Ben
-        the Soldier","Kevin Gallagher aka Lil&#039; Kevin"]},{"category":"Entertainment:
-        Film","type":"multiple","difficulty":"easy","question":"Who in Pulp Fiction
-        says &quot;No, they got the metric system there, they wouldn&#039;t know what
-        the fuck a Quarter Pounder is.&quot;","correct_answer":"Vincent Vega","incorrect_answers":["Jules
-        Winnfield","Jimmie Dimmick","Butch Coolidge"]},{"category":"Animals","type":"multiple","difficulty":"easy","question":"What
-        is Grumpy Cat&#039;s real name?","correct_answer":"Tardar Sauce","incorrect_answers":["Sauce","Minnie","Broccoli"]},{"category":"Entertainment:
-        Television","type":"multiple","difficulty":"hard","question":"In Star Trek,
-        what is the name of Spock&#039;s father?","correct_answer":"Sarek","incorrect_answers":["Tuvok","T&#039;Pal","Surak"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"easy","question":"Valve Corporation
-        is an American video game developer located in which city?","correct_answer":"Bellevue,
-        Washington","incorrect_answers":["Austin, Texas","Seattle, Washington","San
-        Francisco, California"]},{"category":"History","type":"multiple","difficulty":"hard","question":"In
-        addition to his career as an astrologer and &quot;prophet&quot;, Nostradamus
-        published a 1555 treatise that included a section on what?","correct_answer":"Making
-        jams and jellies","incorrect_answers":["Teaching parrots to talk","Cheating
-        at card games","Digging graves"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"hard","question":"What
-        is the default name of the Vampire character in &quot;Shining Soul 2&quot;.","correct_answer":"Bloodstar","incorrect_answers":["Sachs","Dracuul","Alucard"]},{"category":"Entertainment:
-        Japanese Anime & Manga","type":"multiple","difficulty":"easy","question":"What
-        is the name of JoJo&#039;s Bizarre Adventure Part 5?","correct_answer":"Vento
-        Aureo","incorrect_answers":["Vento Oreo","Vanto Aureo","Vento Eureo"]}]}'
-  recorded_at: Tue, 28 Dec 2021 20:18:31 GMT
+      string: '{"response_code":0,"results":[{"category":"History","type":"multiple","difficulty":"hard","question":"Which
+        naval battle was considered the turning point of the Pacific Ocean Theater
+        during World War 2?","correct_answer":"Battle of Midway","incorrect_answers":["Attack
+        on Truk Island","Attack on Pearl Harbor","Battle of the Coral Sea"]},{"category":"Celebrities","type":"multiple","difficulty":"easy","question":"Named
+        after a character he played in a 1969 film, what is the name of the ski resort
+        in Utah that Robert Redford bought in 1968?","correct_answer":"Sundance","incorrect_answers":["Woodward","Turner","Booker"]},{"category":"History","type":"multiple","difficulty":"easy","question":"What
+        was Manfred von Richthofen&#039;s nickname?","correct_answer":"The Red Baron","incorrect_answers":["The
+        High Flying Ace","The Blue Serpent ","The Germany Gunner"]},{"category":"Science
+        & Nature","type":"multiple","difficulty":"easy","question":"What does DNA
+        stand for?","correct_answer":"Deoxyribonucleic Acid","incorrect_answers":["Deoxyribogenetic
+        Acid","Deoxyribogenetic Atoms","Detoxic Acid"]},{"category":"Vehicles","type":"multiple","difficulty":"medium","question":"What
+        do the 4 Rings in Audi&#039;s Logo represent?","correct_answer":"Previously
+        independent automobile manufacturers","incorrect_answers":["States in which
+        Audi makes the most sales","Main cities vital to Audi","Countries in which
+        Audi makes the most sales"]},{"category":"Science & Nature","type":"multiple","difficulty":"hard","question":"What
+        element on the periodic table has 92 electrons?","correct_answer":"Uranium","incorrect_answers":["Sulfur","Hydrogen","Iron"]},{"category":"Entertainment:
+        Music","type":"boolean","difficulty":"easy","question":"Daft Punk originated
+        in France.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"medium","question":"Which of
+        these blocks in &quot;Minecraft&quot; has the lowest blast resistance?","correct_answer":"Sand","incorrect_answers":["End
+        Stone","Water","Wood Planks"]},{"category":"Science & Nature","type":"multiple","difficulty":"medium","question":"Which
+        desert is the only desert in the world where the &quot;Saguaro&quot; cactus
+        grows indigenously?","correct_answer":"The Sonoran Desert","incorrect_answers":["The
+        Gobi Desert","The Yuma Desert","The Arabian Desert"]},{"category":"History","type":"multiple","difficulty":"easy","question":"Which
+        famous military commander marched an army, which included war elephants, over
+        the Alps during the Second Punic War?","correct_answer":"Hannibal","incorrect_answers":["Garmanicus","Alexander
+        the Great","Tiberius"]}]}'
+  recorded_at: Mon, 17 Jan 2022 23:04:31 GMT
 recorded_with: VCR 6.0.0

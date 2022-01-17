@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.8.0
+      - Faraday v1.9.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 28 Dec 2021 20:18:32 GMT
+      - Mon, 17 Jan 2022 23:04:32 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +31,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=0f990f4a215d7ac1b131cae5dbd5929f; path=/
+      - PHPSESSID=490295c34082829868ae224e8513584d; path=/
       Upgrade:
       - h2
       Connection:
@@ -46,17 +46,17 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"d242df20e4081c04bd984862b8c1f32002697a283e4b59bef5ed82c8d16f30ff"}'
-  recorded_at: Tue, 28 Dec 2021 20:18:31 GMT
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"fa63bf22859fc02c586acdcd311315279ce21be815d8f30ada05dbdfc870ef4c"}'
+  recorded_at: Mon, 17 Jan 2022 23:04:32 GMT
 - request:
     method: get
-    uri: https://opentdb.com/api.php?amount=50&category=19&difficulty=easy&token=d242df20e4081c04bd984862b8c1f32002697a283e4b59bef5ed82c8d16f30ff&type=boolean
+    uri: https://opentdb.com/api.php?amount=50&category=19&difficulty=easy&token=fa63bf22859fc02c586acdcd311315279ce21be815d8f30ada05dbdfc870ef4c&type=boolean
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.8.0
+      - Faraday v1.9.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -67,7 +67,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 28 Dec 2021 20:18:32 GMT
+      - Mon, 17 Jan 2022 23:04:32 GMT
       Server:
       - Apache
       Expires:
@@ -79,7 +79,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=8166a13300197e3e3fed56127fa0b0c7; path=/
+      - PHPSESSID=874086303fe5a9ce29c5fd86ddd44977; path=/
       Upgrade:
       - h2
       Connection:
@@ -95,5 +95,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"response_code":4,"results":[]}'
-  recorded_at: Tue, 28 Dec 2021 20:18:32 GMT
+  recorded_at: Mon, 17 Jan 2022 23:04:32 GMT
 recorded_with: VCR 6.0.0

@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 09 Jan 2022 05:18:50 GMT
+      - Mon, 17 Jan 2022 23:04:28 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +31,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=2a0968b00b4b4075a01627cbb9700455; path=/
+      - PHPSESSID=df1742c610860cc629aa864ffde82b72; path=/
       Upgrade:
       - h2
       Connection:
@@ -46,11 +46,11 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"d05b872c4ebde2c0beee261242931a983fb45a116072e71e84fbc029594a5bc5"}'
-  recorded_at: Sun, 09 Jan 2022 05:18:50 GMT
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"51001a461496a4b715c309594f9f7e05de58aee21106626d8db33aec81a6bec7"}'
+  recorded_at: Mon, 17 Jan 2022 23:04:28 GMT
 - request:
     method: get
-    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&game_type
+    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&game_type=
     body:
       encoding: US-ASCII
       string: ''
@@ -67,7 +67,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 09 Jan 2022 05:18:50 GMT
+      - Mon, 17 Jan 2022 23:04:29 GMT
       Server:
       - Apache
       Expires:
@@ -79,7 +79,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=0166ec141500cb0bdea20fb8d7e9da3e; path=/
+      - PHPSESSID=9cc83d0679b926ecbbe963feddeb6a43; path=/
       Upgrade:
       - h2
       Connection:
@@ -94,32 +94,30 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"History","type":"multiple","difficulty":"medium","question":"America&#039;s
-        Strategic Defense System during the Cold War was nicknamed after this famous
-        movie.","correct_answer":"Star Wars","incorrect_answers":["Jaws","Blade Runner","Alien"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"easy","question":"Blinky, Pinky,
-        Inky and Clyde are characters from which classic video game?","correct_answer":"Pac-Man","incorrect_answers":["Gauntlet","Space
-        Invaders","Street Fighter"]},{"category":"Science & Nature","type":"boolean","difficulty":"medium","question":"Like
-        with the Neanderthals, Homo sapiens sapiens also interbred with the Denisovans.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Science
-        & Nature","type":"boolean","difficulty":"easy","question":"An atom contains
-        a nucleus.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"medium","question":"In the Portal
-        series, Aperture Science was founded under what name in the early 1940s?","correct_answer":"Aperture
-        Fixtures","incorrect_answers":["Aperture Lavatories","Aperture Science Innovators","Wheatley
-        Laboratories"]},{"category":"Entertainment: Music","type":"multiple","difficulty":"hard","question":"Which
-        of these songs is NOT included in the Suicide Squad OST?","correct_answer":"Skies
-        on Fire - AC\/DC","incorrect_answers":["Heathens - Twenty One Pilots","Without
-        Me - Eminem","Fortunate Son - Creedence Clearwater Revival"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"easy","question":"What is the
-        name of the 4-armed Chaos Witch from the 2016 video game &quot;Battleborn&quot;?","correct_answer":"Orendi","incorrect_answers":["Orendoo","Oranda","Randy"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"hard","question":"What is the
-        name of the alligator in Where&#039;s My Water?","correct_answer":"Swampy","incorrect_answers":["Cranky","Crocky","Justice"]},{"category":"Entertainment:
-        Music","type":"multiple","difficulty":"medium","question":"What was Raekwon
-        the Chefs debut solo album?","correct_answer":"Only Built 4 Cuban Linx","incorrect_answers":["Shaolin
-        vs Wu-Tang","The Wild","The Lex Diamond Story"]},{"category":"Entertainment:
-        Film","type":"multiple","difficulty":"medium","question":"In the Mad Max franchise,
-        what type of car is the Pursuit Special driven by Max?","correct_answer":"Ford
-        Falcon","incorrect_answers":["Holden Monaro","Chrysler Valiant Charger","Pontiac
-        Firebird"]}]}'
-  recorded_at: Sun, 09 Jan 2022 05:18:50 GMT
+      string: '{"response_code":0,"results":[{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"What
+        is the punishment for playing Postal 2 in New Zealand?","correct_answer":"10
+        years in prison and a fine of $50,000","incorrect_answers":["Fine of $5,000","Nothing","15
+        years in prison and a fine of $10,000"]},{"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"What
+        is the first book of the Old Testament?","correct_answer":"Genesis","incorrect_answers":["Exodus","Leviticus","Numbers"]},{"category":"Science:
+        Computers","type":"boolean","difficulty":"medium","question":"The very first
+        recorded computer &quot;bug&quot; was a moth found inside a Harvard Mark II
+        computer.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Politics","type":"multiple","difficulty":"medium","question":"Before
+        2011, &quot;True Capitalist Radio&quot; was known by a different name. What
+        was that name?","correct_answer":"True Conservative Radio","incorrect_answers":["True
+        Republican Radio","Texan Capitalist Radio","United Capitalists"]},{"category":"Entertainment:
+        Television","type":"multiple","difficulty":"easy","question":"In which British
+        seaside town was the BBC sitcom &quot;Fawlty Towers&quot; set?","correct_answer":"Torquay","incorrect_answers":["Blackpool","Bournemouth","Great
+        Yarmouth"]},{"category":"Animals","type":"multiple","difficulty":"medium","question":"What
+        is the scientific name for the &quot;Polar Bear&quot;?","correct_answer":"Ursus
+        Maritimus","incorrect_answers":["Polar Bear","Ursus Spelaeus","Ursus Arctos"]},{"category":"Entertainment:
+        Video Games","type":"boolean","difficulty":"hard","question":"In Undertale,
+        having a &quot;Fun Value&quot; set to 56-57 will play the &quot;Wrong Number
+        Song Call&quot;.","correct_answer":"False","incorrect_answers":["True"]},{"category":"History","type":"boolean","difficulty":"hard","question":"The
+        Battle of Trafalgar took place on October 23rd, 1805","correct_answer":"False","incorrect_answers":["True"]},{"category":"Entertainment:
+        Television","type":"multiple","difficulty":"medium","question":"In Game of
+        Thrones what is the name of Jon Snow&#039;s sword?","correct_answer":"Longclaw","incorrect_answers":["Oathkeeper","Widow&#039;s
+        Wail","Needle"]},{"category":"Entertainment: Music","type":"multiple","difficulty":"easy","question":"The
+        Rush song &quot;YYZ&quot; derives its name from the IATA aiport identification
+        code for which city?","correct_answer":"Toronto","incorrect_answers":["Vancouver","Ottawa","Calgary"]}]}'
+  recorded_at: Mon, 17 Jan 2022 23:04:29 GMT
 recorded_with: VCR 6.0.0

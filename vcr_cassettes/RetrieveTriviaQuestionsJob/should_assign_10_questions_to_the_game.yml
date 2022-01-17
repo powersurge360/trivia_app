@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 09 Jan 2022 05:18:50 GMT
+      - Mon, 17 Jan 2022 23:04:29 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +31,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=b168851e39a4176e1055b0038df468ee; path=/
+      - PHPSESSID=d34f8a354ba718bfe09dca5a4293d103; path=/
       Upgrade:
       - h2
       Connection:
@@ -46,11 +46,11 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"d5923efed0090fb38daa92bfdc84a9e5600fe7047ff69860b0028c48a7036220"}'
-  recorded_at: Sun, 09 Jan 2022 05:18:50 GMT
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"4b9b1582f7d8d93d10a081a5ffbd13d7e3f250be88943b87beaa752af269439d"}'
+  recorded_at: Mon, 17 Jan 2022 23:04:29 GMT
 - request:
     method: get
-    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&game_type
+    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&game_type=
     body:
       encoding: US-ASCII
       string: ''
@@ -67,7 +67,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 09 Jan 2022 05:18:50 GMT
+      - Mon, 17 Jan 2022 23:04:29 GMT
       Server:
       - Apache
       Expires:
@@ -79,7 +79,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=9570601f1a43fd4bccb42fe2f4d862e6; path=/
+      - PHPSESSID=850a3eac9388afe2c1c0573c0114bfb3; path=/
       Upgrade:
       - h2
       Connection:
@@ -94,30 +94,26 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"Vehicles","type":"multiple","difficulty":"medium","question":"Which
-        of the following passenger jets is the longest?","correct_answer":"Boeing
-        747-8","incorrect_answers":["Airbus A350-1000","Airbus A330-200","Boeing 787-10"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"medium","question":"In Terraria,
-        which of the following items does the Martian Saucer mini-boss NOT drop?","correct_answer":"Drill
-        Containment Unit","incorrect_answers":["Anti-Gravity Hook","Influx Waver","Cosmic
-        Car Key"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"hard","question":"What
-        device allows Tracer to manipulate her own time in the game &quot;Overwatch&quot;?","correct_answer":"Chronal
-        Accelerator","incorrect_answers":["B.L.I.N.K","Spacial Displacement Manipulator","TMD
-        (Time Manipulation Device)"]},{"category":"Entertainment: Television","type":"multiple","difficulty":"easy","question":"What
-        is the name of the main character in &quot;The Flash&quot; TV series?","correct_answer":"Barry
-        Allen","incorrect_answers":["Oliver Queen","Bart Allen","Bruce Wayne"]},{"category":"Entertainment:
-        Books","type":"multiple","difficulty":"medium","question":"The book &quot;Fahrenheit
-        451&quot; was written by whom?","correct_answer":"Ray Bradbury","incorrect_answers":["R.
-        L. Stine","Wolfgang Amadeus Mozart","Stephen King"]},{"category":"Animals","type":"multiple","difficulty":"hard","question":"Which
-        of the following is another name for the &quot;Poecilotheria Metallica Tarantula&quot;?","correct_answer":"Gooty","incorrect_answers":["Hopper","Silver
-        Stripe","Woebegone"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"hard","question":"What
-        is the plane of existence in MicroProse&#039;s 1997 &quot;Magic the Gathering&quot;?","correct_answer":"Shandalar","incorrect_answers":["Theros","Ravnica","Amonkhet"]},{"category":"Geography","type":"multiple","difficulty":"medium","question":"Which
-        of the following is NOT a capital city?","correct_answer":"Sydney","incorrect_answers":["Cairo","Moscow","Beijing"]},{"category":"Entertainment:
-        Music","type":"multiple","difficulty":"easy","question":"Which music publication
-        is often abbreviated to NME?","correct_answer":"New Musical Express","incorrect_answers":["New
-        Metro Entertainment","Next Musical Enterprise","North Manchester Express"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"easy","question":"Which psychopath(s)
-        in Dead Rising 1 gave you the small chainsaw?","correct_answer":"Adam the
-        Clown","incorrect_answers":["Cliff Hudson","The convicts","Larry the butcher"]}]}'
-  recorded_at: Sun, 09 Jan 2022 05:18:50 GMT
+      string: '{"response_code":0,"results":[{"category":"Entertainment: Video Games","type":"boolean","difficulty":"hard","question":"The
+        retail disc of Tony Hawk&#039;s Pro Skater 5 only comes with the tutorial.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Geography","type":"multiple","difficulty":"medium","question":"How
+        many sovereign states are members of the United Nations?","correct_answer":"195","incorrect_answers":["201","153","178"]},{"category":"Geography","type":"multiple","difficulty":"easy","question":"Which
+        country does Austria not border?","correct_answer":"France","incorrect_answers":["Slovenia","Switzerland","Slovakia"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"medium","question":"What snowy
+        mob was added in Minecraft 1.10?","correct_answer":"Polar bears","incorrect_answers":["Eskimos","Penguins","Walking
+        TNT"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"Which
+        was the first video game to be produced by development company Rare?","correct_answer":"Slalom","incorrect_answers":["R.C.
+        Pro-Am","Donkey Kong Country","Battletoads"]},{"category":"Entertainment:
+        Books","type":"multiple","difficulty":"easy","question":"What&#039;s Harry
+        Potter&#039;s dad&#039;s name?","correct_answer":"James Potter","incorrect_answers":["Joey
+        Potter","Frank Potter","Hairy Potter Sr."]},{"category":"Entertainment: Video
+        Games","type":"multiple","difficulty":"medium","question":"Which of these
+        games takes place in the Irish town of Doolin, with the option to play as
+        one of the characters, Ellen and Keats?","correct_answer":"Folklore","incorrect_answers":["Shadow
+        of the Colossus","ICO","Beyond Good &amp; Evil"]},{"category":"Geography","type":"multiple","difficulty":"medium","question":"Which
+        of the following is the longest river in Europe?","correct_answer":"Volga","incorrect_answers":["Danube","Ural","Dnieper"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"hard","question":"What is the
+        name of the alien species introduced in Shadow the Hedgehog (2005)?","correct_answer":"Black
+        Arms","incorrect_answers":["The Swarm","Black Hive","The Eclipse"]},{"category":"Animals","type":"multiple","difficulty":"medium","question":"&quot;Decapods&quot;
+        are an order of ten-footed crustaceans.  Which of these are NOT decapods?","correct_answer":"Krill","incorrect_answers":["Lobsters","Shrimp","Crabs"]}]}'
+  recorded_at: Mon, 17 Jan 2022 23:04:29 GMT
 recorded_with: VCR 6.0.0

@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 09 Jan 2022 05:18:50 GMT
+      - Mon, 17 Jan 2022 23:04:29 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +31,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=0e24920d4d51bbdb4b3d7448e99f87d1; path=/
+      - PHPSESSID=0c8adefca322850229dc28441dec124a; path=/
       Upgrade:
       - h2
       Connection:
@@ -46,11 +46,11 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"ead88e5c0055728b38a5003f830a64f3bc1607e8057c34aa89667d065d9cd385"}'
-  recorded_at: Sun, 09 Jan 2022 05:18:50 GMT
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"549b0af16e36503646adf110b4a7cccb3f13c6fc40a3c50e1ff481f882e95d01"}'
+  recorded_at: Mon, 17 Jan 2022 23:04:29 GMT
 - request:
     method: get
-    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&game_type
+    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&game_type=
     body:
       encoding: US-ASCII
       string: ''
@@ -67,7 +67,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 09 Jan 2022 05:18:50 GMT
+      - Mon, 17 Jan 2022 23:04:29 GMT
       Server:
       - Apache
       Expires:
@@ -79,7 +79,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=e77d49bc8b19fc1a4935a6cf58f5782a; path=/
+      - PHPSESSID=abbc25f4c4cdf575a371efc56509c577; path=/
       Upgrade:
       - h2
       Connection:
@@ -94,26 +94,26 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"Entertainment: Cartoon &
-        Animations","type":"multiple","difficulty":"easy","question":"What was the
-        name of the sea witch in the 1989 Disney film &quot;The Little Mermaid&quot;?","correct_answer":"Ursula","incorrect_answers":["Madam
-        Mim","Maleficent","Lady Tremaine"]},{"category":"Entertainment: Film","type":"boolean","difficulty":"easy","question":"The
-        movie &quot;The Nightmare before Christmas&quot; was all done with physical
-        objects.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Art","type":"multiple","difficulty":"hard","question":"Albrecht
-        D&uuml;rer&#039;s birthplace and place of death were in...","correct_answer":"N&uuml;rnberg","incorrect_answers":["Augsburg","Bamberg","Berlin"]},{"category":"Science
-        & Nature","type":"multiple","difficulty":"medium","question":"Where did the
-        dog breed &quot;Chihuahua&quot; originate?","correct_answer":"Mexico","incorrect_answers":["France","Spain","Russia"]},{"category":"History","type":"multiple","difficulty":"hard","question":"When
-        did Canada leave the confederation to become their own nation?","correct_answer":"July
-        1st, 1867","incorrect_answers":["July 1st, 1763","July 1st, 1832","July 1st,
-        1902"]},{"category":"Mythology","type":"multiple","difficulty":"easy","question":"The
-        greek god Poseidon was the god of what?","correct_answer":"The Sea","incorrect_answers":["War","Sun","Fire"]},{"category":"Entertainment:
-        Film","type":"multiple","difficulty":"hard","question":"In the movie &quot;Scream&quot;
-        who is Ghost Face?","correct_answer":"Billy Loomis and Stu Macher","incorrect_answers":["Dewey
-        Riley","Sidney Prescott","Archie Prescott and Philip Marv"]},{"category":"Celebrities","type":"multiple","difficulty":"easy","question":"Aubrey
-        Graham is better known as","correct_answer":"Drake","incorrect_answers":["Travis
-        Scott","Lil Wayne","2 Chainz"]},{"category":"General Knowledge","type":"multiple","difficulty":"medium","question":"What
-        direction does the Statue of Liberty face?","correct_answer":"Southeast","incorrect_answers":["Southwest","Northwest","Northeast"]},{"category":"Entertainment:
-        Video Games","type":"boolean","difficulty":"easy","question":"&quot;Resident
-        Evil 7&quot; is the first first-person Resident Evil game.","correct_answer":"False","incorrect_answers":["True"]}]}'
-  recorded_at: Sun, 09 Jan 2022 05:18:50 GMT
+      string: '{"response_code":0,"results":[{"category":"Entertainment: Board Games","type":"boolean","difficulty":"easy","question":"Snakes
+        and Ladders was originally created in India?","correct_answer":"True","incorrect_answers":["False"]},{"category":"Geography","type":"multiple","difficulty":"medium","question":"In
+        which English county is Stonehenge?","correct_answer":"Wiltshire","incorrect_answers":["Somerset","Cumbria","Herefordshire"]},{"category":"Geography","type":"multiple","difficulty":"medium","question":"Which
+        of the following countries banned the use of personal genetic ancestry tests?","correct_answer":"Germany","incorrect_answers":["Austria","Canada","Sweden"]},{"category":"Entertainment:
+        Board Games","type":"multiple","difficulty":"medium","question":"The board
+        game, Nightmare was released in what year?","correct_answer":"1991","incorrect_answers":["1992","1989","1995"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"easy","question":"What&#039;s
+        the Team Fortress 2 Scout&#039;s city of origin?","correct_answer":"Boston","incorrect_answers":["Sydney","Detroit","New
+        York"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"easy","question":"Which
+        Game Boy from the Game Boy series of portable video game consoles was released
+        first?","correct_answer":"Game Boy Color","incorrect_answers":["Game Boy Advance","Game
+        Boy Micro","Game Boy Advance SP"]},{"category":"Science: Computers","type":"boolean","difficulty":"easy","question":"In
+        most programming languages, the operator ++ is equivalent to the statement
+        &quot;+= 1&quot;.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Entertainment:
+        Board Games","type":"multiple","difficulty":"hard","question":"Which board
+        game was first released on February 6th, 1935?","correct_answer":"Monopoly","incorrect_answers":["Risk","Clue","Candy
+        Land"]},{"category":"Entertainment: Music","type":"multiple","difficulty":"medium","question":"In
+        what film was the Michael Jackson song &quot;Will You Be There&quot; featured?","correct_answer":"Free
+        Willy","incorrect_answers":["Sleepless in Seattle","Men in Black","Bad Boys"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"medium","question":"In &quot;PUBATTLEGROUNDS&quot;
+        what is the name of the Military Base island?","correct_answer":"Sosnovka","incorrect_answers":["Novorepnoye","Mylta","Yasnaya"]}]}'
+  recorded_at: Mon, 17 Jan 2022 23:04:29 GMT
 recorded_with: VCR 6.0.0

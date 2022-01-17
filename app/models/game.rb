@@ -4,7 +4,7 @@ class Game < ApplicationRecord
   validates :difficulty, inclusion: DIFFICULTY_CHOICES.values
   validates :number_of_questions, numericality: { greater_than: 0, less_than_or_equal_to: 50 }
   validates :category, inclusion: TRIVIA_CATEGORIES.values
-  validates :game_type, inclusion: [nil, 'boolean', 'multiple']
+  validates :game_type, inclusion: GAME_TYPES.values
 
   def retrieve_trivia_questions
     RetrieveTriviaQuestionsJob.perform_later(self)

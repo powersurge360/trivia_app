@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_09_051436) do
+ActiveRecord::Schema.define(version: 2022_01_17_225727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2022_01_09_051436) do
     t.integer "number_of_questions", default: 10, null: false
     t.integer "category"
     t.string "difficulty", default: "", null: false
-    t.string "game_type"
+    t.string "game_type", default: "", null: false
     t.string "session_token"
     t.string "game_lifecycle", default: "pending", null: false
     t.datetime "created_at", precision: 6, null: false

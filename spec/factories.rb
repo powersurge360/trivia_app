@@ -18,4 +18,19 @@ FactoryBot.define do
       difficulty { "easy" }
     end
   end
+
+  factory :game do
+    trait :invalid do
+      number_of_questions { 0 }
+      difficulty { "difficult" }
+      category { 2 }
+      game_type { 'jeopardy' }
+    end
+
+    trait :valid do
+      number_of_questions { 1 }
+      category { 9  } # General Knowledge, defined in constants initializer
+      game_type { 'boolean' }
+    end
+  end
 end

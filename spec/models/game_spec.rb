@@ -1,25 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Game, type: :model do
-  let(:valid_attributes) do
-    {
-      number_of_questions: 1,
-      category: 9, # General Knowledge, defined in constants initializer
-      game_type: 'boolean'
-    }
+  let(:valid_game) do
+    build :game, :valid
   end
 
-  let(:invalid_attributes) do
-    {
-      number_of_questions: 0,
-      difficulty: "difficult",
-      category: 2,
-      game_type: 'jeopardy',
-    }
+  let(:invalid_game) do
+    build :game, :invalid
   end
 
   describe 'with valid attributes passed' do
-    subject { Game.new(valid_attributes) }
+    subject { valid_game }
 
     it 'should save' do
       expect(subject.save).to be true
@@ -32,28 +23,23 @@ RSpec.describe Game, type: :model do
     end
 
     it 'should have questions up to 50' do
-      valid_attrs = valid_attributes.clone
-      valid_attrs[:number_of_questions] = 50
+      valid_game.number_of_questions = 50
 
-      new_game = Game.new(valid_attrs)
-      expect(new_game.save).to be true
+      expect(valid_game.save).to be true
     end
   end
 
   describe 'with invalid attributes passed' do
-    subject { Game.new(invalid_attributes) }
+    subject { invalid_game }
 
     it 'should not save' do
       expect(subject.save).to be false
     end
 
     it 'should not allow questions above 50' do
-      valid_attrs = valid_attributes.clone
-      valid_attrs[:number_of_questions] = 51
+      valid_game.number_of_questions = 51
 
-      new_game = Game.new(valid_attrs)
-
-      expect(new_game.save).to be false
+      expect(valid_game.save).to be false
     end
 
     it 'should have errors for game_type' do

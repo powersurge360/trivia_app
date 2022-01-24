@@ -38,4 +38,21 @@ RSpec.describe "Games", type: :request do
       end
     end
   end
+
+  describe "POST /games/:id/start" do
+    let(:question) { create :question, :valid }
+    subject { create :game, :valid, questions: [question] }
+
+    it 'should allow a transition to the running state' do
+      post start_game_path(subject.id)
+
+      expect(response).to be_redirect
+      subject.reload
+      expect(subject.game_lifecycle).to eql("running")
+
+      follow_redirect!
+
+      expect(response.body).to match /#{question.body}/
+    end
+  end
 end

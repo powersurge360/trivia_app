@@ -6,5 +6,10 @@ Rails.application.routes.draw do
 
   root 'games#new'
 
-  resources :games, only: [:new, :show, :create]
+  resources :games, only: [:new, :show, :create] do
+    post :start, on: :member
+    post :answer, on: :member
+    post :next, on: :member
+    post :finish, on: :member
+  end
 end

@@ -1,26 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Question, type: :model do
-  let(:valid_attributes) {
-    {
-      body: "What is the capital of Kentucky?",
-      answer_1: "Frankfort",
-      answer_2: "Louisville",
-      answer_3: "Lexington",
-      answer_4: "Bowling Green",
-      correct_answer: "Frankfort",
-      difficulty: "easy",
-    }
+  let(:valid_question) {
+    build :question, :valid
   }
 
-  let(:invalid_attributes) {
-    {
-      body: "What time is it?",
-      answer_1: nil,
-      answer_2: nil,
-      correct_answer: nil,
-      difficulty: "difficult"
-    }
+  let(:invalid_question) {
+    build :question, :invalid
   }
 
   let(:valid_multiple_json) {
@@ -50,15 +36,13 @@ RSpec.describe Question, type: :model do
   }
 
   it 'should hash the body to create the pk automatically' do
-    question = Question.new(valid_attributes)
-
-    expect(question.id).to be_nil
-    expect(question.valid?).to be true
-    expect(question.id).to eql(Question.hash_body(question.body))
+    expect(valid_question.id).to be_nil
+    expect(valid_question.valid?).to be true
+    expect(valid_question.id).to eql(Question.hash_body(valid_question.body))
   end
 
   describe 'invalid attributes' do
-    subject { Question.create(invalid_attributes) }
+    subject { invalid_question }
 
     it 'should not save invalid models' do
       expect(subject.id).to be_nil
@@ -66,18 +50,22 @@ RSpec.describe Question, type: :model do
     end
 
     it 'should have an answer_1 error' do
+      subject.valid?
       expect(subject.errors).to include(:answer_1)
     end
 
     it 'should have an answer_2 error' do
+      subject.valid?
       expect(subject.errors).to include(:answer_2)
     end
 
     it 'should have a correct_answer error' do
+      subject.valid?
       expect(subject.errors).to include(:correct_answer)
     end
 
     it 'should have a difficulty error' do
+      subject.valid?
       expect(subject.errors).to include(:difficulty)
     end
   end
@@ -129,10 +117,8 @@ RSpec.describe Question, type: :model do
 
   describe "#hash_body" do
     it "should give the same hash each time" do
-      question = Question.new(valid_attributes)
-
-      old_hash = Question.hash_body(question.body)
-      new_hash = Question.hash_body(question.body)
+      old_hash = Question.hash_body(valid_question.body)
+      new_hash = Question.hash_body(valid_question.body)
       different_hash = Question.hash_body("random thought")
 
       expect(new_hash).to eql(old_hash)

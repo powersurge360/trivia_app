@@ -1,0 +1,6 @@
+POSTGRES_USER=monster_trivia
+POSTGRES_DATABASE=monster_trivia
+POSTGRES_PASSWORD=monster_trivia_rules
+DATABASE_URL=postgres://monster_trivia:monster_trivia_rules@db/monster_trivia
+REDIS_URL=redis://redis/1
+TEST_DATABASE=monster_trivia_test

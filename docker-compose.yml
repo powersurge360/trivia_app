@@ -2,7 +2,9 @@ version: "3.9"
 services:
   web:
     build:
-      target: base
+      context: .
+      dockerfile: Dockerfile
+    image: trivia_app
     env_file: .env
     ports:
       - 3000:3000
@@ -12,11 +14,12 @@ services:
     volumes:
       - .:/app
 
-  frontend:
-    build:
-      target: frontend
+  sidekiq:
+    image: trivia_app
+    command: bin/sidekiq
     env_file: .env
-    profiles: ["development"]
+    depends_on:
+      - web
     volumes:
       - .:/app
 
@@ -24,6 +27,8 @@ services:
     image: postgres:14.1-alpine
     restart: always
     env_file: .env
+    ports:
+      - 5432:5432
     volumes:
       - pgdata:/var/lib/postgresql/data
 
@@ -32,5 +37,62 @@ services:
     ports:
       - 6379:6379
 
+  frontend:
+    image: web
+    command: bin/rails tailwindcss:watch
+    env_file: .env
+    profiles: ["development"]
+    volumes:
+      - .:/app
+
+  migrate:
+    image: trivia_app
+    command: bin/rails db:migrate
+    env_file: .env
+    profiles: ["tools"]
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  test-db:
+    image: postgres:14.1-alpine
+    restart: always
+    env_file: .env
+    volumes:
+      - test-pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: monster_trivia
+      POSTGRES_DATABASE: ${TEST_DATABASE}
+      POSTGRES_PASSWORD: monster_trivia_rules
+    profiles: ["tests"]
+
+  specs:
+    image: trivia_app
+    command: bin/rails db:test:prepare spec
+    profiles: ["tests"]
+    env_file: .env
+    depends_on:
+      - test-db
+    volumes:
+      - .:/app
+    environment:
+      RAILS_ENV: test
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@test-db/${TEST_DATABASE}
+
+  guard:
+    image: trivia_app
+    command: bin/guard
+    profiles: ["tests"]
+    env_file: .env
+    depends_on:
+      - test-db
+    volumes:
+      - .:/app
+    environment:
+      RAILS_ENV: test
+      DATABASE_URL: postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_DATABASE/$TEST_DATABASE
+
 volumes:
   pgdata:
+  test-pgdata:

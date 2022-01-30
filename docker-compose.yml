@@ -91,7 +91,7 @@ services:
       - .:/app
     environment:
       RAILS_ENV: test
-      DATABASE_URL: postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_DATABASE/$TEST_DATABASE
+      DATABASE_URL: postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@test-db/$TEST_DATABASE
 
 volumes:
   pgdata:

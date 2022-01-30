@@ -80,6 +80,19 @@ services:
       RAILS_ENV: test
       DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@test-db/${TEST_DATABASE}
 
+  test-prepare:
+    image: trivia_app
+    command: bin/rails db:test:prepare
+    profiles: ["tests"]
+    env_file: .env
+    depends_on:
+      - test-db
+    volumes:
+      - .:/app
+    environment:
+      RAILS_ENV: test
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@test-db/${TEST_DATABASE}
+
   guard:
     image: trivia_app
     command: bin/guard

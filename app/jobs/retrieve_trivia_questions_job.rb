@@ -43,7 +43,7 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
       question_objs = Question.upsert_all(questions.map(&:attributes), returning: [ "id" ])
 
       game.question_ids = question_objs.map { |res| res['id'] }
-      game.game_lifecycle = "ready"
+      game.finished_setup
     end
 
     game.save

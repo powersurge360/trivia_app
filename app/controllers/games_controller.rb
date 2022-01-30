@@ -21,7 +21,7 @@ class GamesController < ApplicationController
   end
 
   def start
-    @game.game_lifecycle = "running"
+    @game.start
     @game.save
 
     if @game.valid?

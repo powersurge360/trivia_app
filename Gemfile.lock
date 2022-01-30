@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (5.2.0)
+      concurrent-ruby (~> 1.0)
     actioncable (7.0.1)
       actionpack (= 7.0.1)
       activesupport (= 7.0.1)
@@ -322,6 +324,7 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
+  aasm
   bootsnap
   capybara
   debug

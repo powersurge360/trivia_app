@@ -49,6 +49,7 @@ gem "faraday"
 gem "faraday_middleware"
 gem "sidekiq"
 gem "heroicon"
+gem "aasm"
 
 # Use Sass to process CSS
 # gem "sassc-rails"

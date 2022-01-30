@@ -41,7 +41,7 @@ RSpec.describe "Games", type: :request do
 
   describe "POST /games/:id/start" do
     let(:question) { create :question, :valid }
-    subject { create :game, :valid, questions: [question] }
+    subject { create :game, :valid, questions: [question], game_lifecycle: "ready" }
 
     it 'should allow a transition to the running state' do
       post start_game_path(subject.id)

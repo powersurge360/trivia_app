@@ -1,11 +1,5 @@
 class Game < ApplicationRecord
-  GAME_LIFECYCLE = [
-    "pending",
-    "ready",
-    "running",
-    "answered",
-    "finished",
-  ].freeze
+  include AASM
 
   has_and_belongs_to_many :questions
 
@@ -13,6 +7,35 @@ class Game < ApplicationRecord
   validates :number_of_questions, numericality: { greater_than: 0, less_than_or_equal_to: 50 }
   validates :category, inclusion: TRIVIA_CATEGORIES.values
   validates :game_type, inclusion: GAME_TYPES.values
+
+  # TODO: Add an error state to handle failed from pending
+  aasm column: :game_lifecycle do
+    state :pending, initial: true
+    state :ready
+    state :running
+    state :answered
+    state :finished
+
+    event :finished_setup do
+      transitions from: :pending, to: :ready
+    end
+
+    event :start do
+      transitions from: :ready, to: :running
+    end
+
+    event :answer do
+      transitions from: :running, to: :answered
+    end
+
+    event :continue do
+      transitions from: :answered, to: :running
+    end
+
+    event :finish do
+      transitions from: :answered, to: :finished
+    end
+  end
 
   broadcasts
 

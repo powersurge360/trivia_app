@@ -35,8 +35,10 @@ This is a simple application that uses Rails 7, Hotwire, and the [OpenTDB](https
 * Run `docker compose build web` to build the trivia_app image ahead of time (many utilities and tools depend on it)
 * Run `docker compose run rails db:migrate` to run database migrations
 * Run `docker compose up` to start the suite
-  * Optionally run `docker compose run guard` to start the rspec watcher
+  * Optionally run `docker compose run guard` to start the rspec watcher. Before specs can be run either `docker compose run test-prepare` or `docker compose run specs` is required to set up the database
 
 Use `docker compose run specs` to run specs
 
 To install new dependencies, rebuild the web image with `docker compose build web`
+
+⚠️: When using `docker compose run`, you will accumulate stopped containers over time. Consider using the `--rm` flag to automatically clean up after yourself. For example, `docker compose run --rm guard`.

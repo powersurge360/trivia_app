@@ -41,6 +41,7 @@ services:
     image: trivia_app
     command: bin/rails tailwindcss:watch
     env_file: .env
+    tty: true
     volumes:
       - .:/app
 

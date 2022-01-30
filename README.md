@@ -40,5 +40,3 @@ This is a simple application that uses Rails 7, Hotwire, and the [OpenTDB](https
 Use `docker compose run specs` to run specs
 
 To install new dependencies, rebuild the web image with `docker compose build web`
-
-⚠️: Tailwind CSS does not work in M1 environments in docker at the moment, they don't provide a binary for arm linux. When that changes, this should work. In the mean time, you'll have to either run natively or build just the tailwind stuff locally.

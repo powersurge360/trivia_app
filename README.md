@@ -31,7 +31,7 @@ This is a simple application that uses Rails 7, Hotwire, and the [OpenTDB](https
 ### Docker Compose
 
 * Copy `dotenv` to `.env`
-* Make any changes you deign necessary (and certainly before deploying)
+* Make any changes you deem necessary (and certainly before deploying)
 * Run `docker compose build web` to build the trivia_app image ahead of time (many utilities and tools depend on it)
 * Run `docker compose up` to start the suite
   * Optionally run `docker compose up frontend` to start tailwind watching

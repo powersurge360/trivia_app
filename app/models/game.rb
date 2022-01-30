@@ -11,6 +11,7 @@ class Game < ApplicationRecord
   # TODO: Add an error state to handle failed from pending
   aasm column: :game_lifecycle do
     state :pending, initial: true
+    state :error
     state :ready
     state :running
     state :answered
@@ -18,6 +19,10 @@ class Game < ApplicationRecord
 
     event :finished_setup do
       transitions from: :pending, to: :ready
+    end
+
+    event :error_detected do
+      transitions from: :pending, to: :error
     end
 
     event :start do

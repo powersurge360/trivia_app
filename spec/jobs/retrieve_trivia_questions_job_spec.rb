@@ -62,6 +62,7 @@ RSpec.describe RetrieveTriviaQuestionsJob, type: :job do
 
       expect(game.game_lifecycle).to eql('pending')
       job.handle_error(question_response)
+      game.reload
       expect(game.game_lifecycle).to eql('error')
     end
   end

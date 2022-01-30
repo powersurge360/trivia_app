@@ -50,7 +50,7 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
   end
 
   def handle_error(question_response)
-    self.game.game_lifecycle = 'error'
+    self.game.error_detected
 
     case question_response.response_code
     when :no_token
@@ -74,5 +74,7 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
 
       self.game.error_message = 'An error occurred retrieving questions'
     end
+
+    game.save
   end
 end

@@ -38,16 +38,15 @@ services:
       - 6379:6379
 
   frontend:
-    image: web
+    image: trivia_app
     command: bin/rails tailwindcss:watch
     env_file: .env
-    profiles: ["development"]
     volumes:
       - .:/app
 
-  migrate:
+  rails:
     image: trivia_app
-    command: bin/rails db:migrate
+    entrypoint: bin/rails
     env_file: .env
     profiles: ["tools"]
     volumes:

@@ -13,10 +13,9 @@ services:
       - redis
     volumes:
       - .:/app
-      - ./docker/database.yml:/app/config/database.yml
-      - ./docker/cable.yml:/app/config/cable.yml
     environment:
       REDIS_URL: redis://redis:6379/1
+      POSTGRES_HOST: db
 
   sidekiq:
     image: trivia_app
@@ -26,10 +25,9 @@ services:
       - web
     volumes:
       - .:/app
-      - ./docker/database.yml:/app/config/database.yml
-      - ./docker/cable.yml:/app/config/cable.yml
     environment:
       REDIS_URL: redis://redis:6379/1
+      POSTGRES_HOST: db
 
   db:
     image: postgres:14.1-alpine
@@ -58,9 +56,10 @@ services:
     entrypoint: bin/rails
     env_file: .env
     profiles: ["tools"]
+    environment:
+      POSTGRES_HOST: db
     volumes:
       - .:/app
-      - ./docker/database.yml:/app/config/database.yml
     depends_on:
       - db
 

@@ -22,6 +22,7 @@ This is a simple application that uses Rails 7, Hotwire, and the [OpenTDB](https
 
 ###  Native
 
+* Copy `dotenv` to `.env`
 * In the directory, in a terminal, run `bundle install`
 * Run `bin/rails db:migrate` to get your database running
 * Once everything has been installed, use `bin/dev` to run the tailwind build process, the sidekiq job queue, and the rails server in three different processes.

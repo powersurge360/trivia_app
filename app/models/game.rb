@@ -8,7 +8,6 @@ class Game < ApplicationRecord
   validates :category, inclusion: TRIVIA_CATEGORIES.values
   validates :game_type, inclusion: GAME_TYPES.values
 
-  # TODO: Add an error state to handle failed from pending
   aasm column: :game_lifecycle do
     state :pending, initial: true
     state :error

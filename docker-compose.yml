@@ -13,6 +13,10 @@ services:
       - redis
     volumes:
       - .:/app
+      - ./docker/database.yml:/app/config/database.yml
+      - ./docker/cable.yml:/app/config/cable.yml
+    environment:
+      REDIS_URL: redis://redis:6379/1
 
   sidekiq:
     image: trivia_app
@@ -22,6 +26,10 @@ services:
       - web
     volumes:
       - .:/app
+      - ./docker/database.yml:/app/config/database.yml
+      - ./docker/cable.yml:/app/config/cable.yml
+    environment:
+      REDIS_URL: redis://redis:6379/1
 
   db:
     image: postgres:14.1-alpine
@@ -29,9 +37,13 @@ services:
     env_file: .env
     volumes:
       - pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
 
   redis:
     image: redis:6.2.6-alpine
+    ports:
+      - 6379:6379
 
   frontend:
     image: trivia_app
@@ -48,59 +60,9 @@ services:
     profiles: ["tools"]
     volumes:
       - .:/app
+      - ./docker/database.yml:/app/config/database.yml
     depends_on:
       - db
-
-  test-db:
-    image: postgres:14.1-alpine
-    restart: always
-    env_file: .env
-    volumes:
-      - test-pgdata:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: monster_trivia
-      POSTGRES_DATABASE: ${TEST_DATABASE}
-      POSTGRES_PASSWORD: monster_trivia_rules
-    profiles: ["tests"]
-
-  specs:
-    image: trivia_app
-    command: bin/rails db:test:prepare spec
-    profiles: ["tests"]
-    env_file: .env
-    depends_on:
-      - test-db
-    volumes:
-      - .:/app
-    environment:
-      RAILS_ENV: test
-      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@test-db/${TEST_DATABASE}
-
-  test-prepare:
-    image: trivia_app
-    command: bin/rails db:test:prepare
-    profiles: ["tests"]
-    env_file: .env
-    depends_on:
-      - test-db
-    volumes:
-      - .:/app
-    environment:
-      RAILS_ENV: test
-      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@test-db/${TEST_DATABASE}
-
-  guard:
-    image: trivia_app
-    command: bin/guard
-    profiles: ["tests"]
-    env_file: .env
-    depends_on:
-      - test-db
-    volumes:
-      - .:/app
-    environment:
-      RAILS_ENV: test
-      DATABASE_URL: postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@test-db/$TEST_DATABASE
 
 volumes:
   pgdata:

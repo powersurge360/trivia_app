@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :retrieve_game, only: [:show, :start]
+  before_action :retrieve_game, only: [:show, :start, :answer]
 
   def new
     @game = Game.new

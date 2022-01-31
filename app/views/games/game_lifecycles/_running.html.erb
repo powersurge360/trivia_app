@@ -1,6 +1,15 @@
-<%= game.id %>
-<%= game.current_question.body %>
-<%= game.current_question.answer_1 %>
-<%= game.current_question.answer_2 %>
-<%= game.current_question.answer_3 %>
-<%= game.current_question.answer_4 %>
+<div class="flex flex-col grow justify-center text-center">
+  <p class="flex flex-col text-2xl justify-center basis-2/5 grow">
+    <%= game.current_question.body.html_safe %>
+  </p>
+  <div class="flex flex-col justify-top basis-3/5 grow">
+    <%= link_to game.current_question.answer_1, "", class: button_class %>
+    <%= link_to game.current_question.answer_2, "", class: button_class %>
+    <% if game.current_question.answer_3 %>
+      <%= link_to game.current_question.answer_3, "", class: button_class %>
+    <% end %>
+    <% if game.current_question.answer_4 %>
+      <%= link_to game.current_question.answer_4, "", class: button_class %>
+    <% end %>
+  </div>
+</div>

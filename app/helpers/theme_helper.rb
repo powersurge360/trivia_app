@@ -10,6 +10,6 @@ module ThemeHelper
   end
 
   def button_class
-    'font-bold grow text-amber-300 rounded-xl mb-2 py-2 bg-purple-800 hover:bg-purple-500'
+    'font-bold text-amber-300 rounded-xl mb-2 py-2 bg-purple-800 hover:bg-purple-500'
   end
 end

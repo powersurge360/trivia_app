@@ -65,4 +65,3 @@ services:
 
 volumes:
   pgdata:
-  test-pgdata:

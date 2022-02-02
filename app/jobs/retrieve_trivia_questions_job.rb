@@ -21,7 +21,7 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
 
     question_response = self.opentdb.questions.get(**game.api_attributes)
 
-    logger.debug("Question attributes: #{game.api_attributes}")
+    logger.debug("Game attributes: #{game.api_attributes}")
     logger.debug("Question response: #{question_response.data}")
 
     if !question_response.successful?

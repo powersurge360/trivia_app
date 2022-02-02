@@ -12,6 +12,7 @@ module MonsterTrivia
     config.load_defaults 7.0
 
     config.active_job.queue_adapter = :sidekiq
+    config.log_level = ENV.fetch('RAILS_LOG_LEVEL') { 'info' }.to_sym
 
     # Configuration for the application, engines, and railties goes here.
     #

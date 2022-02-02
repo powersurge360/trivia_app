@@ -67,7 +67,7 @@ class Game < ApplicationRecord
       difficulty: attrs['difficulty'],
       amount: attrs['number_of_questions'],
       category: attrs['category'],
-      game_type: attrs['game_type']
+      type: attrs['game_type']
     }
   end
 end

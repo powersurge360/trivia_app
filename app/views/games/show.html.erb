@@ -1,3 +1,5 @@
 <% content_for :show_header, true %>
 
+<%= turbo_stream_from @game %>
+
 <%= render partial: @game %>

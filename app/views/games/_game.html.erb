@@ -1,5 +1,3 @@
-<%= turbo_stream_from game %>
-
 <div id="<%= dom_id(game) %>" class="flex grow">
   <%= render "games/game_lifecycles/#{game.game_lifecycle}", game: game %>
 </div>

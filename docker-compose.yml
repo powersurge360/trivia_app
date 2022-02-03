@@ -16,6 +16,7 @@ services:
     environment:
       REDIS_URL: redis://redis:6379/1
       POSTGRES_HOST: db
+      BINDING: 0.0.0.0
 
   sidekiq:
     image: trivia_app

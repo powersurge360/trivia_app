@@ -5,7 +5,7 @@ RUN apt-get install -y libpq-dev
 COPY Gemfile Gemfile.lock /app
 RUN bundle install
 COPY . /app
-RUN RAILS_ENV=production bin/rails assets:precompile
+RUN bin/rails assets:precompile
 
 ENTRYPOINT ["./entry-point.sh"]
 

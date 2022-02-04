@@ -41,7 +41,7 @@ class GamesController < ApplicationController
   private
 
   def retrieve_game
-    @game = Game.includes(:questions).find(params[:id])
+    @game = Game.includes(:questions, :game_questions).find(params[:id])
   end
 
   def create_game_params

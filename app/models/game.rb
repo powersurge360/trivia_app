@@ -57,7 +57,7 @@ class Game < ApplicationRecord
   end
 
   def current_answer
-    GameQuestion.find_by(game: self, question: current_question)
+    current_question.game_questions.find_by(game: self)
   end
 
   def retrieve_trivia_questions

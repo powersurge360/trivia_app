@@ -14,7 +14,7 @@
   <body class="text-amber-200 h-screen overflow-y-scroll flex flex-col bg-gray-800">
     <div class="sm:container mx-auto w-full flex flex-col grow">
       <% if !content_for? :hide_header %>
-        <h1 class="fixed bg-gray-800 p-5 w-full text-accent text-3xl font-['Kavoon']">
+        <h1 class="sticky top-0 bg-gray-800 p-5 w-full text-accent text-3xl font-['Kavoon']">
           <%= link_to 'Monster Trivia', root_path %>
         </h1>
       <% end %>

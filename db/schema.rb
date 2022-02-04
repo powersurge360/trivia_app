@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_17_233135) do
+ActiveRecord::Schema.define(version: 2022_02_04_043522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "game_questions", force: :cascade do |t|
+    t.bigint "game_id"
+    t.string "question_id"
+    t.boolean "correctly_answered"
+    t.index ["game_id"], name: "index_game_questions_on_game_id"
+    t.index ["question_id"], name: "index_game_questions_on_question_id"
+  end
 
   create_table "games", force: :cascade do |t|
     t.integer "number_of_questions", default: 10, null: false
@@ -26,13 +34,6 @@ ActiveRecord::Schema.define(version: 2022_01_17_233135) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "error_message"
     t.integer "current_round", default: 1, null: false
-  end
-
-  create_table "games_questions", force: :cascade do |t|
-    t.bigint "game_id"
-    t.string "question_id"
-    t.index ["game_id"], name: "index_games_questions_on_game_id"
-    t.index ["question_id"], name: "index_games_questions_on_question_id"
   end
 
   create_table "questions", id: :string, force: :cascade do |t|
@@ -48,4 +49,6 @@ ActiveRecord::Schema.define(version: 2022_01_17_233135) do
     t.integer "category_id"
   end
 
+  add_foreign_key "game_questions", "games"
+  add_foreign_key "game_questions", "questions"
 end

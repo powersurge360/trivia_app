@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 17 Jan 2022 23:04:30 GMT
+      - Fri, 04 Feb 2022 04:49:31 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +31,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=bd8daab1dcac8941df9d2f132b6e3f9b; path=/
+      - PHPSESSID=42095d041faa63f06612a19bae909876; path=/
       Upgrade:
       - h2
       Connection:
@@ -46,11 +46,11 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"88351a19caf5c6e7f5ff5ce3097e7fffcb1a28de55dd0579620eb951802af9c1"}'
-  recorded_at: Mon, 17 Jan 2022 23:04:30 GMT
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"7dd4fb7658f679b16b5319c8f733b74adf6ff23c4a5a649ff7313df656c2de63"}'
+  recorded_at: Fri, 04 Feb 2022 04:49:31 GMT
 - request:
     method: get
-    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&game_type=
+    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&type=
     body:
       encoding: US-ASCII
       string: ''
@@ -67,7 +67,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 17 Jan 2022 23:04:30 GMT
+      - Fri, 04 Feb 2022 04:49:31 GMT
       Server:
       - Apache
       Expires:
@@ -79,7 +79,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=8507d7d3a1b036a1912eb8acfcbee7c0; path=/
+      - PHPSESSID=1088aaea441186b7b7324861b8864185; path=/
       Upgrade:
       - h2
       Connection:
@@ -94,30 +94,29 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"What
-        is &quot;dabbing&quot;?","correct_answer":"A dance","incorrect_answers":["A
-        medical procedure","A sport","A language"]},{"category":"History","type":"multiple","difficulty":"medium","question":"When
-        was the United States National Security Agency established?","correct_answer":"November
-        4, 1952","incorrect_answers":["July 26, 1908"," July 1, 1973"," November 25,
-        2002"]},{"category":"History","type":"multiple","difficulty":"medium","question":"How
-        many times was Albert Einstein married in his lifetime?","correct_answer":"Twice","incorrect_answers":["Five","Thrice","Once"]},{"category":"General
-        Knowledge","type":"multiple","difficulty":"medium","question":"The new One
-        World Trade Center in Manhattan, New York City was designed by which architect?
-        ","correct_answer":"David Childs","incorrect_answers":["Bjarke Ingels","Michael
-        Arad","Fumihiko Maki"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"According
-        to Overwatch&#039;s lore, who was once a member of the Deadlock Gang?","correct_answer":"McCree","incorrect_answers":["Roadhog","Soldier
-        76","Junkrat"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"hard","question":"In
-        the &quot;Little Lost Girl&quot; Easter Egg in Call of Duty: Black Ops II,
-        what&#039;s the last step required for the achievement?","correct_answer":"Raise
-        Hell","incorrect_answers":["Freedom","Skewer the Winged Beast","Ascend from
-        Darkness"]},{"category":"General Knowledge","type":"boolean","difficulty":"easy","question":"Scotland
-        voted to become an independent country during the referendum from September
-        2014.","correct_answer":"False","incorrect_answers":["True"]},{"category":"Mythology","type":"multiple","difficulty":"medium","question":"In
-        African mythology, Anansi is a trickster and storyteller who takes the shape
-        of which animal?","correct_answer":"Spider","incorrect_answers":["Wild dog","Monkey","Crocodile"]},{"category":"Animals","type":"multiple","difficulty":"hard","question":"What
-        bird is born with claws on its wing digits?","correct_answer":"Hoatzin","incorrect_answers":["Cormorant","Cassowary","Secretary
-        bird"]},{"category":"Entertainment: Music","type":"multiple","difficulty":"easy","question":"Who
-        is the lead singer of Foo Fighters?","correct_answer":"Dave Grohl","incorrect_answers":["Dave
-        Mustaine","James Hetfield","Little Red Riding Hood"]}]}'
-  recorded_at: Mon, 17 Jan 2022 23:04:31 GMT
+      string: '{"response_code":0,"results":[{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"Who
+        was the first jedi that Starkiller had to kill in Star Wars: The Force Unleashed?","correct_answer":"Rahm
+        Kota","incorrect_answers":["Ahsoka Tano","Kazdan Paratus","Kento Marek"]},{"category":"Entertainment:
+        Television","type":"multiple","difficulty":"easy","question":"Which of these
+        characters in &quot;Stranger Things&quot; has the power of Telekinesis?","correct_answer":"Eleven","incorrect_answers":["Mike","Lucas","Karen"]},{"category":"History","type":"multiple","difficulty":"medium","question":"Who
+        tutored Alexander the Great?","correct_answer":"Aristotle","incorrect_answers":["Socrates","Plato","King
+        Philip"]},{"category":"Entertainment: Music","type":"multiple","difficulty":"medium","question":"What
+        is the relationship between the band members of American rock band King of
+        Leon?","correct_answer":"Brothers &amp; cousins","incorrect_answers":["Childhood
+        friends","Former classmates","Fraternity house members"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"medium","question":"Which company
+        did Bethesda purchase the Fallout Series from?","correct_answer":"Interplay
+        Entertainment ","incorrect_answers":["Capcom","Blizzard Entertainment","Nintendo"]},{"category":"Entertainment:
+        Comics","type":"multiple","difficulty":"medium","question":"Who created Ultron
+        of Earth-616?","correct_answer":"Henry Pym","incorrect_answers":["Amadeus
+        Cho","Tony Stark","Reed Richards"]},{"category":"Entertainment: Film","type":"multiple","difficulty":"hard","question":"In
+        order to cut costs, what were most of the extras of Mad Max (1979) paid with?","correct_answer":"Beer","incorrect_answers":["Fast
+        food","Food stamps","They weren&#039;t paid"]},{"category":"Science: Computers","type":"multiple","difficulty":"medium","question":"Approximately
+        how many Apple I personal computers were created?","correct_answer":"200","incorrect_answers":["100","500","1000"]},{"category":"Entertainment:
+        Television","type":"multiple","difficulty":"hard","question":"What was the
+        name of the inflatable duck sacrified to the crowd at the end of Episode 34
+        of the 18th season of Big Brother?","correct_answer":"Pablo","incorrect_answers":["Esteban","Carlos","Duckster"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"easy","question":"What is the
+        name of the talking cat in Persona 5?","correct_answer":"Morgana","incorrect_answers":["Teddie","Marie","Ryuji"]}]}'
+  recorded_at: Fri, 04 Feb 2022 04:49:31 GMT
 recorded_with: VCR 6.0.0

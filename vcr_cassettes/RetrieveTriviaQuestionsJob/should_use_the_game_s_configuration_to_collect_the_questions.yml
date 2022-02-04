@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 17 Jan 2022 23:04:28 GMT
+      - Fri, 04 Feb 2022 04:50:10 GMT
       Server:
       - Apache
       Expires:
@@ -31,7 +31,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=df1742c610860cc629aa864ffde82b72; path=/
+      - PHPSESSID=3e7db7a3d88f0e1d38cc91d9ba7a0a3e; path=/
       Upgrade:
       - h2
       Connection:
@@ -46,11 +46,11 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"51001a461496a4b715c309594f9f7e05de58aee21106626d8db33aec81a6bec7"}'
-  recorded_at: Mon, 17 Jan 2022 23:04:28 GMT
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"5aefbb36a22e6a7ec43f3f98c23d29ed51111d317ea82c9647af90ef1642b120"}'
+  recorded_at: Fri, 04 Feb 2022 04:50:10 GMT
 - request:
     method: get
-    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&game_type=
+    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&type=
     body:
       encoding: US-ASCII
       string: ''
@@ -67,7 +67,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 17 Jan 2022 23:04:29 GMT
+      - Fri, 04 Feb 2022 04:50:10 GMT
       Server:
       - Apache
       Expires:
@@ -79,7 +79,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Set-Cookie:
-      - PHPSESSID=9cc83d0679b926ecbbe963feddeb6a43; path=/
+      - PHPSESSID=7d85dc902a309529bbb2b3d799bac2eb; path=/
       Upgrade:
       - h2
       Connection:
@@ -94,30 +94,26 @@ http_interactions:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"What
-        is the punishment for playing Postal 2 in New Zealand?","correct_answer":"10
-        years in prison and a fine of $50,000","incorrect_answers":["Fine of $5,000","Nothing","15
-        years in prison and a fine of $10,000"]},{"category":"General Knowledge","type":"multiple","difficulty":"easy","question":"What
-        is the first book of the Old Testament?","correct_answer":"Genesis","incorrect_answers":["Exodus","Leviticus","Numbers"]},{"category":"Science:
-        Computers","type":"boolean","difficulty":"medium","question":"The very first
-        recorded computer &quot;bug&quot; was a moth found inside a Harvard Mark II
-        computer.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Politics","type":"multiple","difficulty":"medium","question":"Before
-        2011, &quot;True Capitalist Radio&quot; was known by a different name. What
-        was that name?","correct_answer":"True Conservative Radio","incorrect_answers":["True
-        Republican Radio","Texan Capitalist Radio","United Capitalists"]},{"category":"Entertainment:
-        Television","type":"multiple","difficulty":"easy","question":"In which British
-        seaside town was the BBC sitcom &quot;Fawlty Towers&quot; set?","correct_answer":"Torquay","incorrect_answers":["Blackpool","Bournemouth","Great
-        Yarmouth"]},{"category":"Animals","type":"multiple","difficulty":"medium","question":"What
-        is the scientific name for the &quot;Polar Bear&quot;?","correct_answer":"Ursus
-        Maritimus","incorrect_answers":["Polar Bear","Ursus Spelaeus","Ursus Arctos"]},{"category":"Entertainment:
-        Video Games","type":"boolean","difficulty":"hard","question":"In Undertale,
-        having a &quot;Fun Value&quot; set to 56-57 will play the &quot;Wrong Number
-        Song Call&quot;.","correct_answer":"False","incorrect_answers":["True"]},{"category":"History","type":"boolean","difficulty":"hard","question":"The
-        Battle of Trafalgar took place on October 23rd, 1805","correct_answer":"False","incorrect_answers":["True"]},{"category":"Entertainment:
-        Television","type":"multiple","difficulty":"medium","question":"In Game of
-        Thrones what is the name of Jon Snow&#039;s sword?","correct_answer":"Longclaw","incorrect_answers":["Oathkeeper","Widow&#039;s
-        Wail","Needle"]},{"category":"Entertainment: Music","type":"multiple","difficulty":"easy","question":"The
-        Rush song &quot;YYZ&quot; derives its name from the IATA aiport identification
-        code for which city?","correct_answer":"Toronto","incorrect_answers":["Vancouver","Ottawa","Calgary"]}]}'
-  recorded_at: Mon, 17 Jan 2022 23:04:29 GMT
+      string: '{"response_code":0,"results":[{"category":"Entertainment: Video Games","type":"multiple","difficulty":"easy","question":"Who
+        is the writer of the game &quot;Half-Life&quot;?","correct_answer":"Marc Laidlaw","incorrect_answers":["Gabe
+        Newell","Robin Walker","Chet Faliszek"]},{"category":"General Knowledge","type":"multiple","difficulty":"hard","question":"Sciophobia
+        is the fear of what?","correct_answer":"Shadows","incorrect_answers":["Eating","Bright
+        lights","Transportation"]},{"category":"General Knowledge","type":"boolean","difficulty":"medium","question":"You
+        are allowed to sell your soul on eBay.","correct_answer":"False","incorrect_answers":["True"]},{"category":"Entertainment:
+        Music","type":"multiple","difficulty":"medium","question":"Which of these
+        bands are NOT from Australia?","correct_answer":"The Naked and Famous","incorrect_answers":["Cut
+        Copy","Empire of the Sun","Tame Impala"]},{"category":"Geography","type":"multiple","difficulty":"easy","question":"What
+        is the nickname for the US state Delaware?","correct_answer":"The First State","incorrect_answers":["The
+        Fiftieth State","The Second State","The Sixteenth State"]},{"category":"Entertainment:
+        Books","type":"boolean","difficulty":"easy","question":"Stephen Chbosky wrote
+        the book &#039;The Perks of Being A Wallflower&#039;.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"easy","question":"What is the
+        name of the world that the MMO &quot;RuneScape&quot; takes place in?","correct_answer":"Gielinor","incorrect_answers":["Glindor","Azeroth","Zaros"]},{"category":"Entertainment:
+        Video Games","type":"boolean","difficulty":"medium","question":"In Portal,
+        the Companion Cube&#039;s ARE sentient.","correct_answer":"True","incorrect_answers":["False"]},{"category":"History","type":"multiple","difficulty":"medium","question":"In
+        what year did the Berlin Wall fall?","correct_answer":"1989","incorrect_answers":["1987","1991","1993"]},{"category":"Entertainment:
+        Television","type":"multiple","difficulty":"easy","question":"On the NBC show
+        Community, whose catch-phrase was &quot;Pop! Pop!&quot;?","correct_answer":"Magnitude","incorrect_answers":["Star
+        Burns","Leonard","Senoir Chang"]}]}'
+  recorded_at: Fri, 04 Feb 2022 04:50:10 GMT
 recorded_with: VCR 6.0.0

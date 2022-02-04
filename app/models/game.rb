@@ -1,7 +1,8 @@
 class Game < ApplicationRecord
   include AASM
 
-  has_and_belongs_to_many :questions
+  has_many :game_questions
+  has_many :questions, through: :game_questions
 
   validates :difficulty, inclusion: DIFFICULTY_CHOICES.values
   validates :number_of_questions, numericality: { greater_than: 0, less_than_or_equal_to: 50 }

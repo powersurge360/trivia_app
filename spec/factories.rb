@@ -1,4 +1,8 @@
 FactoryBot.define do
+  factory :game_question do
+    
+  end
+
   factory :question do
     trait :invalid do
       body { "What time is it?" }

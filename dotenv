@@ -2,3 +2,4 @@ POSTGRES_USER=monster_trivia
 POSTGRES_DATABASE=monster_trivia_dev
 POSTGRES_PASSWORD=monster_trivia_rules
 RAILS_LOG_LEVEL=info
+SECRET_KEY_BASE=changeme

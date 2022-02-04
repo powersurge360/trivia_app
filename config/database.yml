@@ -13,8 +13,8 @@ development:
   <<: *default
   database: monster_trivia_dev
   host: <%= ENV.fetch("POSTGRES_HOST") { "localhost" } %>
-  username: <%= ENV.fetch("POSTGRES_USER") %>
-  password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
+  username: <%= ENV.fetch("POSTGRES_USER") { "monster_trivia_dev" } %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") { "monster_trivia_rules" }%>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,8 +23,8 @@ test:
   <<: *default
   database: monster_trivia_test
   host: <%= ENV.fetch("POSTGRES_HOST") { "localhost" } %>
-  username: <%= ENV.fetch("POSTGRES_USER") %>
-  password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
+  username: <%= ENV.fetch("POSTGRES_USER") { "monster_trivia_test" }%>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") { "monster_trivia_rules" }%>
 
 production:
   <<: *default

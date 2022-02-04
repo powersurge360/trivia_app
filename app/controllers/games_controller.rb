@@ -29,6 +29,15 @@ class GamesController < ApplicationController
     end
   end
 
+  def answer
+    @game.answer(answer_params)
+    @game.save
+
+    if @game.valid?
+      redirect_to @game
+    end
+  end
+
   private
 
   def retrieve_game
@@ -37,5 +46,9 @@ class GamesController < ApplicationController
 
   def create_game_params
     params.require(:game).permit(:number_of_questions, :category, :difficulty, :game_type)
+  end
+
+  def answer_params
+    params.require(:answer)
   end
 end

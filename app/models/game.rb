@@ -30,6 +30,10 @@ class Game < ApplicationRecord
     end
 
     event :answer do
+      before do |*args|
+        answer_with(*args)
+      end
+
       transitions from: :running, to: :answered
     end
 
@@ -52,8 +56,22 @@ class Game < ApplicationRecord
     questions.offset(current_round - 1).limit(1).first
   end
 
+  def current_answer
+    GameQuestion.find_by(game: self, question: current_question)
+  end
+
   def retrieve_trivia_questions
     RetrieveTriviaQuestionsJob.perform_later(self)
+  end
+
+  def answer_with(answer)
+    game_relation = GameQuestion.find_by(question: current_question.id, game: id)
+
+    if answer == current_question.correct_answer
+      game_relation.update(correctly_answered: true)
+    else
+      game_relation.update(correctly_answered: false)
+    end
   end
 
   def api_attributes

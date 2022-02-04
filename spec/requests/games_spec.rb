@@ -54,5 +54,16 @@ RSpec.describe "Games", type: :request do
 
       expect(response.body).to match /#{question.body}/
     end
+
+    it 'should fail when attempting to transition an invalid state' do
+      subject.game_lifecycle = "pending"
+      subject.save
+
+      post start_game_path(subject.id)
+
+      expect(response).to be_unprocessable
+      subject.reload
+      expect(subject.game_lifecycle).to eql("pending")
+    end
   end
 end

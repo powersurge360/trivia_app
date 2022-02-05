@@ -6,8 +6,8 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
   def logger
     tagged_logger = super
 
-    if self.game&.id
-      tagged_logger.tagged("Game ID: #{self.game.id}")
+    if game&.id
+      tagged_logger.tagged("Game ID: #{game.id}")
     else
       tagged_logger
     end
@@ -17,9 +17,9 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
     self.game = game
     self.opentdb = External::OpenTdbService.new
 
-    game.session_token = self.opentdb.tokens.request.data
+    game.session_token = opentdb.tokens.request.data
 
-    question_response = self.opentdb.questions.get(**game.api_attributes)
+    question_response = opentdb.questions.get(**game.api_attributes)
 
     logger.debug("Game attributes: #{game.api_attributes}")
     logger.debug("Question response: #{question_response.data}")
@@ -41,9 +41,9 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
     end
 
     if questions.map(&:valid?).all?
-      question_objs = Question.upsert_all(questions.map(&:attributes), returning: [ "id" ])
+      question_objs = Question.upsert_all(questions.map(&:attributes), returning: ["id"])
 
-      game.question_ids = question_objs.map { |res| res['id'] }
+      game.question_ids = question_objs.map { |res| res["id"] }
       game.finished_setup
     end
 
@@ -51,29 +51,29 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
   end
 
   def handle_error(question_response)
-    self.game.error_detected
+    game.error_detected
 
     case question_response.response_code
     when :no_token
-      logger.error('Bad token generated for game')
+      logger.error("Bad token generated for game")
 
-      self.game.error_message = 'There was an error generating the game'
+      game.error_message = "There was an error generating the game"
     when :token_exhausted
-      logger.info('Token was exhausted')
+      logger.info("Token was exhausted")
 
-      self.game.error_message = 'All possible questions for these settings have been exhausted'
+      game.error_message = "All possible questions for these settings have been exhausted"
     when :invalid_parameter
-      logger.error('An invalid parameter was passed')
+      logger.error("An invalid parameter was passed")
 
-      self.game.error_message = 'An error occurred retrieving questions'
+      game.error_message = "An error occurred retrieving questions"
     when :no_results
-      logger.info('Not enough questions for the current configuration')
+      logger.info("Not enough questions for the current configuration")
 
-      self.game.error_message = 'Not enough questions for the current settings'
+      game.error_message = "Not enough questions for the current settings"
     else
-      logger.error('No known cause for this error')
+      logger.error("No known cause for this error")
 
-      self.game.error_message = 'An error occurred retrieving questions'
+      game.error_message = "An error occurred retrieving questions"
     end
 
     game.save

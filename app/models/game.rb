@@ -5,7 +5,7 @@ class Game < ApplicationRecord
   has_many :questions, through: :game_questions
 
   validates :difficulty, inclusion: DIFFICULTY_CHOICES.values
-  validates :number_of_questions, numericality: { greater_than: 0, less_than_or_equal_to: 50 }
+  validates :number_of_questions, numericality: {greater_than: 0, less_than_or_equal_to: 50}
   validates :category, inclusion: TRIVIA_CATEGORIES.values
   validates :game_type, inclusion: GAME_TYPES.values
 
@@ -49,9 +49,7 @@ class Game < ApplicationRecord
   broadcasts
 
   def current_question
-    if current_round > number_of_questions
-      return nil
-    end
+    return nil if current_round > number_of_questions
 
     questions.offset(current_round - 1).limit(1).first
   end
@@ -75,18 +73,15 @@ class Game < ApplicationRecord
   end
 
   def api_attributes
-    attrs = self.attributes.slice(
-      'difficulty',
-      'number_of_questions',
-      'category',
-      'game_type',
+    attrs = attributes.slice(
+      "difficulty", "number_of_questions", "category", "game_type"
     )
 
     {
-      difficulty: attrs['difficulty'],
-      amount: attrs['number_of_questions'],
-      category: attrs['category'],
-      type: attrs['game_type']
+      difficulty: attrs["difficulty"],
+      amount: attrs["number_of_questions"],
+      category: attrs["category"],
+      type: attrs["game_type"]
     }
   end
 end

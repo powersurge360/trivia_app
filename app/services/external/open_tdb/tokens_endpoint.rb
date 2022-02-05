@@ -6,8 +6,8 @@ class External::OpenTdb::TokensEndpoint
   end
 
   def request
-    response = self.service.conn.get(
-      'api_token.php',
+    response = service.conn.get(
+      "api_token.php",
       command: :request
     )
 

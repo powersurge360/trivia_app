@@ -24,7 +24,7 @@ TRIVIA_CATEGORIES = {
   "Vehicles" => 28,
   "Entertainment: Comics" => 29,
   "Science: Gadgets" => 30,
-  "Entertainment: Japanese Anime & Manga"  => 31,
+  "Entertainment: Japanese Anime & Manga" => 31,
   "Entertainment: Cartoon & Animations" => 32
 }.freeze
 

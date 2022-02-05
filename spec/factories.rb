@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :game_question do
-    
   end
 
   factory :question do
@@ -28,13 +27,13 @@ FactoryBot.define do
       number_of_questions { 0 }
       difficulty { "difficult" }
       category { 2 }
-      game_type { 'jeopardy' }
+      game_type { "jeopardy" }
     end
 
     trait :valid do
       number_of_questions { 1 }
-      category { 9  } # General Knowledge, defined in constants initializer
-      game_type { 'boolean' }
+      category { 9 } # General Knowledge, defined in constants initializer
+      game_type { "boolean" }
     end
   end
 end

@@ -6,15 +6,15 @@ class Question < ApplicationRecord
   validates :answer_1, presence: true
   validates :answer_2, presence: true
   validates :correct_answer, presence: true
-  validates :difficulty, presence: true, inclusion: { in: ["easy", "medium", "hard"] }
+  validates :difficulty, presence: true, inclusion: {in: ["easy", "medium", "hard"]}
 
   before_validation :ensure_id
 
   def self.from_api(question_json)
-    if question_json["type"] == "multiple"
-      answers = question_json["incorrect_answers"].append(question_json["correct_answer"]).shuffle
+    answers = if question_json["type"] == "multiple"
+      question_json["incorrect_answers"].append(question_json["correct_answer"]).shuffle
     else
-      answers = ["True", "False", nil, nil]
+      ["True", "False", nil, nil]
     end
 
     new(

@@ -11,11 +11,11 @@ module External
     end
 
     def questions
-      return External::OpenTdb::QuestionsEndpoint.new(self)
+      External::OpenTdb::QuestionsEndpoint.new(self)
     end
 
     def tokens
-      return External::OpenTdb::TokensEndpoint.new(self)
+      External::OpenTdb::TokensEndpoint.new(self)
     end
   end
 end

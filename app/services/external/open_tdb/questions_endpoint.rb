@@ -6,8 +6,8 @@ class External::OpenTdb::QuestionsEndpoint
   end
 
   def get(**kwargs)
-    response = self.service.conn.get(
-      'api.php',
+    response = service.conn.get(
+      "api.php",
       kwargs
     )
 

@@ -1,8 +1,8 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Games", type: :request do
   describe "GET /" do
-    it 'shows a form' do
+    it "shows a form" do
       get root_path
 
       expect(response).to be_successful
@@ -11,7 +11,7 @@ RSpec.describe "Games", type: :request do
   end
 
   describe "POST /" do
-    it 'redirects to the game page' do
+    it "redirects to the game page" do
       expect(Game.count).to eql(0)
 
       post games_path, params: {
@@ -34,7 +34,7 @@ RSpec.describe "Games", type: :request do
 
         expect(response).to be_unprocessable
 
-        expect(response.body).to match /Number of questions must be greater than 0/
+        expect(response.body).to match(/Number of questions must be greater than 0/)
       end
     end
   end
@@ -43,7 +43,7 @@ RSpec.describe "Games", type: :request do
     let(:question) { create :question, :valid }
     subject { create :game, :valid, questions: [question], game_lifecycle: "ready" }
 
-    it 'should allow a transition to the running state' do
+    it "should allow a transition to the running state" do
       post start_game_path(subject.id)
 
       expect(response).to be_redirect
@@ -52,10 +52,10 @@ RSpec.describe "Games", type: :request do
 
       follow_redirect!
 
-      expect(response.body).to match /#{question.body}/
+      expect(response.body).to match(/#{question.body}/)
     end
 
-    it 'should fail when attempting to transition an invalid state' do
+    it "should fail when attempting to transition an invalid state" do
       subject.game_lifecycle = "pending"
       subject.save
 

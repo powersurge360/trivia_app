@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Question, type: :model do
   let(:valid_question) {
@@ -35,57 +35,57 @@ RSpec.describe Question, type: :model do
     }')
   }
 
-  it 'should hash the body to create the pk automatically' do
+  it "should hash the body to create the pk automatically" do
     expect(valid_question.id).to be_nil
     expect(valid_question.valid?).to be true
     expect(valid_question.id).to eql(Question.hash_body(valid_question.body))
   end
 
-  describe 'invalid attributes' do
+  describe "invalid attributes" do
     subject { invalid_question }
 
-    it 'should not save invalid models' do
+    it "should not save invalid models" do
       expect(subject.id).to be_nil
       expect(subject.valid?).to be false
     end
 
-    it 'should have an answer_1 error' do
+    it "should have an answer_1 error" do
       subject.valid?
       expect(subject.errors).to include(:answer_1)
     end
 
-    it 'should have an answer_2 error' do
+    it "should have an answer_2 error" do
       subject.valid?
       expect(subject.errors).to include(:answer_2)
     end
 
-    it 'should have a correct_answer error' do
+    it "should have a correct_answer error" do
       subject.valid?
       expect(subject.errors).to include(:correct_answer)
     end
 
-    it 'should have a difficulty error' do
+    it "should have a difficulty error" do
       subject.valid?
       expect(subject.errors).to include(:difficulty)
     end
   end
 
-  describe '#from_api' do
-    describe 'being passed a multiple choice question' do
-      it 'should return a valid question object' do
+  describe "#from_api" do
+    describe "being passed a multiple choice question" do
+      it "should return a valid question object" do
         question = Question.from_api(valid_multiple_json)
 
         expect(question.valid?).to be true
       end
 
-      it 'should not have empty answers 3 and 4' do
+      it "should not have empty answers 3 and 4" do
         question = Question.from_api(valid_multiple_json)
 
         expect(question.answer_3).to_not be_nil
         expect(question.answer_4).to_not be_nil
       end
 
-      it 'should have a matching answer and correct answer' do
+      it "should have a matching answer and correct answer" do
         question = Question.from_api(valid_multiple_json)
 
         answers = [
@@ -99,14 +99,14 @@ RSpec.describe Question, type: :model do
       end
     end
 
-    describe 'being passed a true or false question' do
-      it 'should return a valid question object' do
+    describe "being passed a true or false question" do
+      it "should return a valid question object" do
         question = Question.from_api(valid_boolean_json)
 
         expect(question.valid?).to be true
       end
 
-      it 'should have nil for answers 3 and 4' do
+      it "should have nil for answers 3 and 4" do
         question = Question.from_api(valid_boolean_json)
 
         expect(question.answer_3).to be_nil

@@ -38,11 +38,23 @@ class Game < ApplicationRecord
     end
 
     event :continue do
-      transitions from: :answered, to: :running
+      transitions from: :answered, to: :running do
+        guard do
+          current_round < number_of_questions
+        end
+
+        after do
+          increment(:current_round)
+        end
+      end
     end
 
     event :finish do
-      transitions from: :answered, to: :finished
+      transitions from: :answered, to: :finished do
+        guard do
+          current_round >= number_of_questions
+        end
+      end
     end
   end
 

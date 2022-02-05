@@ -1,5 +1,25 @@
-<% if game.current_answer.correctly_answered %>
-  Correct!
-<% else %>
-  Incorrect!
-<% end %>
+<div class="flex flex-col grow justify-center text-center">
+  <p class="text-2xl pb-10">
+    <% if game.current_answer.correctly_answered %>
+      Correct!
+    <% else %>
+      Incorrect!
+    <% end %>
+  </p>
+  <% if game.may_continue? %>
+    <%= button_to 'Next Question',
+      continue_game_path(game),
+      method: :post,
+      class: button_class,
+      form_class: "flex flex-col"
+    %>
+  <% end %>
+  <% if game.may_finish? %>
+    <%= button_to 'See Results',
+      finish_game_path(game),
+      method: :post,
+      class: button_class,
+      form_class: "flex flex-col"
+    %>
+  <% end %>
+</div>

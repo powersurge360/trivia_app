@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :retrieve_game, only: [:show, :start, :answer]
+  before_action :retrieve_game, only: [:show, :start, :answer, :continue, :finish]
 
   def new
     @game = Game.new
@@ -31,6 +31,24 @@ class GamesController < ApplicationController
 
   def answer
     @game.answer(answer_params)
+    @game.save
+
+    if @game.valid?
+      redirect_to @game
+    end
+  end
+
+  def continue
+    @game.continue
+    @game.save
+
+    if @game.valid?
+      redirect_to @game
+    end
+  end
+
+  def finish
+    @game.finish
     @game.save
 
     if @game.valid?

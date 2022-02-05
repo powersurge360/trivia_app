@@ -46,13 +46,9 @@ RSpec.describe "Games", type: :request do
     it "should allow a transition to the running state" do
       post start_game_path(subject.id)
 
-      expect(response).to be_redirect
+      expect(response).to have_http_status(:no_content)
       subject.reload
       expect(subject.game_lifecycle).to eql("running")
-
-      follow_redirect!
-
-      expect(response.body).to match(/#{question.body}/)
     end
 
     it "should fail when attempting to transition an invalid state" do

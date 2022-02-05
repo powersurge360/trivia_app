@@ -23,37 +23,21 @@ class GamesController < ApplicationController
   def start
     @game.start
     @game.save
-
-    if @game.valid?
-      redirect_to @game
-    end
   end
 
   def answer
     @game.answer(answer_params)
     @game.save
-
-    if @game.valid?
-      redirect_to @game
-    end
   end
 
   def continue
     @game.continue
     @game.save
-
-    if @game.valid?
-      redirect_to @game
-    end
   end
 
   def finish
     @game.finish
     @game.save
-
-    if @game.valid?
-      redirect_to @game
-    end
   end
 
   private

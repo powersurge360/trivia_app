@@ -1,11 +1,16 @@
 <div class="flex flex-col grow justify-center text-center">
-  <p class="text-2xl pb-10">
-    <% if game.current_answer.correctly_answered %>
+  <% if game.current_answer.correctly_answered %>
+    <p class="text-2xl pb-10">
       Correct!
-    <% else %>
-      Incorrect!
-    <% end %>
-  </p>
+    </p>
+  <% else %>
+    <p class="text-2xl pb-10">
+      Incorrect! The right answer was:
+    </p>
+    <p class="text-2xl font-bold text-accent pb-10">
+      <%= game.current_question.correct_answer.html_safe %>
+    </p>
+  <% end %>
   <% if game.may_continue? %>
     <%= button_to 'Next Question',
       continue_game_path(game),

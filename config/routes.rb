@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     post :answer, on: :member
     post :continue, on: :member
     post :finish, on: :member
+    post :new_round, on: :member
   end
 end

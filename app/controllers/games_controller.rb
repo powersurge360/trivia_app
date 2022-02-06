@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :retrieve_game, only: [:show, :start, :answer, :continue, :finish]
+  before_action :retrieve_game, only: [:show, :start, :answer, :continue, :finish, :new_round]
 
   def new
     @game = Game.new
@@ -38,6 +38,32 @@ class GamesController < ApplicationController
   def finish
     @game.finish
     @game.save
+  end
+
+  def new_round
+    new_game = @game.dup
+    new_game.game_lifecycle = "pending"
+    new_game.current_round = 1
+    new_game.save
+
+    new_game.retrieve_trivia_questions
+
+    if new_game.valid?
+      redirect_to new_game
+    else
+      logger.error("Failed to start a new round: #{@game.to_json}")
+      redirect_to new_game_path
+    end
+  end
+
+  def logger
+    tagged_logger = super
+
+    if @game&.id
+      tagged_logger.tagged("Game ID: #{@game.id}")
+    else
+      tagged_logger
+    end
   end
 
   private

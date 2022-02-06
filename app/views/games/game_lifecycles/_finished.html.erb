@@ -9,4 +9,24 @@
   <p class="text-2xl pb-10">
     That's <%= game.score %> / <%= game.number_of_questions %> questions this round
   </p>
+  <div class="flex flex-col justify-center">
+    <%= button_to "Play Another Round",
+      new_round_game_path(game),
+      method: :post,
+      class: button_class,
+      form_class: "flex flex-col",
+      params: {
+        answer: game.current_question.answer_1
+      }
+    %>
+    <%= button_to "Go Back Home",
+      root_path,
+      method: :get,
+      class: button_class,
+      form_class: "flex flex-col",
+      params: {
+        answer: game.current_question.answer_1
+      }
+    %>
+  </div>
 </div>

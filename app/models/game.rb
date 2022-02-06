@@ -70,6 +70,14 @@ class Game < ApplicationRecord
     current_question.game_questions.find_by(game: self)
   end
 
+  def score
+    game_questions.where(correctly_answered: true).count(:id)
+  end
+
+  def percentage_correct
+    (score.to_f / number_of_questions.to_f * 100).truncate
+  end
+
   def retrieve_trivia_questions
     RetrieveTriviaQuestionsJob.perform_later(self)
   end

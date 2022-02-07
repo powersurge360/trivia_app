@@ -1,8 +1,12 @@
 class Game < ApplicationRecord
   include AASM
 
+  # Relationships
+
   has_many :game_questions
   has_many :questions, through: :game_questions
+
+  # Validation
 
   validates :difficulty, inclusion: DIFFICULTY_CHOICES.values
   validates :number_of_questions, numericality: {greater_than: 0, less_than_or_equal_to: 50}
@@ -11,6 +15,16 @@ class Game < ApplicationRecord
   validates :channel, presence: true
 
   before_validation :ensure_channel
+
+  # Scopes
+
+  scope :latest_round, ->(channel) {
+    Game
+      .order(updated_at: :desc)
+      .find_by(channel: channel)
+  }
+
+  # State Machine
 
   aasm column: :game_lifecycle do
     state :pending, initial: true
@@ -61,7 +75,13 @@ class Game < ApplicationRecord
     end
   end
 
-  broadcasts_to :channel, inserts_by: :replace, target: proc { |game| ActionView::RecordIdentifier.dom_id(game) }
+  broadcasts_to :channel,
+    inserts_by: :replace,
+    target: ->(game) do
+      ActionView::RecordIdentifier.dom_id(game)
+    end
+
+  # Database look-ups/aggregation
 
   def current_question
     return nil if current_round > number_of_questions
@@ -73,27 +93,15 @@ class Game < ApplicationRecord
     current_question.game_questions.find_by(game: self)
   end
 
-  def score
-    game_questions.where(correctly_answered: true).count(:id)
-  end
-
-  def percentage_correct
-    (score.to_f / number_of_questions.to_f * 100).truncate
-  end
-
   def retrieve_trivia_questions
     RetrieveTriviaQuestionsJob.perform_later(self)
   end
 
-  def answer_with(answer)
-    game_relation = GameQuestion.find_by(question: current_question.id, game: id)
-
-    if answer == current_question.correct_answer
-      game_relation.update(correctly_answered: true)
-    else
-      game_relation.update(correctly_answered: false)
-    end
+  def score
+    game_questions.where(correctly_answered: true).count(:id)
   end
+
+  # General Methods
 
   def api_attributes
     attrs = attributes.slice(
@@ -107,6 +115,24 @@ class Game < ApplicationRecord
       type: attrs["game_type"]
     }
   end
+
+  def answer_with(answer)
+    game_relation = GameQuestion.find_by(question: current_question.id, game: id)
+
+    if answer == current_question.correct_answer
+      game_relation.update(correctly_answered: true)
+    else
+      game_relation.update(correctly_answered: false)
+    end
+  end
+
+  # Presentational
+
+  def percentage_correct
+    (score.to_f / number_of_questions.to_f * 100).truncate
+  end
+
+  # Overrides
 
   def to_param
     channel

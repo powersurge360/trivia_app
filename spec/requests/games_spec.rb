@@ -39,7 +39,7 @@ RSpec.describe "Games", type: :request do
     end
   end
 
-  describe "POST /games/:id/start" do
+  describe "POST /games/:channel/start" do
     let(:question) { create :question, :valid }
     subject { create :game, :valid, questions: [question], game_lifecycle: "ready" }
 
@@ -61,5 +61,31 @@ RSpec.describe "Games", type: :request do
       subject.reload
       expect(subject.game_lifecycle).to eql("pending")
     end
+  end
+
+  describe "POST /games/:channel/answer" do
+    it "should allow a transition to the answered state"
+    it "should fail when attempting to transition an invalid state"
+  end
+
+  describe "POST /games/:channel/finish" do
+    it "should allow a transition to the finished state"
+    it "should fail when attempting to transition an invalid state"
+  end
+
+  describe "POST /games/:channel/continue" do
+    it "should allow a transition to the running state"
+    it "should fail when attempting to transition an invalid state"
+  end
+
+  describe "POST /games/:channel/finish" do
+    it "should allow a transition to the finished state"
+    it "should fail when attempting to transition to an invalid state"
+  end
+
+  describe "POST /games/:channel/new_round" do
+    it "should create a new game object with the same configured data"
+    it "should reset the rounds on the new round"
+    it "should set the pending status on the new round"
   end
 end

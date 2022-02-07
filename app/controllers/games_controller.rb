@@ -66,7 +66,7 @@ class GamesController < ApplicationController
   private
 
   def retrieve_game
-    @game = Game.includes(:questions, :game_questions).order(updated_at: :desc).find_by(channel: params[:channel])
+    @game = Game.includes(:questions, :game_questions).latest_round(params[:channel])
   end
 
   def create_game_params

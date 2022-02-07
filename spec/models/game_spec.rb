@@ -66,4 +66,14 @@ RSpec.describe Game, type: :model do
       expect(subject.errors).to include(:category)
     end
   end
+
+  describe "#current_question"
+
+  describe "#current_answer"
+
+  describe "#score"
+
+  describe "#answer_with"
+
+  describe "#percentage_correct"
 end

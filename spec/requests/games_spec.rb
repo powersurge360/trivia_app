@@ -95,6 +95,26 @@ RSpec.describe "Games", type: :request do
       game.reload
       expect(game.game_lifecycle).to eql("running")
     end
+
+    it "should mark answer correct when correct" do
+      game = create :game, :valid, questions: [question], game_lifecycle: "running"
+
+      post answer_game_path(game, answer: question.correct_answer)
+
+      game.reload
+
+      expect(game.current_answer.correctly_answered).to be true
+    end
+
+    it "should mark answer incorrect when incorrect" do
+      game = create :game, :valid, questions: [question], game_lifecycle: "running"
+
+      post answer_game_path(game, answer: question.answer_2)
+
+      game.reload
+
+      expect(game.current_answer.correctly_answered).to be false
+    end
   end
 
   describe "POST /games/:channel/finish" do

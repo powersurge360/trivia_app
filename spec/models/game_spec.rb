@@ -67,13 +67,24 @@ RSpec.describe Game, type: :model do
     end
   end
 
-  describe "#current_question"
+  describe "#current_question" do
+    it "should return nil if the current_round is further than possible"
 
-  describe "#current_answer"
+    it "should only grab a single question"
 
-  describe "#score"
+    it "should be paginated according to current_round"
+  end
 
-  describe "#answer_with"
+  describe "#current_answer" do
+    it "should retrieve the GameQuestion for the currently active question"
+  end
 
-  describe "#percentage_correct"
+  describe "#score" do
+    it "should count all of the correct answers"
+  end
+
+  describe "#answer_with" do
+    it "should mark the current answer correct when correct"
+    it "should mark the current answer incorrect when incorrect"
+  end
 end

@@ -41,36 +41,109 @@ RSpec.describe "Games", type: :request do
 
   describe "POST /games/:channel/start" do
     let(:question) { create :question, :valid }
-    subject { create :game, :valid, questions: [question], game_lifecycle: "ready" }
 
     it "should allow a transition to the running state" do
-      post start_game_path(subject)
+      game = create :game, :valid, questions: [question], game_lifecycle: "ready"
+
+      post start_game_path(game)
 
       expect(response).to have_http_status(:no_content)
-      subject.reload
-      expect(subject.game_lifecycle).to eql("running")
+      game.reload
+      expect(game.game_lifecycle).to eql("running")
     end
 
     it "should fail when attempting to transition an invalid state" do
-      subject.game_lifecycle = "pending"
-      subject.save
+      game = create :game, :valid, questions: [question], game_lifecycle: "pending"
 
-      post start_game_path(subject)
+      post start_game_path(game)
 
       expect(response).to be_unprocessable
-      subject.reload
-      expect(subject.game_lifecycle).to eql("pending")
+      game.reload
+      expect(game.game_lifecycle).to eql("pending")
     end
   end
 
   describe "POST /games/:channel/answer" do
-    it "should allow a transition to the answered state"
-    it "should fail when attempting to transition an invalid state"
+    let(:question) { create :question, :valid }
+
+    it "should allow a transition to the answered state" do
+      game = create :game, :valid, questions: [question], game_lifecycle: "running"
+
+      post answer_game_path(game, answer: question.answer_1)
+
+      expect(response).to have_http_status(:no_content)
+      game.reload
+      expect(game.game_lifecycle).to eql("answered")
+    end
+
+    it "should fail when attempting to transition an invalid state" do
+      game = create :game, :valid, questions: [question], game_lifecycle: "pending"
+
+      post answer_game_path(game, answer: question.answer_1)
+
+      expect(response).to be_unprocessable
+      game.reload
+      expect(game.game_lifecycle).to eql("pending")
+    end
+
+    it "should not allow invalid answers" do
+      game = create :game, :valid, questions: [question], game_lifecycle: "running"
+
+      post answer_game_path(game, answer: "Prince Albert in a Can")
+
+      expect(response).to be_unprocessable
+      game.reload
+      expect(game.game_lifecycle).to eql("running")
+    end
   end
 
   describe "POST /games/:channel/finish" do
-    it "should allow a transition to the finished state"
-    it "should fail when attempting to transition an invalid state"
+    let(:question) { create :question, :valid }
+
+    it "should allow a transition to the finished state" do
+      game = create :game,
+        :valid,
+        questions: [question],
+        game_lifecycle: "answered",
+        current_round: 10,
+        number_of_questions: 10
+
+      post finish_game_path(game)
+
+      expect(response).to have_http_status(:no_content)
+      game.reload
+      expect(game.game_lifecycle).to eql("finished")
+    end
+
+    it "should fail when attempting to transition an invalid state" do
+      game = create :game,
+        :valid,
+        questions: [question],
+        game_lifecycle: "running",
+        current_round: 10,
+        number_of_questions: 10
+
+      post finish_game_path(game)
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      game.reload
+      expect(game.game_lifecycle).to eql("running")
+    end
+
+    it "should fail when attempting to finish before reaching the end of the game" do
+      game = create :game,
+        :valid,
+        questions: [question],
+        game_lifecycle: "answered",
+        current_round: 8,
+        number_of_questions: 10
+
+      post finish_game_path(game)
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      game.reload
+      expect(game.game_lifecycle).to eql("answered")
+    end
   end
 
   describe "POST /games/:channel/continue" do

@@ -47,11 +47,20 @@ class Game < ApplicationRecord
     end
 
     event :answer do
-      before do |*args|
+      after do |*args|
         answer_with(*args)
       end
 
-      transitions from: :running, to: :answered
+      transitions from: :running, to: :answered do
+        guard do |answer|
+          answer.in? [
+            current_question.answer_1,
+            current_question.answer_2,
+            current_question.answer_3,
+            current_question.answer_4
+          ]
+        end
+      end
     end
 
     event :continue do
@@ -81,7 +90,7 @@ class Game < ApplicationRecord
       ActionView::RecordIdentifier.dom_id(game)
     end
 
-  # Database look-ups/aggregation
+  # Database handling
 
   def current_question
     return nil if current_round > number_of_questions
@@ -101,6 +110,14 @@ class Game < ApplicationRecord
     game_questions.where(correctly_answered: true).count(:id)
   end
 
+  def answer_with(answer)
+    if answer == current_question.correct_answer
+      current_answer.update(correctly_answered: true)
+    else
+      current_answer.update(correctly_answered: false)
+    end
+  end
+
   # General Methods
 
   def api_attributes
@@ -114,16 +131,6 @@ class Game < ApplicationRecord
       category: attrs["category"],
       type: attrs["game_type"]
     }
-  end
-
-  def answer_with(answer)
-    game_relation = GameQuestion.find_by(question: current_question.id, game: id)
-
-    if answer == current_question.correct_answer
-      game_relation.update(correctly_answered: true)
-    else
-      game_relation.update(correctly_answered: false)
-    end
   end
 
   # Presentational

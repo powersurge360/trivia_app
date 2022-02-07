@@ -10,7 +10,6 @@ class GamesController < ApplicationController
 
     if @game.valid?
       @game.retrieve_trivia_questions
-
       redirect_to @game
     else
       render :new, status: :unprocessable_entity
@@ -46,10 +45,8 @@ class GamesController < ApplicationController
     new_game.current_round = 1
     new_game.save
 
-    new_game.retrieve_trivia_questions
-
     if new_game.valid?
-      redirect_to new_game
+      new_game.retrieve_trivia_questions
     else
       logger.error("Failed to start a new round: #{@game.to_json}")
       redirect_to new_game_path
@@ -69,7 +66,7 @@ class GamesController < ApplicationController
   private
 
   def retrieve_game
-    @game = Game.includes(:questions, :game_questions).find(params[:id])
+    @game = Game.includes(:questions, :game_questions).order(updated_at: :desc).find_by(channel: params[:channel])
   end
 
   def create_game_params

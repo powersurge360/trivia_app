@@ -8,6 +8,9 @@ class Game < ApplicationRecord
   validates :number_of_questions, numericality: {greater_than: 0, less_than_or_equal_to: 50}
   validates :category, inclusion: TRIVIA_CATEGORIES.values
   validates :game_type, inclusion: GAME_TYPES.values
+  validates :channel, presence: true
+
+  before_validation :ensure_channel
 
   aasm column: :game_lifecycle do
     state :pending, initial: true
@@ -58,7 +61,7 @@ class Game < ApplicationRecord
     end
   end
 
-  broadcasts
+  broadcasts_to :channel, inserts_by: :replace, target: proc { |game| ActionView::RecordIdentifier.dom_id(game) }
 
   def current_question
     return nil if current_round > number_of_questions
@@ -103,5 +106,21 @@ class Game < ApplicationRecord
       category: attrs["category"],
       type: attrs["game_type"]
     }
+  end
+
+  def to_param
+    channel
+  end
+
+  def to_key
+    [:channel, channel]
+  end
+
+  private
+
+  def ensure_channel
+    if channel.nil?
+      self.channel = SecureRandom.uuid
+    end
   end
 end

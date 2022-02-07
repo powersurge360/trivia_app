@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root "games#new"
 
-  resources :games, only: [:new, :show, :create] do
+  resources :games, only: [:new, :show, :create], param: :channel do
     post :start, on: :member
     post :answer, on: :member
     post :continue, on: :member

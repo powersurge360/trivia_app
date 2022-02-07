@@ -17,7 +17,7 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
     self.game = game
     self.opentdb = External::OpenTdbService.new
 
-    if game.nil?
+    if game.session_token.nil?
       game.session_token = opentdb.tokens.request.data
     end
 

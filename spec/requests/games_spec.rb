@@ -44,7 +44,7 @@ RSpec.describe "Games", type: :request do
     subject { create :game, :valid, questions: [question], game_lifecycle: "ready" }
 
     it "should allow a transition to the running state" do
-      post start_game_path(subject.id)
+      post start_game_path(subject)
 
       expect(response).to have_http_status(:no_content)
       subject.reload
@@ -55,7 +55,7 @@ RSpec.describe "Games", type: :request do
       subject.game_lifecycle = "pending"
       subject.save
 
-      post start_game_path(subject.id)
+      post start_game_path(subject)
 
       expect(response).to be_unprocessable
       subject.reload

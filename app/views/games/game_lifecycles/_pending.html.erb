@@ -5,4 +5,15 @@
   <div class="flex flex-row justify-center">
     <%= heroicon "book-open", options: { class: "animate-ping w-10 justify-center" } %>
   </div>
+  <noscript class="flex flex-col">
+    <p class="text-2xl py-10">
+      This game is better played with JS enabled.
+    </p>
+    <%= link_to "Check if questions are ready",
+      game_path(game),
+      method: :get,
+      class: button_class,
+      form_class: "flex flex-col"
+    %>
+  </noscript>
 </div>

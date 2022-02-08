@@ -14,19 +14,13 @@
       new_round_game_path(game),
       method: :post,
       class: button_class,
-      form_class: "flex flex-col",
-      params: {
-        answer: game.current_question.answer_1
-      }
+      form_class: "flex flex-col"
     %>
     <%= button_to "Go Back Home",
       root_path,
       method: :get,
       class: button_class,
-      form_class: "flex flex-col",
-      params: {
-        answer: game.current_question.answer_1
-      }
+      form_class: "flex flex-col"
     %>
   </div>
 </div>

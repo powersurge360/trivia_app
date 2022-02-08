@@ -22,6 +22,9 @@ RSpec.describe "Games", type: :request do
 
       expect(response).to redirect_to game_path(Game.last)
       expect(Game.count).to eql(1)
+      follow_redirect!
+
+      expect(response.body).to match(/Looking up some great questions/)
     end
 
     describe "given bad input" do
@@ -47,9 +50,12 @@ RSpec.describe "Games", type: :request do
 
       post start_game_path(game)
 
-      expect(response).to have_http_status(:no_content)
+      expect(response).to be_redirect
       game.reload
+      follow_redirect!
+
       expect(game.game_lifecycle).to eql("running")
+      expect(response.body).to match(/#{question.body}/)
     end
 
     it "should fail when attempting to transition an invalid state" do
@@ -71,7 +77,7 @@ RSpec.describe "Games", type: :request do
 
       post answer_game_path(game, answer: question.answer_1)
 
-      expect(response).to have_http_status(:no_content)
+      expect(response).to be_redirect
       game.reload
       expect(game.game_lifecycle).to eql("answered")
     end
@@ -102,8 +108,10 @@ RSpec.describe "Games", type: :request do
       post answer_game_path(game, answer: question.correct_answer)
 
       game.reload
+      follow_redirect!
 
       expect(game.current_answer.correctly_answered).to be true
+      expect(response.body).to match(/Correct!/)
     end
 
     it "should mark answer incorrect when incorrect" do
@@ -112,8 +120,10 @@ RSpec.describe "Games", type: :request do
       post answer_game_path(game, answer: question.answer_2)
 
       game.reload
+      follow_redirect!
 
       expect(game.current_answer.correctly_answered).to be false
+      expect(response.body).to match(/Incorrect!/)
     end
   end
 
@@ -130,9 +140,12 @@ RSpec.describe "Games", type: :request do
 
       post finish_game_path(game)
 
-      expect(response).to have_http_status(:no_content)
+      expect(response).to be_redirect
       game.reload
+      follow_redirect!
+
       expect(game.game_lifecycle).to eql("finished")
+      expect(response.body).to match(/All done!/)
     end
 
     it "should fail when attempting to transition an invalid state" do

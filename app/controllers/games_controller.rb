@@ -22,21 +22,41 @@ class GamesController < ApplicationController
   def start
     @game.start
     @game.save
+
+    respond_to do |format|
+      format.html { redirect_to @game }
+      format.turbo_stream
+    end
   end
 
   def answer
     @game.answer(answer_params)
     @game.save
+
+    respond_to do |format|
+      format.html { redirect_to @game }
+      format.turbo_stream
+    end
   end
 
   def continue
     @game.continue
     @game.save
+
+    respond_to do |format|
+      format.html { redirect_to @game }
+      format.turbo_stream
+    end
   end
 
   def finish
     @game.finish
     @game.save
+
+    respond_to do |format|
+      format.html { redirect_to @game }
+      format.turbo_stream
+    end
   end
 
   def new_round
@@ -47,6 +67,11 @@ class GamesController < ApplicationController
 
     if new_game.valid?
       new_game.retrieve_trivia_questions
+
+      respond_to do |format|
+        format.html { redirect_to @game }
+        format.turbo_stream
+      end
     else
       logger.error("Failed to start a new round: #{@game.to_json}")
       redirect_to new_game_path

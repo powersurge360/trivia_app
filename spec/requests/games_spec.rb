@@ -145,7 +145,7 @@ RSpec.describe "Games", type: :request do
       follow_redirect!
 
       expect(game.game_lifecycle).to eql("finished")
-      expect(response.body).to match(/All done!/)
+      expect(response.body).to match(/You got [0-9]{1,2}% right!/)
     end
 
     it "should fail when attempting to transition an invalid state" do

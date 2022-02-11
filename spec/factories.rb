@@ -34,6 +34,7 @@ FactoryBot.define do
       number_of_questions { 1 }
       category { 9 } # General Knowledge, defined in constants initializer
       game_type { "boolean" }
+      channel { SecureRandom.uuid }
     end
   end
 end

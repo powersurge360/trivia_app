@@ -180,18 +180,116 @@ RSpec.describe "Games", type: :request do
   end
 
   describe "POST /games/:channel/continue" do
-    it "should allow a transition to the running state"
-    it "should fail when attempting to transition an invalid state"
-  end
+    let(:questions) do
+      [
+        create(:question, :valid),
+        create(:question, :valid, body: "This is just a nonsense body!")
+      ]
+    end
 
-  describe "POST /games/:channel/finish" do
-    it "should allow a transition to the finished state"
-    it "should fail when attempting to transition to an invalid state"
+    it "should allow a transition to the running state" do
+      game = create :game,
+        :valid,
+        questions: questions,
+        game_lifecycle: "answered",
+        current_round: 1,
+        number_of_questions: 2
+
+      post continue_game_path(game)
+
+      expect(response).to be_redirect
+
+      game.reload
+      follow_redirect!
+
+      expect(game.game_lifecycle).to eql("running")
+      expect(response.body).to match(/#{game.current_question.body}/)
+    end
+
+    it "should fail when attempting to transition an invalid state" do
+      game = create :game,
+        :valid,
+        questions: questions,
+        game_lifecycle: "pending"
+
+      post continue_game_path(game)
+
+      expect(response).to be_unprocessable
+
+      game.reload
+
+      expect(game.game_lifecycle).to eql("pending")
+    end
+
+    it "should fail when trying to continue and the game is over." do
+      game = create :game,
+        :valid,
+        questions: questions,
+        game_lifecycle: "answered"
+
+      post continue_game_path(game)
+
+      expect(response).to be_unprocessable
+
+      game.reload
+
+      expect(game.game_lifecycle).to eql("answered")
+    end
   end
 
   describe "POST /games/:channel/new_round" do
-    it "should create a new game object with the same configured data"
-    it "should reset the rounds on the new round"
-    it "should set the pending status on the new round"
+    let(:question) { create :question, :valid }
+
+    it "should create a new game object with the same configured data" do
+      game = create :game,
+        :valid,
+        questions: [question],
+        game_lifecycle: "finished"
+
+      expect(Game.where(channel: game.channel).count).to eql(1)
+
+      post new_round_game_path(game)
+
+      expect(response).to be_redirect
+      expect(Game.where(channel: game.channel).count).to eql(2)
+
+      new_game = Game.where(channel: game.channel).last
+
+      expect(new_game.api_attributes.to_json).to eql(game.api_attributes.to_json)
+    end
+
+    it "should reset the rounds on the new round" do
+      game = create :game,
+        :valid,
+        questions: [question],
+        game_lifecycle: "finished",
+        current_round: 10,
+        number_of_questions: 10
+
+      post new_round_game_path(game)
+
+      expect(response).to be_redirect
+
+      new_game = Game.where(channel: game.channel).last
+
+      expect(new_game.current_round).to eql(1)
+    end
+
+    it "should set the pending status on the new round" do
+      game = create :game,
+        :valid,
+        questions: [question],
+        game_lifecycle: "finished",
+        current_round: 10,
+        number_of_questions: 10
+
+      post new_round_game_path(game)
+
+      expect(response).to be_redirect
+
+      new_game = Game.where(channel: game.channel).last
+
+      expect(new_game.game_lifecycle).to eql("pending")
+    end
   end
 end

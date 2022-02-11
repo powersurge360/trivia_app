@@ -11,10 +11,10 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="text-amber-200 h-full overflow-y-scroll flex bg-gray-800">
+  <body class="dark:text-amber-200 text-amber-900 h-full overflow-y-scroll flex bg-stone-50 dark:bg-gray-800">
     <div class="container mx-auto flex flex-col max-w-screen-md grow">
       <% if !content_for? :hide_header %>
-        <h1 class="sticky top-0 bg-gray-800 p-5 w-full text-accent text-3xl font-['Kavoon']">
+        <h1 class="sticky top-0 dark:bg-gray-800 bg-stone-50 p-5 w-full text-accent text-3xl font-['Kavoon']">
           <%= link_to 'Monster Trivia', root_path %>
         </h1>
       <% end %>

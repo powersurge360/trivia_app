@@ -9,7 +9,6 @@ class GamesController < ApplicationController
     @game = Game.create(create_game_params)
 
     if @game.valid?
-      @game.retrieve_trivia_questions
       redirect_to @game
     else
       render :new, status: :unprocessable_entity
@@ -17,6 +16,9 @@ class GamesController < ApplicationController
   end
 
   def show
+    if @game.pending?
+      @game.retrieve_trivia_questions
+    end
   end
 
   def start

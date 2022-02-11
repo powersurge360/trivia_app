@@ -42,6 +42,20 @@ RSpec.describe "Games", type: :request do
     end
   end
 
+  describe "GET /games/:channel" do
+    context "when an error has been detected" do
+      it "should display the error message" do
+        game = create :game,
+          error_message: "API Token has been exhausted",
+          game_lifecycle: "error"
+
+        get game_path(game)
+
+        expect(response.body).to match(/API Token has been exhausted/)
+      end
+    end
+  end
+
   describe "POST /games/:channel/start" do
     let(:question) { create :question, :valid }
 

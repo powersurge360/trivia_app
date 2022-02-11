@@ -84,6 +84,8 @@ class Game < ApplicationRecord
     end
   end
 
+  # Turbo/hotwire
+
   broadcasts_to :channel,
     inserts_by: :replace,
     target: ->(game) do

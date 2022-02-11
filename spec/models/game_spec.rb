@@ -87,4 +87,36 @@ RSpec.describe Game, type: :model do
     it "should mark the current answer correct when correct"
     it "should mark the current answer incorrect when incorrect"
   end
+
+  describe "state machine" do
+    context "answer transition" do
+      # After is handled by #answer_with
+
+      context "guard" do
+        it "should allow a known answer for this question"
+
+        it "should not allow an unknown answer for this question"
+      end
+    end
+
+    context "continue transition" do
+      context "guard" do
+        it "should allow transitions when there are legal rounds left"
+
+        it "should not allow transitions when there are no legal rounds left"
+      end
+
+      context "after" do
+        it "should increase the current round"
+      end
+    end
+
+    context "finish transition" do
+      context "guard" do
+        it "should allow finishing a game when out of legal rounds to progress through"
+
+        it "should not allow finishing a game when legal rounds remain"
+      end
+    end
+  end
 end

@@ -68,11 +68,9 @@ class GamesController < ApplicationController
     new_game.save
 
     if new_game.valid?
-      new_game.retrieve_trivia_questions
-
       respond_to do |format|
         format.html { redirect_to @game }
-        format.turbo_stream
+        format.turbo_stream { new_game.retrieve_trivia_questions }
       end
     else
       logger.error("Failed to start a new round: #{@game.to_json}")

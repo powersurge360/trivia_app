@@ -68,15 +68,100 @@ RSpec.describe Game, type: :model do
   end
 
   describe "#current_question" do
-    it "should return nil if the current_round is further than possible"
+    it "should return nil if the current_round is further than possible" do
+      game = create :game,
+        :valid,
+        number_of_questions: 10,
+        current_round: 11
 
-    it "should only grab a single question"
+      expect(game.current_question).to be_nil
+    end
 
-    it "should be paginated according to current_round"
+    it "should return nil if the current_round is the last possible" do
+      game = create :game,
+        :valid,
+        number_of_questions: 10,
+        current_round: 10
+
+      expect(game.current_question).to be_nil
+    end
+
+    it "should only grab a single question" do
+      question = create :question, :valid
+      game = create :game,
+        :valid,
+        questions: [question],
+        number_of_questions: 10,
+        current_round: 1
+
+      expect(game.current_question).to_not be_nil
+      expect(game.current_question.id).to eql(question.id)
+    end
+
+    it "should be paginated according to current_round" do
+      questions = [
+        create(:question, :valid),
+        create(:question, :valid, body: "This is an example body!!")
+      ]
+
+      game = create :game,
+        :valid,
+        questions: questions,
+        number_of_questions: 2,
+        current_round: 1
+
+      expect(game.current_question).to eql(questions[0])
+      game.current_round = 2
+      expect(game.current_question).to eql(questions[1])
+    end
+
+    it "should return nil when no valid question is found" do
+      questions = [
+        create(:question, :valid),
+        create(:question, :valid, body: "This is an example body!!")
+      ]
+
+      game = create :game,
+        :valid,
+        questions: questions,
+        number_of_questions: 5,
+        current_round: 3
+
+      expect(game.current_question).to be_nil
+    end
   end
 
   describe "#current_answer" do
-    it "should retrieve the GameQuestion for the currently active question"
+    it "should retrieve the GameQuestion for the currently active question" do
+      questions = [
+        create(:question, :valid),
+        create(:question, :valid, body: "This is an example body!!")
+      ]
+
+      game = create :game,
+        :valid,
+        questions: questions,
+        number_of_questions: 10,
+        current_round: 1
+
+      game_question = GameQuestion.find_by(question: questions[0], game: game)
+
+      expect(game.current_answer).to eql(game_question)
+      game.current_round = 2
+      expect(game.current_answer).to_not eql(game_question)
+    end
+
+    it "should return nil when there is no valid currently active question" do
+      question = create :question, :valid
+
+      game = create :game,
+        :valid,
+        questions: [question],
+        number_of_questions: 10,
+        current_round: 2
+
+      expect(game.current_answer).to be_nil
+    end
   end
 
   describe "#score" do

@@ -2,7 +2,7 @@ class Question < ApplicationRecord
   has_many :game_questions
   has_many :games, through: :game_questions
 
-  validates :body, presence: :true
+  validates :body, presence: true
   validates :answer_1, presence: true
   validates :answer_2, presence: true
   validates :correct_answer, presence: true

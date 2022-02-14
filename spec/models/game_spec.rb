@@ -165,12 +165,63 @@ RSpec.describe Game, type: :model do
   end
 
   describe "#score" do
-    it "should count all of the correct answers"
+    it "should count all of the correct answers" do
+      questions = [
+        create(:question, :valid),
+        create(:question, :valid, body: "This is an example body!!"),
+        create(:question, :valid, body: "This is the 2nd example body!!"),
+        create(:question, :valid, body: "This is the 3rd example body!!"),
+        create(:question, :valid, body: "This is the 4th example body!!"),
+        create(:question, :valid, body: "This is the 5th example body!!"),
+        create(:question, :valid, body: "This is the 6th example body!!"),
+        create(:question, :valid, body: "This is the 7th example body!!"),
+        create(:question, :valid, body: "This is the 8th example body!!"),
+        create(:question, :valid, body: "This is the 9th example body!!"),
+        create(:question, :valid, body: "This is the 10th example body!!")
+      ]
+
+      game = create :game,
+        :valid,
+        questions: questions,
+        number_of_questions: 10,
+        current_round: 1
+
+      GameQuestion.where(
+        game: game,
+        # Only set the first 4 questions to correct
+        question: questions[0...4]
+      ).update(correctly_answered: true)
+
+      expect(game.score).to eql(4)
+    end
   end
 
   describe "#answer_with" do
-    it "should mark the current answer correct when correct"
-    it "should mark the current answer incorrect when incorrect"
+    it "should mark the current answer correct when correct" do
+      question = create :question, :valid, answer_1: "Frankfurt", correct_answer: "Frankfurt"
+      game = create :game, :valid, questions: [question]
+
+      game_question = GameQuestion.find_by(game: game, question: question)
+      expect(game_question.correctly_answered).to be_nil
+
+      game.answer_with("Frankfurt")
+
+      game_question.reload
+      expect(game_question.correctly_answered).to be true
+    end
+
+    it "should mark the current answer incorrect when incorrect" do
+      question = create :question, :valid, answer_1: "Frankfurt", correct_answer: "Frankfurt"
+      game = create :game, :valid, questions: [question]
+
+      game_question = GameQuestion.find_by(game: game, question: question)
+      expect(game_question.correctly_answered).to be_nil
+
+      game.answer_with("Lexington")
+
+      game_question.reload
+      expect(game_question.correctly_answered).to be false
+    end
   end
 
   describe "state machine" do
@@ -178,29 +229,81 @@ RSpec.describe Game, type: :model do
       # After is handled by #answer_with
 
       context "guard" do
-        it "should allow a known answer for this question"
+        it "should allow a known answer for this question" do
+          question = create :question, :valid
+          game = create :game, :valid, questions: [question], game_lifecycle: "running"
 
-        it "should not allow an unknown answer for this question"
+          expect { game.answer(question.answer_1) }.to_not raise_error
+        end
+
+        it "should not allow an unknown answer for this question" do
+          question = create :question, :valid
+          game = create :game, :valid, questions: [question], game_lifecycle: "running"
+
+          expect {
+            game.answer("beavers can be fooled by running a pipe through a dam, called a beaver deceiver")
+          }.to raise_error(AASM::InvalidTransition)
+        end
       end
     end
 
     context "continue transition" do
       context "guard" do
-        it "should allow transitions when there are legal rounds left"
+        it "should allow transitions when there are legal rounds left" do
+          game = create :game,
+            :valid,
+            game_lifecycle: "answered",
+            current_round: 1,
+            number_of_questions: 10
 
-        it "should not allow transitions when there are no legal rounds left"
+          expect { game.continue }.to_not raise_error
+        end
+
+        it "should not allow transitions when there are no legal rounds left" do
+          game = create :game,
+            :valid,
+            game_lifecycle: "answered",
+            current_round: 10,
+            number_of_questions: 10
+
+          expect { game.continue }.to raise_error(AASM::InvalidTransition)
+        end
       end
 
       context "after" do
-        it "should increase the current round"
+        it "should increase the current round" do
+          game = create :game,
+            :valid,
+            game_lifecycle: "answered",
+            current_round: 1,
+            number_of_questions: 10
+
+          expect { game.continue }.to change { game.current_round }.from(1).to(2)
+        end
       end
     end
 
     context "finish transition" do
       context "guard" do
-        it "should allow finishing a game when out of legal rounds to progress through"
+        it "should allow finishing a game when out of legal rounds to progress through" do
+          game = create :game,
+            :valid,
+            game_lifecycle: "answered",
+            current_round: 10,
+            number_of_questions: 10
 
-        it "should not allow finishing a game when legal rounds remain"
+          expect { game.finish }.to_not raise_error
+        end
+
+        it "should not allow finishing a game when legal rounds remain" do
+          game = create :game,
+            :valid,
+            game_lifecycle: "answered",
+            current_round: 5,
+            number_of_questions: 10
+
+          expect { game.finish }.to raise_error(AASM::InvalidTransition)
+        end
       end
     end
   end

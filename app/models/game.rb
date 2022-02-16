@@ -43,10 +43,6 @@ class Game < ApplicationRecord
     end
 
     event :start do
-      after do
-        retrieve_trivia_questions
-      end
-
       transitions from: :configured, to: :pending
     end
 

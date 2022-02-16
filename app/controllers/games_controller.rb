@@ -23,6 +23,7 @@ class GamesController < ApplicationController
     @game.save
 
     respond_to do |format|
+      @game.retrieve_trivia_questions
       format.html { redirect_to @game }
       format.turbo_stream
     end

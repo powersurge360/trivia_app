@@ -3,6 +3,7 @@ build:
     RAILS_ENV: production
   docker:
     web: Dockerfile
+    worker: Dockerfile
 run:
   web: bin/rails s
   worker: bin/sidekiq

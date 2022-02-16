@@ -20,6 +20,7 @@
       <% end %>
       <main class="mx-auto py-5 px-5 w-full grow flex flex-col">
         <%= yield %>
+        <%= turbo_stream_from nil %>
       </main>
     </div>
   </body>

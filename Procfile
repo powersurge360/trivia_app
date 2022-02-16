@@ -1,2 +1,2 @@
-web: bin/rails server -p 3000 -e $RAILS_ENV
+web: bin/rails server -e $RAILS_ENV
 worker: bin/sidekiq

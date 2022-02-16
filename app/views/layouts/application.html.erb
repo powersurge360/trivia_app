@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="h-full">
   <head>
-    <title>TriviaApp</title>
+    <title>Monster Trivia</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -20,7 +20,6 @@
       <% end %>
       <main class="mx-auto py-5 px-5 w-full grow flex flex-col">
         <%= yield %>
-        <%= turbo_stream_from nil %>
       </main>
     </div>
   </body>

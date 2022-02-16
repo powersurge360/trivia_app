@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe RetrieveTriviaQuestionsJob, type: :job do
   let(:game) {
-    Game.create
+    Game.create(game_lifecycle: "pending")
   }
 
   it "should use the game's configuration to collect the questions", :vcr do
@@ -29,13 +29,13 @@ RSpec.describe RetrieveTriviaQuestionsJob, type: :job do
     expect(game.questions.count).to eql(10)
   end
 
-  it "should set the state to ready", :vcr do
+  it "should set the state to running", :vcr do
     expect(game.game_lifecycle).to eql("pending")
 
     RetrieveTriviaQuestionsJob.perform_now(game)
 
     game.reload
-    expect(game.game_lifecycle).to eql("ready")
+    expect(game.game_lifecycle).to eql("running")
   end
 
   describe "#handle_error" do

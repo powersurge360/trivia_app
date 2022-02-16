@@ -24,7 +24,7 @@ RSpec.describe "Games", type: :request do
       expect(Game.count).to eql(1)
       follow_redirect!
 
-      expect(response.body).to match(/Looking up some great questions/)
+      expect(response.body).to match(/Ready to go/)
     end
 
     describe "given bad input" do
@@ -59,8 +59,8 @@ RSpec.describe "Games", type: :request do
   describe "POST /games/:channel/start" do
     let(:question) { create :question, :valid }
 
-    it "should allow a transition to the running state" do
-      game = create :game, :valid, questions: [question], game_lifecycle: "ready"
+    it "should allow a transition to the pending state" do
+      game = create :game, :valid, questions: [question], game_lifecycle: "configured"
 
       post start_game_path(game)
 
@@ -68,8 +68,8 @@ RSpec.describe "Games", type: :request do
       game.reload
       follow_redirect!
 
-      expect(game.game_lifecycle).to eql("running")
-      expect(response.body).to match(/#{question.body}/)
+      expect(game.game_lifecycle).to eql("pending")
+      expect(response.body).to match(/Looking up some great questions/)
     end
 
     it "should fail when attempting to transition an invalid state" do

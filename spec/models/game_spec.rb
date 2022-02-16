@@ -16,10 +16,10 @@ RSpec.describe Game, type: :model do
       expect(subject.save).to be true
     end
 
-    it "should default to pending state" do
+    it "should default to configured state" do
       subject.save
 
-      expect(subject.game_lifecycle).to eql("pending")
+      expect(subject.game_lifecycle).to eql("configured")
     end
 
     it "should have questions up to 50" do

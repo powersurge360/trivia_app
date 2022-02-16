@@ -16,9 +16,6 @@ class GamesController < ApplicationController
   end
 
   def show
-    if @game.pending?
-      @game.retrieve_trivia_questions
-    end
   end
 
   def start

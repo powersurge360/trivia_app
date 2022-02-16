@@ -27,15 +27,15 @@ class Game < ApplicationRecord
   # State Machine
 
   aasm column: :game_lifecycle do
-    state :pending, initial: true
+    state :configured, initial: true
+    state :pending
     state :error
-    state :ready
     state :running
     state :answered
     state :finished
 
     event :finished_setup do
-      transitions from: :pending, to: :ready
+      transitions from: :pending, to: :running
     end
 
     event :error_detected do
@@ -43,7 +43,11 @@ class Game < ApplicationRecord
     end
 
     event :start do
-      transitions from: :ready, to: :running
+      after do
+        retrieve_trivia_questions
+      end
+
+      transitions from: :configured, to: :pending
     end
 
     event :answer do

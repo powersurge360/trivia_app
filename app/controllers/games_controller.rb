@@ -60,14 +60,14 @@ class GamesController < ApplicationController
 
   def new_round
     new_game = @game.dup
-    new_game.game_lifecycle = "pending"
+    new_game.game_lifecycle = "configured"
     new_game.current_round = 1
     new_game.save
 
     if new_game.valid?
       respond_to do |format|
         format.html { redirect_to @game }
-        format.turbo_stream { new_game.retrieve_trivia_questions }
+        format.turbo_stream
       end
     else
       logger.error("Failed to start a new round: #{@game.to_json}")

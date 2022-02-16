@@ -289,7 +289,7 @@ RSpec.describe "Games", type: :request do
       expect(new_game.current_round).to eql(1)
     end
 
-    it "should set the pending status on the new round" do
+    it "should set the configured status on the new round" do
       game = create :game,
         :valid,
         questions: [question],
@@ -303,7 +303,7 @@ RSpec.describe "Games", type: :request do
 
       new_game = Game.where(channel: game.channel).last
 
-      expect(new_game.game_lifecycle).to eql("pending")
+      expect(new_game.game_lifecycle).to eql("configured")
     end
   end
 end

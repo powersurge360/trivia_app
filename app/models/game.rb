@@ -124,7 +124,7 @@ class Game < ApplicationRecord
 
   def api_attributes
     attrs = attributes.slice(
-      "difficulty", "number_of_questions", "category", "game_type"
+      'difficulty', "number_of_questions", "category", "game_type"
     )
 
     {

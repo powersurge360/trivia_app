@@ -18,10 +18,10 @@ class Game < ApplicationRecord
 
   # Scopes
 
-  scope :latest_round, ->(channel) {
+  scope :for_channel, ->(channel) {
     Game
       .order(updated_at: :desc)
-      .find_by(channel: channel)
+      .where(channel: channel)
   }
 
   # State Machine

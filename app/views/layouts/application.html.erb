@@ -9,6 +9,14 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYEKGBD2V6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RYEKGBD2V6');
+    </script>
   </head>
 
   <body class="dark:text-amber-200 text-amber-900 h-full overflow-y-scroll flex bg-stone-50 dark:bg-gray-800">

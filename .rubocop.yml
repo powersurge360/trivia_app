@@ -1,6 +1,7 @@
 AllCops:
   Exclude:
     - bin/*
+    - vendor/*
 require: standard
 inherit_gem:
   standard: config/base.yml

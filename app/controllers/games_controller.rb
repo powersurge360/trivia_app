@@ -89,7 +89,7 @@ class GamesController < ApplicationController
   private
 
   def retrieve_game
-    @game = Game.includes(:questions, :game_questions).for_channel(params[:channel]).last
+    @game = Game.includes(:questions, :game_questions).where(channel: params[:channel]).last
   end
 
   def create_game_params

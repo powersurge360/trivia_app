@@ -16,14 +16,6 @@ class Game < ApplicationRecord
 
   before_validation :ensure_channel
 
-  # Scopes
-
-  scope :for_channel, ->(channel) {
-    Game
-      .order(updated_at: :desc)
-      .where(channel: channel)
-  }
-
   # State Machine
 
   aasm column: :game_lifecycle do

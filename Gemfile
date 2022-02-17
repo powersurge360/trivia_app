@@ -90,3 +90,9 @@ group :test do
   gem "vcr"
   gem "webmock"
 end
+
+group :production do
+  gem "sentry-raven"
+  gem "sentry-rails"
+  gem "sentry-sidekiq"
+end

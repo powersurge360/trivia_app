@@ -1,4 +1,4 @@
-FROM ruby:3.0.3
+FROM ruby:3.1.0
 WORKDIR /app
 RUN apt-get update
 RUN apt-get install -y libpq-dev

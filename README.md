@@ -6,7 +6,7 @@ This is a simple application that uses Rails 7, Hotwire, and the [OpenTDB](https
 
 ### Native
 
-* Ruby 3.0.3 (soon to be 3.1.0)
+* Ruby 3.1.0
 * Bundler
 * Foreman (installed outside of the project, globally please)
 * Postgres

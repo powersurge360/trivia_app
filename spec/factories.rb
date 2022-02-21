@@ -1,4 +1,9 @@
 FactoryBot.define do
+  factory :player do
+    name { "MyString" }
+    game { nil }
+  end
+
   factory :game_question do
   end
 

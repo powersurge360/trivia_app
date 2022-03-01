@@ -19,8 +19,10 @@ class GamesController < ApplicationController
   end
 
   def start
-    @game.start
-    @game.save
+    @game.with_lock do
+      @game.start
+      @game.save
+    end
 
     respond_to do |format|
       @game.retrieve_trivia_questions
@@ -30,8 +32,10 @@ class GamesController < ApplicationController
   end
 
   def answer
-    @game.answer(answer_params)
-    @game.save
+    @game.with_lock do
+      @game.answer(answer_params)
+      @game.save
+    end
 
     respond_to do |format|
       format.html { redirect_to @game }
@@ -40,8 +44,10 @@ class GamesController < ApplicationController
   end
 
   def continue
-    @game.continue
-    @game.save
+    @game.with_lock do
+      @game.continue
+      @game.save
+    end
 
     respond_to do |format|
       format.html { redirect_to @game }
@@ -50,8 +56,10 @@ class GamesController < ApplicationController
   end
 
   def finish
-    @game.finish
-    @game.save
+    @game.with_lock do
+      @game.finish
+      @game.save
+    end
 
     respond_to do |format|
       format.html { redirect_to @game }

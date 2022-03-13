@@ -46,7 +46,6 @@ gem "bootsnap", require: false
 
 gem "tailwindcss-rails"
 gem "faraday"
-gem "faraday_middleware"
 gem "sidekiq"
 gem "heroicon"
 gem "aasm"

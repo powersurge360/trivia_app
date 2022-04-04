@@ -40,3 +40,8 @@ GAME_TYPES = {
   "Multiple Choice" => "multiple",
   "True / False" => "boolean"
 }.freeze
+
+PLAYER_MODES = {
+  "Single Player" => "single",
+  "Multiplayer" => "multiplayer"
+}.freeze

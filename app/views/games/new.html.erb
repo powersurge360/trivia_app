@@ -32,6 +32,13 @@
       <%= render "partials/form_error_list", errors: @game.errors.where(:game_type) %>
     <% end %>
 
+    <%= form.label :player_mode, "Single player or multiplayer?" %>
+    <%= form.select :player_mode, options=PLAYER_MODES, {}, class: form_input_class
+    %>
+    <% if @game.errors[:player_mode].any? %>
+      <%= render "partials/form_error_list", errors: @game.errors.where(:player_mode) %>
+    <% end %>
+
     <%= form.submit "Start", class: submit_button_class %>
   <% end %>
 </div>

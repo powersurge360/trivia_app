@@ -14,6 +14,10 @@ class Game < ApplicationRecord
   validates :game_type, inclusion: GAME_TYPES.values
   validates :channel, presence: true
 
+  if Flipper.enabled? :multiplayer_games
+    validates :player_mode, inclusion: PLAYER_MODES.values
+  end
+
   before_validation :ensure_channel
 
   # State Machine

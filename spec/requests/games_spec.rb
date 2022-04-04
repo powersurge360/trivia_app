@@ -10,6 +10,10 @@ RSpec.describe "Games", type: :request do
     end
   end
 
+  it "should not have multiplayer enabled yet" do
+    expect(Flipper.enabled?(:multiplayer_games)).to be false
+  end
+
   describe "POST /" do
     it "redirects to the game page" do
       expect(Game.count).to eql(0)
@@ -304,6 +308,16 @@ RSpec.describe "Games", type: :request do
       new_game = Game.where(channel: game.channel).last
 
       expect(new_game.game_lifecycle).to eql("configured")
+    end
+  end
+
+  describe "with the multiplayer feature turned on" do
+    before(:each) {
+      Flipper.enable :multiplayer_games
+    }
+
+    it("should have the muliplayer games flag enabled") do
+      expect(Flipper.enabled?(:multiplayer_games)).to be true
     end
   end
 end

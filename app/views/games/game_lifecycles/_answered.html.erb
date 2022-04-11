@@ -12,18 +12,16 @@
     </p>
   <% end %>
   <% if game.may_continue? %>
-    <%= button_to 'Next Question',
+    <%= tw_button_to 'Next Question',
       continue_game_path(game),
       method: :post,
-      class: button_class,
       form_class: "flex flex-col"
     %>
   <% end %>
   <% if game.may_finish? %>
-    <%= button_to 'See Results',
+    <%= tw_button_to 'See Results',
       finish_game_path(game),
       method: :post,
-      class: button_class,
       form_class: "flex flex-col"
     %>
   <% end %>

@@ -32,10 +32,11 @@
       <%= render "partials/form_error_list", errors: @game.errors.where(:game_type) %>
     <% end %>
 
-    <%= form.label :player_mode, "Single player or multiplayer?" %>
-    <%= form.select :player_mode, options=PLAYER_MODES, {} %>
-    <% if @game.errors[:player_mode].any? %>
-      <%= render "partials/form_error_list", errors: @game.errors.where(:player_mode) %>
+    <% if Flipper.enabled? :multiplayer_games %>
+      <%= form.toggle :player_mode, "Multiplayer?" %>
+      <% if @game.errors[:player_mode].any? %>
+        <%= render "partials/form_error_list", errors: @game.errors.where(:player_mode) %>
+      <% end %>
     <% end %>
 
     <%= form.submit "Start" %>

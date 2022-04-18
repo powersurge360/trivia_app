@@ -19,6 +19,28 @@ class TailwindBuilder < ActionView::Helpers::FormBuilder
     )
   end
 
+  def toggle(method, label_text, options = {}, checked_value = "1", unchecked_value = "0")
+    @template.content_tag :div, class: "relative" do
+      (
+        label(method, class: "flex grow items-center") do
+          check_box(
+            method,
+            options.reverse_merge(
+              class: "sr-only peer"
+            ),
+            checked_value,
+            unchecked_value
+          ) +
+          @template.content_tag(:div, nil, class: "block bg-gray-600 w-14 h-8 m-0 rounded-full peer-checked:bg-purple-500") +
+          @template.content_tag(:div, nil, class: "dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition peer-checked:translate-x-full") +
+          @template.content_tag(:div, class: "mx-2 inline") do
+            label_text
+          end
+        end
+      )
+    end
+  end
+
   def submit(value, options = {})
     super(
       value,

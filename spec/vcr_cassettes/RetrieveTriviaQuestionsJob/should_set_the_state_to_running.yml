@@ -8,112 +8,107 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.9.3
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      - Faraday v2.2.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Wed, 16 Feb 2022 16:17:14 GMT
-      Server:
+      date:
+      - Tue, 26 Apr 2022 16:58:12 GMT
+      server:
       - Apache
-      Expires:
+      expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
-      Cache-Control:
+      cache-control:
       - no-store, no-cache, must-revalidate
-      Pragma:
+      pragma:
       - no-cache
-      Access-Control-Allow-Origin:
+      access-control-allow-origin:
       - "*"
-      Set-Cookie:
-      - PHPSESSID=1ef82ce932566a2d41c229406683af2d; path=/
-      Upgrade:
+      set-cookie:
+      - PHPSESSID=8bebb3d7f48ea2387ad512230e9f96bb; path=/
+      upgrade:
       - h2
-      Connection:
+      connection:
       - Upgrade
-      Vary:
+      vary:
       - User-Agent
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      Transfer-Encoding:
+      transfer-encoding:
       - chunked
-      Content-Type:
+      content-type:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"d593c3aa5cd27adc3c4c45852de1a6b1acdf848126fdb85d7330d0f13deeb011"}'
-  recorded_at: Wed, 16 Feb 2022 16:17:14 GMT
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"d68219e4f272f1db29412f2f60f01d197da991d2c487809dfb270466ccdc365d"}'
+  recorded_at: Tue, 26 Apr 2022 16:58:13 GMT
 - request:
     method: get
-    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&type=
+    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&token=d68219e4f272f1db29412f2f60f01d197da991d2c487809dfb270466ccdc365d&type=
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.9.3
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      - Faraday v2.2.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Wed, 16 Feb 2022 16:17:14 GMT
-      Server:
+      date:
+      - Tue, 26 Apr 2022 16:58:13 GMT
+      server:
       - Apache
-      Expires:
+      expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
-      Cache-Control:
+      cache-control:
       - no-store, no-cache, must-revalidate
-      Pragma:
+      pragma:
       - no-cache
-      Access-Control-Allow-Origin:
+      access-control-allow-origin:
       - "*"
-      Set-Cookie:
-      - PHPSESSID=d2e57bfc70097dc6ba3eaf49dd62f66a; path=/
-      Upgrade:
+      set-cookie:
+      - PHPSESSID=ea8266ac3ebad13d1788f92719c991fc; path=/
+      upgrade:
       - h2
-      Connection:
+      connection:
       - Upgrade
-      Vary:
+      vary:
       - User-Agent
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      Transfer-Encoding:
+      transfer-encoding:
       - chunked
-      Content-Type:
+      content-type:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"Entertainment: Board Games","type":"multiple","difficulty":"easy","question":"Carcassonne
-        is based on which French town?","correct_answer":"Carcassonne","incorrect_answers":["Paris","Marseille","Clermont-Ferrand"]},{"category":"Geography","type":"multiple","difficulty":"easy","question":"All
-        of the following are classified as Finno-Ugric languages EXCEPT:","correct_answer":"Samoyedic","incorrect_answers":["Hungarian","Finnish","Estonian"]},{"category":"Geography","type":"boolean","difficulty":"medium","question":"The
-        Southeast Asian island of Borneo is politically divided among 3 countries.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Entertainment:
-        Video Games","type":"boolean","difficulty":"easy","question":"The game &quot;Battlefield
-        1&quot; takes place during World War I.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"medium","question":"In which
-        game does a character say, &quot;Sometimes, I dream about cheese&quot;?","correct_answer":"Half
-        Life 2","incorrect_answers":["Team Fortress 2","Dark Souls","Serious Sam:
-        The Second Encounter"]},{"category":"Entertainment: Film","type":"multiple","difficulty":"easy","question":"Which
-        actor plays Obi-Wan Kenobi in Star Wars Episodes I-lll?","correct_answer":"Ewan
-        McGregor","incorrect_answers":["Alec Guinness","Hayden Christensen","Liam
-        Neeson"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"hard","question":"How
-        many voice channels does the Nintendo Entertainment System support natively?","correct_answer":"5","incorrect_answers":["4","6","3"]},{"category":"Geography","type":"multiple","difficulty":"easy","question":"What
-        is the smallest country in the world?","correct_answer":"Vatican City","incorrect_answers":["Maldives","Monaco","Malta"]},{"category":"Science:
-        Gadgets","type":"multiple","difficulty":"hard","question":"Who built the first
-        laser?","correct_answer":"Theodore Harold Maiman","incorrect_answers":["Nikola
-        Tesla","Jack Kilby","Edith Clarke"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"What
-        numbers did Sayaka Maizono write on the wall in Dangan Ronpa Trigger Happy
-        Havoc?","correct_answer":"11037","incorrect_answers":["4, 8, 15, 16, 23, 42","55730","3,
-        9, 11, 12, 15, 17,"]}]}'
-  recorded_at: Wed, 16 Feb 2022 16:17:14 GMT
-recorded_with: VCR 6.0.0
+      string: '{"response_code":0,"results":[{"category":"Science & Nature","type":"multiple","difficulty":"easy","question":"Which
+        of these bones is hardest to break?","correct_answer":"Femur","incorrect_answers":["Cranium","Humerus","Tibia"]},{"category":"History","type":"multiple","difficulty":"medium","question":"The
+        Battle of the Somme in World War I took place in which country?","correct_answer":"France","incorrect_answers":["Germany","Italy","Austria"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"medium","question":"Which of
+        the following is NOT an official game in Nintendo&#039;s Super Smash Bros.
+        series?","correct_answer":"Super Smash Bros. Crusade","incorrect_answers":["Super
+        Smash Bros. Melee","Super Smash Bros. Brawl","Super Smash Bros. for Nintendo
+        3DS and Wii U"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"easy","question":"Which
+        of these characters is the mascot of the video game company SEGA?","correct_answer":"Sonic
+        the Hedgehog","incorrect_answers":["Dynamite Headdy","Alex Kidd","Opa-Opa"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"easy","question":"What is the
+        name of the main character in &quot;Life is Strange&quot;?","correct_answer":"Maxine
+        Caulfield","incorrect_answers":["Victoria Chase","Stella Hill","Chloe Price"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"medium","question":"Which of
+        these is not a DLC vehicle in &quot;Mario Kart 8&quot;?","correct_answer":"Wild
+        Wiggler","incorrect_answers":["Bone Rattler","B Dasher","300 SL Roadster"]},{"category":"History","type":"multiple","difficulty":"easy","question":"Which
+        modern country is known as &quot;The Graveyard of Empires&quot;?","correct_answer":"Afghanistan","incorrect_answers":["China","Iraq","Russia"]},{"category":"Entertainment:
+        Music","type":"multiple","difficulty":"medium","question":"Who was walking
+        like an Egyptian in 1981?","correct_answer":"The Bangles","incorrect_answers":["R.E.M.","The
+        Ocean Blue","The Connells"]},{"category":"Entertainment: Music","type":"boolean","difficulty":"medium","question":"Metallica
+        collaborated with Rowan Atkinson&#039;s Mr Bean on a 1992 comic relief single.","correct_answer":"False","incorrect_answers":["True"]},{"category":"Entertainment:
+        Film","type":"multiple","difficulty":"easy","question":"Who plays Jack Burton
+        in the movie &quot;Big Trouble in Little China?&quot;","correct_answer":"Kurt
+        Russell","incorrect_answers":["Patrick Swayze","John Cusack","Harrison Ford"]}]}'
+  recorded_at: Tue, 26 Apr 2022 16:58:13 GMT
+recorded_with: VCR 6.1.0

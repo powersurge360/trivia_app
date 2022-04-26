@@ -8,119 +8,108 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.9.3
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      - Faraday v2.2.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Fri, 04 Feb 2022 04:50:10 GMT
-      Server:
+      date:
+      - Tue, 26 Apr 2022 17:00:04 GMT
+      server:
       - Apache
-      Expires:
+      expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
-      Cache-Control:
+      cache-control:
       - no-store, no-cache, must-revalidate
-      Pragma:
+      pragma:
       - no-cache
-      Access-Control-Allow-Origin:
+      access-control-allow-origin:
       - "*"
-      Set-Cookie:
-      - PHPSESSID=96ec37afbf85338fd25271e2b2290d07; path=/
-      Upgrade:
+      set-cookie:
+      - PHPSESSID=eb4ea074475e548fb444a5af637fd89c; path=/
+      upgrade:
       - h2
-      Connection:
+      connection:
       - Upgrade
-      Vary:
+      vary:
       - User-Agent
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      Transfer-Encoding:
+      transfer-encoding:
       - chunked
-      Content-Type:
+      content-type:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"75d5f07e85af43e3ddabb70ad707cb62f596ee5b5a783487de4a2b263dae217d"}'
-  recorded_at: Fri, 04 Feb 2022 04:50:10 GMT
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"924bffd61f50f95a7a5c55465a3cf198b7c270e5959c322588b4bc91a6197437"}'
+  recorded_at: Tue, 26 Apr 2022 17:00:04 GMT
 - request:
     method: get
-    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&type=
+    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&token=924bffd61f50f95a7a5c55465a3cf198b7c270e5959c322588b4bc91a6197437&type=
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.9.3
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      - Faraday v2.2.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Fri, 04 Feb 2022 04:50:10 GMT
-      Server:
+      date:
+      - Tue, 26 Apr 2022 17:00:04 GMT
+      server:
       - Apache
-      Expires:
+      expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
-      Cache-Control:
+      cache-control:
       - no-store, no-cache, must-revalidate
-      Pragma:
+      pragma:
       - no-cache
-      Access-Control-Allow-Origin:
+      access-control-allow-origin:
       - "*"
-      Set-Cookie:
-      - PHPSESSID=e8812d8d272f3c47acff27d824cc8248; path=/
-      Upgrade:
+      set-cookie:
+      - PHPSESSID=addc2f3c6fb011f49e2b7560dcc97592; path=/
+      upgrade:
       - h2
-      Connection:
+      connection:
       - Upgrade
-      Vary:
+      vary:
       - User-Agent
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      Transfer-Encoding:
+      transfer-encoding:
       - chunked
-      Content-Type:
+      content-type:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"History","type":"multiple","difficulty":"medium","question":"
-        What Russian automatic gas-operated assault rifle was developed in the Soviet
-        Union in 1947, and is still popularly used today?","correct_answer":"AK-47","incorrect_answers":["RPK","M16","MG
-        42"]},{"category":"Entertainment: Music","type":"multiple","difficulty":"medium","question":"Who
-        is the primary lyricist for Canadian progressive rock band Rush?","correct_answer":"Neil
-        Peart","incorrect_answers":["Geddy Lee","Alex Lifeson","John Rutsey"]},{"category":"Celebrities","type":"multiple","difficulty":"easy","question":"Which
-        actress married Michael Douglas in 2000?","correct_answer":"Catherine Zeta-Jones","incorrect_answers":["Ruth
-        Jones","Pam Ferris","Sara Sugarman"]},{"category":"General Knowledge","type":"multiple","difficulty":"hard","question":"Which
-        of the following is not another name for the eggplant?","correct_answer":"Potimarron","incorrect_answers":["Brinjal","Guinea
-        Squash","Melongene"]},{"category":"Entertainment: Video Games","type":"multiple","difficulty":"medium","question":"In
-        the 2015 RPG &quot;Undertale&quot;, which character do you first encounter
-        after falling down into the underground?","correct_answer":"Flowey","incorrect_answers":["Toriel","Sans","Papyrus"]},{"category":"Entertainment:
-        Music","type":"multiple","difficulty":"hard","question":"&quot;All the Boys&quot;
-        by Panic! At the Disco was released as a bonus track on what album?","correct_answer":"Too
-        Weird To Live, Too Rare To Die!","incorrect_answers":["A Fever You Can&#039;t
-        Sweat Out","Death Of A Bachelor","Vices &amp; Virtues"]},{"category":"Geography","type":"multiple","difficulty":"easy","question":"What
-        is the name of New Zealand&#039;s indigenous people?","correct_answer":"Maori","incorrect_answers":["Vikings","Polynesians","Samoans"]},{"category":"Entertainment:
-        Music","type":"multiple","difficulty":"medium","question":"From which album
-        is the Gorillaz song, &quot;On Melancholy Hill&quot; featured in?","correct_answer":"Plastic
-        Beach","incorrect_answers":["Demon Days","Humanz","The Fall"]},{"category":"Entertainment:
-        Cartoon & Animations","type":"multiple","difficulty":"medium","question":"Which
-        Sanrio character was introduced in 1996?","correct_answer":"Pompompurin","incorrect_answers":["My
-        Melody","Badtz-Maru","Kerropi"]},{"category":"Entertainment: Japanese Anime
-        & Manga","type":"multiple","difficulty":"medium","question":"How does the
-        character Dragowizard, Qinus Axia&#039;s from the anime &quot;Buddyfight&quot;
-        differ between the Japanese and English dubs?","correct_answer":"Different
-        Gender","incorrect_answers":["Different Body Proportions","Different Backstory","Different
-        Appearance"]}]}'
-  recorded_at: Fri, 04 Feb 2022 04:50:10 GMT
-recorded_with: VCR 6.0.0
+      string: '{"response_code":0,"results":[{"category":"Vehicles","type":"multiple","difficulty":"easy","question":"Where
+        are the cars of the brand &quot;Ferrari&quot; manufactured?","correct_answer":"Italy","incorrect_answers":["Romania","Germany","Russia"]},{"category":"History","type":"boolean","difficulty":"hard","question":"Japan
+        was part of the Allied Powers during World War I.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Sports","type":"multiple","difficulty":"hard","question":"With
+        which doubles partner did John McEnroe have most success?","correct_answer":"Peter
+        Fleming","incorrect_answers":["Mark Woodforde","Michael Stich","Mary Carillo"]},{"category":"Science:
+        Computers","type":"multiple","difficulty":"easy","question":"In the programming
+        language Java, which of these keywords would you put on a variable to make
+        sure it doesn&#039;t get modified?","correct_answer":"Final","incorrect_answers":["Static","Private","Public"]},{"category":"Entertainment:
+        Television","type":"multiple","difficulty":"medium","question":"In Breaking
+        Bad, the initials W.W. refer to which of the following?","correct_answer":"Walter
+        White","incorrect_answers":["William Wolf","Willy Wonka","Wally Walrus"]},{"category":"Entertainment:
+        Cartoon & Animations","type":"multiple","difficulty":"easy","question":"Which
+        of these characters from &quot;SpongeBob SquarePants&quot; is not a squid?","correct_answer":"Gary","incorrect_answers":["Orvillie","Squidward","Squidette"]},{"category":"Entertainment:
+        Music","type":"multiple","difficulty":"hard","question":"Which lyric is about
+        Red Hot Chili Peppers frontman Anthony Kiedis?","correct_answer":"&quot;A
+        rainy Lithuanian \/ Is dancing as an Indian&quot;","incorrect_answers":["&quot;Fly
+        away on, my zephyr \/ I feel it more than ever&quot;","&quot;And I liked the
+        dimple in your chin \/ Your pale blue eyes&quot;","&quot;You used to be so
+        warm and affectionate...but now you&#039;re quick to get into your regret&quot;"]},{"category":"History","type":"multiple","difficulty":"hard","question":"From
+        1940 to 1942, what was the capital-in-exile of Free France ?","correct_answer":"Brazzaville","incorrect_answers":["Algiers","Paris","Tunis"]},{"category":"Entertainment:
+        Television","type":"multiple","difficulty":"medium","question":"Which actor
+        was not a major character in TV Show Freaks and Geeks?","correct_answer":"Jonah
+        Hill","incorrect_answers":["Jason Segel","Seth Rogen","James Franco"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"medium","question":"In Night
+        in the Woods, which instrument did Casey play?","correct_answer":"Drums","incorrect_answers":["Bass","Piano","Sax"]}]}'
+  recorded_at: Tue, 26 Apr 2022 17:00:04 GMT
+recorded_with: VCR 6.1.0

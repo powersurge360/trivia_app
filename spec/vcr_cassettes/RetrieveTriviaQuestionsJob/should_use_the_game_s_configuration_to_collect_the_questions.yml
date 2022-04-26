@@ -8,112 +8,105 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.9.3
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      - Faraday v2.2.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Fri, 04 Feb 2022 04:50:10 GMT
-      Server:
+      date:
+      - Tue, 26 Apr 2022 16:58:52 GMT
+      server:
       - Apache
-      Expires:
+      expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
-      Cache-Control:
+      cache-control:
       - no-store, no-cache, must-revalidate
-      Pragma:
+      pragma:
       - no-cache
-      Access-Control-Allow-Origin:
+      access-control-allow-origin:
       - "*"
-      Set-Cookie:
-      - PHPSESSID=3e7db7a3d88f0e1d38cc91d9ba7a0a3e; path=/
-      Upgrade:
+      set-cookie:
+      - PHPSESSID=6a8de3f2fb8e732548252ec43c6c7ab5; path=/
+      upgrade:
       - h2
-      Connection:
+      connection:
       - Upgrade
-      Vary:
+      vary:
       - User-Agent
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      Transfer-Encoding:
+      transfer-encoding:
       - chunked
-      Content-Type:
+      content-type:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"5aefbb36a22e6a7ec43f3f98c23d29ed51111d317ea82c9647af90ef1642b120"}'
-  recorded_at: Fri, 04 Feb 2022 04:50:10 GMT
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"23672d0124d11933b7c220bcf89dea743c1b7f7240fc9a29170119cd8d5ceff2"}'
+  recorded_at: Tue, 26 Apr 2022 16:58:52 GMT
 - request:
     method: get
-    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&type=
+    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&token=23672d0124d11933b7c220bcf89dea743c1b7f7240fc9a29170119cd8d5ceff2&type=
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.9.3
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      - Faraday v2.2.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Fri, 04 Feb 2022 04:50:10 GMT
-      Server:
+      date:
+      - Tue, 26 Apr 2022 16:58:52 GMT
+      server:
       - Apache
-      Expires:
+      expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
-      Cache-Control:
+      cache-control:
       - no-store, no-cache, must-revalidate
-      Pragma:
+      pragma:
       - no-cache
-      Access-Control-Allow-Origin:
+      access-control-allow-origin:
       - "*"
-      Set-Cookie:
-      - PHPSESSID=7d85dc902a309529bbb2b3d799bac2eb; path=/
-      Upgrade:
+      set-cookie:
+      - PHPSESSID=c664396d6b1024683b8878483778e072; path=/
+      upgrade:
       - h2
-      Connection:
+      connection:
       - Upgrade
-      Vary:
+      vary:
       - User-Agent
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      Transfer-Encoding:
+      transfer-encoding:
       - chunked
-      Content-Type:
+      content-type:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"Entertainment: Video Games","type":"multiple","difficulty":"easy","question":"Who
-        is the writer of the game &quot;Half-Life&quot;?","correct_answer":"Marc Laidlaw","incorrect_answers":["Gabe
-        Newell","Robin Walker","Chet Faliszek"]},{"category":"General Knowledge","type":"multiple","difficulty":"hard","question":"Sciophobia
-        is the fear of what?","correct_answer":"Shadows","incorrect_answers":["Eating","Bright
-        lights","Transportation"]},{"category":"General Knowledge","type":"boolean","difficulty":"medium","question":"You
-        are allowed to sell your soul on eBay.","correct_answer":"False","incorrect_answers":["True"]},{"category":"Entertainment:
-        Music","type":"multiple","difficulty":"medium","question":"Which of these
-        bands are NOT from Australia?","correct_answer":"The Naked and Famous","incorrect_answers":["Cut
-        Copy","Empire of the Sun","Tame Impala"]},{"category":"Geography","type":"multiple","difficulty":"easy","question":"What
-        is the nickname for the US state Delaware?","correct_answer":"The First State","incorrect_answers":["The
-        Fiftieth State","The Second State","The Sixteenth State"]},{"category":"Entertainment:
-        Books","type":"boolean","difficulty":"easy","question":"Stephen Chbosky wrote
-        the book &#039;The Perks of Being A Wallflower&#039;.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"easy","question":"What is the
-        name of the world that the MMO &quot;RuneScape&quot; takes place in?","correct_answer":"Gielinor","incorrect_answers":["Glindor","Azeroth","Zaros"]},{"category":"Entertainment:
-        Video Games","type":"boolean","difficulty":"medium","question":"In Portal,
-        the Companion Cube&#039;s ARE sentient.","correct_answer":"True","incorrect_answers":["False"]},{"category":"History","type":"multiple","difficulty":"medium","question":"In
-        what year did the Berlin Wall fall?","correct_answer":"1989","incorrect_answers":["1987","1991","1993"]},{"category":"Entertainment:
-        Television","type":"multiple","difficulty":"easy","question":"On the NBC show
-        Community, whose catch-phrase was &quot;Pop! Pop!&quot;?","correct_answer":"Magnitude","incorrect_answers":["Star
-        Burns","Leonard","Senoir Chang"]}]}'
-  recorded_at: Fri, 04 Feb 2022 04:50:10 GMT
-recorded_with: VCR 6.0.0
+      string: '{"response_code":0,"results":[{"category":"Entertainment: Cartoon &
+        Animations","type":"boolean","difficulty":"easy","question":"In the &quot;Shrek&quot;
+        film franchise, Donkey is played by Eddie Murphy.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Science:
+        Computers","type":"multiple","difficulty":"easy","question":"What does GHz
+        stand for?","correct_answer":"Gigahertz","incorrect_answers":["Gigahotz","Gigahetz","Gigahatz"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"hard","question":"The Internet
+        Meme &quot;All your base are belong to us&quot; is based on the poorly translated
+        English Version of which Video Game?","correct_answer":"Zero Wing","incorrect_answers":["F-Zero","Wing
+        Commander","Star Wars: X-Wing"]},{"category":"Vehicles","type":"multiple","difficulty":"easy","question":"Which
+        Italian city is home of the car manufacturer &#039;Fiat&#039;?","correct_answer":"Turin","incorrect_answers":["Maranello","Modena","Rome"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"hard","question":"In World of
+        Warcraft lore, who organized the creation of the Paladins?","correct_answer":"Alonsus
+        Faol","incorrect_answers":["Uther the Lightbringer","Alexandros Mograine","Sargeras,
+        The Daemon Lord"]},{"category":"Entertainment: Musicals & Theatres","type":"multiple","difficulty":"easy","question":"How
+        many plays is Shakespeare generally considered to have written?","correct_answer":"37","incorrect_answers":["18","54","25"]},{"category":"Science
+        & Nature","type":"multiple","difficulty":"medium","question":"Deuterium is
+        an isotope of which element?","correct_answer":"Hydrogen","incorrect_answers":["Nitrogen","Helium","Neon"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"easy","question":"In Rust, how
+        many Timed Explosive Charges does it take to destroy a Ladder Hatch?","correct_answer":"1","incorrect_answers":["3","2","5"]},{"category":"Sports","type":"multiple","difficulty":"easy","question":"What
+        is the most common type of pitch thrown by pitchers in baseball?","correct_answer":"Fastball","incorrect_answers":["Slowball","Screwball","Palmball"]},{"category":"Sports","type":"multiple","difficulty":"easy","question":"Who
+        won the UEFA Champions League in 2016?","correct_answer":"Real Madrid C.F.","incorrect_answers":["FC
+        Bayern Munich","Atletico Madrid","Manchester City F.C."]}]}'
+  recorded_at: Tue, 26 Apr 2022 16:58:52 GMT
+recorded_with: VCR 6.1.0

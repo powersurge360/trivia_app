@@ -116,14 +116,15 @@ class Game < ApplicationRecord
 
   def api_attributes
     attrs = attributes.slice(
-      "difficulty", "number_of_questions", "category", "game_type"
+      "difficulty", "number_of_questions", "category", "game_type", "session_token"
     )
 
     {
       difficulty: attrs["difficulty"],
       amount: attrs["number_of_questions"],
       category: attrs["category"],
-      type: attrs["game_type"]
+      type: attrs["game_type"],
+      token: attrs["session_token"]
     }
   end
 

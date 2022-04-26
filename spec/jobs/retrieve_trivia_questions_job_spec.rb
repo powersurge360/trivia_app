@@ -42,7 +42,7 @@ RSpec.describe RetrieveTriviaQuestionsJob, type: :job do
     let(:question_response) { instance_double(External::OpenTdb::QuestionsResponse) }
 
     it "populate an error message", :vcr do
-      allow(question_response).to receive(:response_code).and_return(:no_token)
+      allow(question_response).to receive(:error).and_return(:no_token)
 
       job = RetrieveTriviaQuestionsJob.new
       job.game = game
@@ -54,7 +54,7 @@ RSpec.describe RetrieveTriviaQuestionsJob, type: :job do
     end
 
     it "should set the lifecycle to error" do
-      allow(question_response).to receive(:response_code).and_return(:no_token)
+      allow(question_response).to receive(:error).and_return(:no_token)
 
       job = RetrieveTriviaQuestionsJob.new
       job.game = game

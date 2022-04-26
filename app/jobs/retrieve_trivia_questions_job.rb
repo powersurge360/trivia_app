@@ -55,7 +55,7 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
   def handle_error(question_response)
     game.error_detected
 
-    case question_response.response_code
+    case question_response.error
     when :no_token
       logger.error("Bad token generated for game")
 
@@ -63,7 +63,7 @@ class RetrieveTriviaQuestionsJob < ApplicationJob
     when :token_exhausted
       logger.info("Token was exhausted")
 
-      game.error_message = "All possible questions for these settings have been exhausted"
+      game.error_message = "Not enough questions to fill a round"
     when :invalid_parameter
       logger.error("An invalid parameter was passed")
 

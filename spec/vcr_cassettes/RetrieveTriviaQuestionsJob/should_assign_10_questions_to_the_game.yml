@@ -8,121 +8,114 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.9.3
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      - Faraday v2.2.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Fri, 04 Feb 2022 04:50:11 GMT
-      Server:
+      date:
+      - Tue, 26 Apr 2022 17:00:04 GMT
+      server:
       - Apache
-      Expires:
+      expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
-      Cache-Control:
+      cache-control:
       - no-store, no-cache, must-revalidate
-      Pragma:
+      pragma:
       - no-cache
-      Access-Control-Allow-Origin:
+      access-control-allow-origin:
       - "*"
-      Set-Cookie:
-      - PHPSESSID=c6bed8c50a08793fceb50a87d97a7977; path=/
-      Upgrade:
+      set-cookie:
+      - PHPSESSID=6e5c837591dea4b9ca635e4ecafa6241; path=/
+      upgrade:
       - h2
-      Connection:
+      connection:
       - Upgrade
-      Vary:
+      vary:
       - User-Agent
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      Transfer-Encoding:
+      transfer-encoding:
       - chunked
-      Content-Type:
+      content-type:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"cf5a90323c7af61667ca281a4a96787c9b5b328e9cd632ec7fac10ac114fd42e"}'
-  recorded_at: Fri, 04 Feb 2022 04:50:11 GMT
+      string: '{"response_code":0,"response_message":"Token Generated Successfully!","token":"0b35901cd6cba3b2cd62b81a4e4621dbab3d9964f7abe0d916506606642efa08"}'
+  recorded_at: Tue, 26 Apr 2022 17:00:04 GMT
 - request:
     method: get
-    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&type=
+    uri: https://opentdb.com/api.php?amount=10&category&difficulty=&token=0b35901cd6cba3b2cd62b81a4e4621dbab3d9964f7abe0d916506606642efa08&type=
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.9.3
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      - Faraday v2.2.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Fri, 04 Feb 2022 04:50:11 GMT
-      Server:
+      date:
+      - Tue, 26 Apr 2022 17:00:04 GMT
+      server:
       - Apache
-      Expires:
+      expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
-      Cache-Control:
+      cache-control:
       - no-store, no-cache, must-revalidate
-      Pragma:
+      pragma:
       - no-cache
-      Access-Control-Allow-Origin:
+      access-control-allow-origin:
       - "*"
-      Set-Cookie:
-      - PHPSESSID=2438f7b0ff6154841af60d1c9f33edb5; path=/
-      Upgrade:
+      set-cookie:
+      - PHPSESSID=8efdfe07815f1d48f07fb9cce01061bc; path=/
+      upgrade:
       - h2
-      Connection:
+      connection:
       - Upgrade
-      Vary:
+      vary:
       - User-Agent
-      Strict-Transport-Security:
+      strict-transport-security:
       - max-age=31536000
-      Transfer-Encoding:
+      transfer-encoding:
       - chunked
-      Content-Type:
+      content-type:
       - application/json
     body:
       encoding: UTF-8
-      string: '{"response_code":0,"results":[{"category":"Entertainment: Japanese
-        Anime & Manga","type":"multiple","difficulty":"medium","question":"When was
-        the first episode of Soul Eater released?","correct_answer":"2008","incorrect_answers":["2003","2005","2011"]},{"category":"Science:
-        Gadgets","type":"boolean","difficulty":"easy","question":"The communication
-        protocol NFC stands for Near-Field Control.","correct_answer":"False","incorrect_answers":["True"]},{"category":"Entertainment:
-        Music","type":"multiple","difficulty":"easy","question":"What is the stage
-        name of English female rapper Mathangi Arulpragasam, who is known for the
-        song &quot;Paper Planes&quot;?","correct_answer":"M.I.A.","incorrect_answers":["K.I.A.","C.I.A.","A.I.A."]},{"category":"Entertainment:
-        Comics","type":"multiple","difficulty":"medium","question":"Which of the following
-        superheros did Wonder Woman NOT have a love interest in?","correct_answer":"Green
-        Arrow","incorrect_answers":["Superman","Batman","Steve Trevor"]},{"category":"Entertainment:
-        Japanese Anime & Manga","type":"multiple","difficulty":"easy","question":"In
-        the 2012 animated film &quot;Wolf Children&quot;, what are the names of the
-        wolf children?","correct_answer":"Ame &amp; Yuki","incorrect_answers":["Hana
-        &amp; Yuki","Ame &amp; Hana","Chuck &amp; Anna"]},{"category":"Entertainment:
-        Video Games","type":"multiple","difficulty":"easy","question":"Valve Corporation
-        is an American video game developer located in which city?","correct_answer":"Bellevue,
-        Washington","incorrect_answers":["Austin, Texas","Seattle, Washington","San
-        Francisco, California"]},{"category":"Science: Computers","type":"boolean","difficulty":"medium","question":"Android
-        versions are named in alphabetical order.","correct_answer":"True","incorrect_answers":["False"]},{"category":"Science:
-        Computers","type":"multiple","difficulty":"medium","question":"Laserjet and
-        inkjet printers are both examples of what type of printer?","correct_answer":"Non-impact
-        printer","incorrect_answers":["Impact printer","Daisywheel printer","Dot matrix
-        printer"]},{"category":"Entertainment: Music","type":"multiple","difficulty":"medium","question":"Which
-        of these Johns was murdered by gunshots outside the Dakota in New York in
-        1980?","correct_answer":"John Lennon","incorrect_answers":["Johnny Thunders","John
-        Denver","John Cascella"]},{"category":"Sports","type":"multiple","difficulty":"medium","question":"Which
-        professional wrestler fell from the rafters to his death during a live Pay-Per-View
-        event in 1999?","correct_answer":"Owen Hart","incorrect_answers":["Chris Benoit","Lex
-        Luger","Al Snow"]}]}'
-  recorded_at: Fri, 04 Feb 2022 04:50:11 GMT
-recorded_with: VCR 6.0.0
+      string: '{"response_code":0,"results":[{"category":"Mythology","type":"multiple","difficulty":"hard","question":"According
+        to Algonquian folklore, how does one transform into a Wendigo?","correct_answer":"Participating
+        in cannibalism.","incorrect_answers":["Excessive mutilation of animal corpses.","Performing
+        a ritual involving murder.","Drinking the blood of many slain animals."]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"medium","question":"Which character
+        is from &quot;Splatoon&quot;?","correct_answer":"Marie","incorrect_answers":["Cyrus","Palutena","Shulk"]},{"category":"Entertainment:
+        Japanese Anime & Manga","type":"multiple","difficulty":"hard","question":"Winch
+        of these names are not a character of JoJo&#039;s Bizarre Adventure?","correct_answer":"JoJo
+        Kikasu","incorrect_answers":["Jean-Pierre Polnareff","George Joestar","Risotto
+        Nero"]},{"category":"Entertainment: Film","type":"multiple","difficulty":"medium","question":"Mark
+        Wahlberg played the titular character of which 2008 video-game adaptation?","correct_answer":"Max
+        Payne","incorrect_answers":["Alan Wake","Hitman","God Of War"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"easy","question":"In the &quot;Hitman&quot;
+        series, what is the name of the main character?","correct_answer":"Agent 47","incorrect_answers":["Agent
+        27","Agent Smith","Agent 67"]},{"category":"Science & Nature","type":"multiple","difficulty":"medium","question":"An
+        organism described as &quot;heliotropic&quot; has a tendancy to move towards
+        which of these things?","correct_answer":"Light","incorrect_answers":["Water","Trees","Pollen"]},{"category":"Entertainment:
+        Video Games","type":"multiple","difficulty":"medium","question":"In &quot;Kingdom
+        Hearts&quot;, what mission are Donald and Goofy assigned by King Mickey?","correct_answer":"To
+        find the Key bearer and stick with him!","incorrect_answers":["To find the
+        Key bearer and steal the key!","To find the Key bearer and report back!","To
+        find the Key bearer and kill him!"]},{"category":"Entertainment: Television","type":"multiple","difficulty":"hard","question":"In
+        the show &#039;Doctor Who&#039;, what is the name of the time-capsule model
+        stolen by &#039;the Doctor&#039;?","correct_answer":"TT Type 40, Mark 3 (TARDIS)","incorrect_answers":["TT
+        Type 1, Mark 3 (TARDIS)","TT Type 40, Mark 5 (TARDIS)","TT Type 1, Mark 5
+        (TARDIS)"]},{"category":"Entertainment: Music","type":"multiple","difficulty":"hard","question":"Panic!
+        At the Disco&#039;s sixth album &quot;Pray For The Wicked&quot; was released
+        on which date?","correct_answer":"June 22, 2018","incorrect_answers":["May
+        9, 2018","March 13, 2018","February 21, 2018"]},{"category":"General Knowledge","type":"multiple","difficulty":"hard","question":"In
+        &quot;Resident Evil 3&quot;, how many inventory slots does Jill have at the
+        start of the game?","correct_answer":"10","incorrect_answers":["6","8","12"]}]}'
+  recorded_at: Tue, 26 Apr 2022 17:00:04 GMT
+recorded_with: VCR 6.1.0

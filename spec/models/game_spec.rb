@@ -307,4 +307,16 @@ RSpec.describe Game, type: :model do
       end
     end
   end
+
+  context "with multiplayer feature turned on" do
+    before(:each) {
+      Flipper.enable :multiplayer_games
+    }
+
+    it("should have the muliplayer games flag enabled") do
+      expect(Flipper.enabled?(:multiplayer_games)).to be true
+    end
+
+    it("should allow a game to be toggled multiplayer")
+  end
 end

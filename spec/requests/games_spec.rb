@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Games", type: :request do
+RSpec.describe "Games workflow", type: :request do
   describe "GET /" do
     it "shows a form" do
       get root_path
@@ -311,7 +311,7 @@ RSpec.describe "Games", type: :request do
     end
   end
 
-  describe "with the multiplayer feature turned on" do
+  context "with the multiplayer feature turned on" do
     before(:each) {
       Flipper.enable :multiplayer_games
     }
@@ -320,7 +320,65 @@ RSpec.describe "Games", type: :request do
       expect(Flipper.enabled?(:multiplayer_games)).to be true
     end
 
-    it("should allow game to be set to multiplayer") do
+    describe "POST /" do
+      it("should allow game to be set to multiplayer") do
+        expect(Game.count).to eql(0)
+
+        post games_path, params: {
+          game: {
+            multiplayer: true
+          }
+        }
+
+        expect(Game.count).to eql(1)
+        expect(Game.last.multiplayer).to be true
+      end
+
+      it "should generate a join code"
+    end
+
+    describe "GET /games/:channel" do
+      context "first game" do
+        it "should ask for a username"
+      end
+
+      context "subsequent game" do
+        it "should show a share info box"
+
+        it "should have the join code displayed"
+      end
+
+      context "joining a game with a host" do
+        context "no username in current session" do
+          it "should ask for a username"
+        end
+
+        context "already has a username from a previous game" do
+          it "should ask if they would like to join"
+        end
+      end
+    end
+
+    describe "POST /games/:channel/answer" do
+      context "when there are still players who haven't answered" do
+        it "should not advance the game state when the answer is wrong"
+
+        it "should advance the game state when the answer is correct"
+      end
+
+      context "when all other players have answered" do
+        it "should advance the game state when the answer is right"
+
+        it "should advance the game state when the answer is wrong"
+      end
+
+      context "when user is not a known player for this game" do
+        it "should ignore the request"
+      end
+    end
+
+    describe "POST /games/:channel/new_round" do
+      it "should copy over all players to the new round"
     end
   end
 end

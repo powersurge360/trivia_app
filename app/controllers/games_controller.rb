@@ -101,7 +101,11 @@ class GamesController < ApplicationController
   end
 
   def create_game_params
-    params.require(:game).permit(:number_of_questions, :category, :difficulty, :game_type)
+    if Flipper.enabled? :multiplayer_games
+      params.require(:game).permit(:number_of_questions, :category, :difficulty, :game_type, :multiplayer)
+    else
+      params.require(:game).permit(:number_of_questions, :category, :difficulty, :game_type)
+    end
   end
 
   def answer_params

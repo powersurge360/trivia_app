@@ -319,5 +319,8 @@ RSpec.describe "Games", type: :request do
     it("should have the muliplayer games flag enabled") do
       expect(Flipper.enabled?(:multiplayer_games)).to be true
     end
+
+    it("should allow game to be set to multiplayer") do
+    end
   end
 end

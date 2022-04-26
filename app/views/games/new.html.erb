@@ -33,9 +33,9 @@
     <% end %>
 
     <% if Flipper.enabled? :multiplayer_games %>
-      <%= form.toggle :player_mode, "Multiplayer?" %>
-      <% if @game.errors[:player_mode].any? %>
-        <%= render "partials/form_error_list", errors: @game.errors.where(:player_mode) %>
+      <%= form.toggle :multiplayer, "Multiplayer?" %>
+      <% if @game.errors[:multiplayer].any? %>
+        <%= render "partials/form_error_list", errors: @game.errors.where(:multiplayer) %>
       <% end %>
     <% end %>
 

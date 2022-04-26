@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_04_022559) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_23_004036) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -52,15 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_04_022559) do
     t.integer "current_round", default: 1, null: false
     t.uuid "channel", default: -> { "gen_random_uuid()" }, null: false
     t.string "join_code"
-    t.string "player_mode", default: "single", null: false
-  end
-
-  create_table "players", force: :cascade do |t|
-    t.string "name", default: "", null: false
-    t.bigint "game_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_players_on_game_id"
+    t.boolean "multiplayer", default: false, null: false
   end
 
   create_table "questions", id: :string, force: :cascade do |t|
@@ -78,5 +70,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_04_022559) do
 
   add_foreign_key "game_questions", "games"
   add_foreign_key "game_questions", "questions"
-  add_foreign_key "players", "games"
 end

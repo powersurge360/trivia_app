@@ -19,11 +19,17 @@ class Game < ApplicationRecord
   # State Machine
 
   aasm column: :game_lifecycle do
+    # Game has been configured and ready to begin
     state :configured, initial: true
+    # Pulling from the API
     state :pending
+    # There was a problem with the API
     state :error
+    # When a question is being asked
     state :running
+    # Shows the score and allows moving to the next question or to final tally
     state :answered
+    # Game is over. Can either start a new one or abandon it
     state :finished
 
     event :finished_setup do

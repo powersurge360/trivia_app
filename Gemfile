@@ -6,9 +6,6 @@ ruby "3.1.2"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.1"
 
-# Explicitly require a newer nokogiri to prevent a known vulnerable install
-gem "nokogiri", "~> 1.13.4"
-
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

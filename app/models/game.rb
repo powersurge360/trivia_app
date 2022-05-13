@@ -21,6 +21,8 @@ class Game < ApplicationRecord
   aasm column: :game_lifecycle do
     # Game has been configured and ready to begin
     state :configured, initial: true
+    # Opens the lobby for other players to join
+    state :lobby_open
     # Pulling from the API
     state :pending
     # There was a problem with the API
@@ -42,6 +44,10 @@ class Game < ApplicationRecord
 
     event :start do
       transitions from: :configured, to: :pending
+    end
+
+    event :set_host do
+      transitions from: :configured, to: :lobby_open
     end
 
     event :answer do

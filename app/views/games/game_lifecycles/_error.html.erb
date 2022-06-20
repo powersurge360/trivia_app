@@ -4,9 +4,10 @@
   </p>
 
   <div class="flex flex-col justify-center">
-    <%= tw_link_button_to "Go Back Home",
+    <%= link_to "Go Back Home",
       root_path,
       method: :get,
+      class: button_class,
       form_class: "flex flex-col"
     %>
   </div>

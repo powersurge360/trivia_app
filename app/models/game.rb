@@ -19,19 +19,11 @@ class Game < ApplicationRecord
   # State Machine
 
   aasm column: :game_lifecycle do
-    # Game has been configured and ready to begin
     state :configured, initial: true
-    # Opens the lobby for other players to join
-    state :lobby_open
-    # Pulling from the API
     state :pending
-    # There was a problem with the API
     state :error
-    # When a question is being asked
     state :running
-    # Shows the score and allows moving to the next question or to final tally
     state :answered
-    # Game is over. Can either start a new one or abandon it
     state :finished
 
     event :finished_setup do
@@ -44,10 +36,6 @@ class Game < ApplicationRecord
 
     event :start do
       transitions from: :configured, to: :pending
-    end
-
-    event :set_host do
-      transitions from: :configured, to: :lobby_open
     end
 
     event :answer do

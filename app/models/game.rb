@@ -97,6 +97,8 @@ class Game < ApplicationRecord
     end
 
   # Database handling
+  # TODO: Make a decision on whether or not to handle this in a service/decorator/delegator
+  # See the delegator class in Ruby's standard library: https://blog.appsignal.com/2019/04/30/ruby-magic-hidden-gems-delegator-forwardable.html
 
   def current_question
     return nil if current_round > number_of_questions
@@ -141,6 +143,7 @@ class Game < ApplicationRecord
   end
 
   # Presentational
+  # TODO: These should be moved to a presentation model
 
   def percentage_correct
     (score.to_f / number_of_questions.to_f * 100).truncate

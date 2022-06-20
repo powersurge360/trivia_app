@@ -115,10 +115,6 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (2.0.3)
     ffi (1.15.5)
-    flipper (0.24.1)
-    flipper-active_record (0.24.1)
-      activerecord (>= 4.2, < 8)
-      flipper (~> 0.24.1)
     formatador (1.1.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -137,7 +133,6 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     hashdiff (1.0.1)
-    hashids (1.0.6)
     heroicon (0.4.0)
       rails (>= 5.2)
     i18n (1.10.0)
@@ -367,11 +362,8 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faraday
-  flipper
-  flipper-active_record
   guard
   guard-rspec
-  hashids
   heroicon
   importmap-rails
   jbuilder

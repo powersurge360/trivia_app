@@ -49,6 +49,9 @@ gem "faraday"
 gem "sidekiq"
 gem "heroicon"
 gem "aasm"
+gem "hashids"
+gem "flipper"
+gem "flipper-active_record"
 
 # Use Sass to process CSS
 # gem "sassc-rails"

@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   root "games#new"
 
   resources :games, only: [:new, :show, :create], param: :channel do
-    post :start, on: :member
-    post :answer, on: :member
-    post :continue, on: :member
-    post :finish, on: :member
-    post :new_round, on: :member
+    member do
+      post :start
+      post :answer
+      post :continue
+      post :finish
+      post :new_round
+    end
   end
 end

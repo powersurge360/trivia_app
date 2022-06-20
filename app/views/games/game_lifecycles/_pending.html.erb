@@ -9,10 +9,9 @@
     <p class="text-2xl py-10">
       This game is better played with JS enabled.
     </p>
-    <%= link_to "Check if questions are ready",
+    <%= tw_link_button_to "Check if questions are ready",
       game_path(game),
       method: :get,
-      class: button_class,
       form_class: "flex flex-col"
     %>
   </noscript>

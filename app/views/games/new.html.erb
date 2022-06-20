@@ -9,29 +9,36 @@
 
   <%= form_with model: @game, class: 'flex flex-col basis-2/3 justify-bottom' do |form| %>
     <%= form.label :number_of_questions, "How many questions per round?" %>
-    <%= form.number_field :number_of_questions, class: form_input_class, min: 1, max: 50 %>
+    <%= form.number_field :number_of_questions, min: 1, max: 50 %>
     <% if @game.errors[:number_of_questions].any? %>
       <%= render "partials/form_error_list", errors: @game.errors.where(:number_of_questions) %>
     <% end %>
 
     <%= form.label :category, "What category?" %>
-    <%= form.select :category, options=TRIVIA_CATEGORIES, {}, class: form_input_class %>
+    <%= form.select :category, options=TRIVIA_CATEGORIES, {} %>
     <% if @game.errors[:category].any? %>
       <%= render "partials/form_error_list", errors: @game.errors.where(:category) %>
     <% end %>
 
     <%= form.label :difficulty, "What difficulty?" %>
-    <%= form.select :difficulty, options=DIFFICULTY_CHOICES, {}, class: form_input_class %>
+    <%= form.select :difficulty, options=DIFFICULTY_CHOICES, {} %>
     <% if @game.errors[:difficulty].any? %>
       <%= render "partials/form_error_list", errors: @game.errors.where(:difficulty) %>
     <% end %>
 
     <%= form.label :game_type, "True / false or multiple choice?" %>
-    <%= form.select :game_type, options=GAME_TYPES, {}, class: form_input_class %>
+    <%= form.select :game_type, options=GAME_TYPES, {} %>
     <% if @game.errors[:game_type].any? %>
       <%= render "partials/form_error_list", errors: @game.errors.where(:game_type) %>
     <% end %>
 
-    <%= form.submit "Start", class: submit_button_class %>
+    <% if Flipper.enabled? :multiplayer_games %>
+      <%= form.toggle :multiplayer, "Multiplayer?" %>
+      <% if @game.errors[:multiplayer].any? %>
+        <%= render "partials/form_error_list", errors: @game.errors.where(:multiplayer) %>
+      <% end %>
+    <% end %>
+
+    <%= form.submit "Start" %>
   <% end %>
 </div>

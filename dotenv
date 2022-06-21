@@ -1,8 +1,12 @@
 POSTGRES_USER=monster_trivia
 POSTGRES_DATABASE=monster_trivia_dev
 POSTGRES_PASSWORD=monster_trivia_rules
+
 RAILS_LOG_LEVEL=info
+
 SECRET_KEY_BASE=changeme
+
+# This is the salt for generating join codes, which themselves are hash ids.
 HASHIDS_SALT=changeme
 
 # GOOGLE_ANALYTICS_KEY=

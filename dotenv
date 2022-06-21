@@ -3,5 +3,6 @@ POSTGRES_DATABASE=monster_trivia_dev
 POSTGRES_PASSWORD=monster_trivia_rules
 RAILS_LOG_LEVEL=info
 SECRET_KEY_BASE=changeme
+HASHIDS_SALT=changeme
 
 # GOOGLE_ANALYTICS_KEY=

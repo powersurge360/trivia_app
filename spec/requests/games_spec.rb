@@ -321,20 +321,23 @@ RSpec.describe "Games workflow", type: :request do
     end
 
     describe "POST /" do
-      it("should allow game to be set to multiplayer") do
-        expect(Game.count).to eql(0)
-
-        post games_path, params: {
-          game: {
-            multiplayer: true
+      context "when a multiplayer game is started" do
+        before(:each) do
+          post games_path, params: {
+            game: {
+              multiplayer: true
+            }
           }
-        }
+        end
 
-        expect(Game.count).to eql(1)
-        expect(Game.last.multiplayer).to be true
+        it "should create a game" do
+          expect(Game.count).to eql(1)
+        end
+
+        it "should allow game to be set to multiplayer" do
+          expect(Game.last.multiplayer).to be true
+        end
       end
-
-      it "should generate a join code"
     end
 
     describe "GET /games/:channel" do

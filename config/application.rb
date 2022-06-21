@@ -14,6 +14,8 @@ module MonsterTrivia
     config.active_job.queue_adapter = :sidekiq
     config.log_level = ENV.fetch("RAILS_LOG_LEVEL") { "info" }.to_sym
 
+    config.x.hashids_salt = ENV["HASHIDS_SALT"]
+
     config.x.google_analytics_key = ENV.fetch("GOOGLE_ANALYTICS_KEY", "")
 
     # Configuration for the application, engines, and railties goes here.

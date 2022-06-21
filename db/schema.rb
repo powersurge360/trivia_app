@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_23_004036) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_21_024736) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -51,7 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_23_004036) do
     t.string "error_message"
     t.integer "current_round", default: 1, null: false
     t.uuid "channel", default: -> { "gen_random_uuid()" }, null: false
-    t.string "join_code"
     t.boolean "multiplayer", default: false, null: false
   end
 

@@ -313,10 +313,43 @@ RSpec.describe Game, type: :model do
       Flipper.enable :multiplayer_games
     }
 
-    it("should have the muliplayer games flag enabled") do
+    it "should have the muliplayer games flag enabled" do
       expect(Flipper.enabled?(:multiplayer_games)).to be true
     end
 
-    it("should allow a game to be toggled multiplayer")
+    it "should allow a game to be toggled multiplayer"
+
+    describe "#encode_hash_id" do
+      let(:game) do
+        create :game,
+          :valid
+      end
+
+      subject! { game.encode_hash_id }
+
+      it "should return the hash consistently" do
+        expect(subject).to eql(game.encode_hash_id)
+      end
+
+      it "should change when the id changes" do
+        game.increment!(:id)
+
+        expect(subject).to_not eql(game.encode_hash_id)
+      end
+    end
+
+    describe "#decode_hash_id" do
+      let(:game) do
+        create :game,
+          :valid,
+          id: 90
+      end
+
+      it "should decode the correct id" do
+        id = Game.decode_hash_id(game.encode_hash_id)
+
+        expect(id).to eql(game.id)
+      end
+    end
   end
 end

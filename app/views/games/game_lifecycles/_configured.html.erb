@@ -12,12 +12,12 @@
 
   <% if Flipper.enabled? :multiplayer_games %>
     <% if game.multiplayer? %>
-      <div class="flex flex-col grow justify-center text-center">
+      <section class="flex flex-col grow justify-center text-center">
         <h1 class="text-accent text-3xl pb-8">Let's Round Up Some Friends</h1>
-        <p>Send them a url</p>
+        <p class="pb-5">Send them a url</p>
         <%= game_url(@game, join_code: @game.encode_hash_id) %>
-        <p>Or if you're hanging out in person, try a QR code</p>
-        <p class="mx-auto"><%=  @game.join_qr_code.html_safe %></p>
+        <p class="pb-5">Or if you're hanging out in person, try a QR code</p>
+        <p class="mx-auto"><%= qr_code(game_url(@game, join_code: @game.encode_hash_id))%></p>
       </div>
     <% else %>
       <p class="text-2xl pb-10">

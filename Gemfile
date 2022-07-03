@@ -52,6 +52,7 @@ gem "aasm"
 gem "hashids"
 gem "flipper"
 gem "flipper-active_record"
+gem "rqrcode"
 
 # Use Sass to process CSS
 # gem "sassc-rails"

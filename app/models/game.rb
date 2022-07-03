@@ -157,6 +157,12 @@ class Game < ApplicationRecord
     (score.to_f / number_of_questions.to_f * 100).truncate
   end
 
+  def join_qr_code
+    qr = RQRCode::QRCode.new(Rails.application.routes.url_helpers.game_path(self, join_code: encode_hash_id))
+
+    qr.as_svg(fill: :white)
+  end
+
   # Overrides
 
   def to_param

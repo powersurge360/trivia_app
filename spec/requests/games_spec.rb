@@ -316,7 +316,7 @@ RSpec.describe "Games workflow", type: :request do
       Flipper.enable :multiplayer_games
     }
 
-    it("should have the muliplayer games flag enabled") do
+    it "should have the muliplayer games flag enabled" do
       expect(Flipper.enabled?(:multiplayer_games)).to be true
     end
 

@@ -1,11 +1,14 @@
 class GameInvitationsController < ApplicationController
   before_action :retrieve_game
+  before_action :enable_controller?
 
   def show
   end
 
   def update
   end
+
+  private
 
   def retrieve_game
     eligible_games = Game.where(channel: params[:channel])
@@ -20,5 +23,9 @@ class GameInvitationsController < ApplicationController
 
   def game_params
     params.permit(:join_code)
+  end
+
+  def enable_controller?
+    render status: :not_found unless Flipper.enabled? :multiplayer_games
   end
 end

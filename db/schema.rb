@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_21_024736) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_07_035312) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_21_024736) do
     t.string "key", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["key"], name: "index_flipper_features_on_key", unique: true
+    t.index ["key"], name: "index_fl pper_features_on_key", unique: true
   end
 
   create_table "flipper_gates", force: :cascade do |t|
@@ -52,6 +52,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_21_024736) do
     t.integer "current_round", default: 1, null: false
     t.uuid "channel", default: -> { "gen_random_uuid()" }, null: false
     t.boolean "multiplayer", default: false, null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.uuid "channel"
+    t.string "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "questions", id: :string, force: :cascade do |t|

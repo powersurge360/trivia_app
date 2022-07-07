@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "GameInvitations", type: :request do
+RSpec.describe "Invitations", type: :request do
   context "with the multiplayer feature turned off" do
     let(:game) { FactoryBot.create(:game) }
 
@@ -10,15 +10,15 @@ RSpec.describe "GameInvitations", type: :request do
 
     describe "GET /game_invitations/:channel" do
       it "should render 404" do
-        get game_invitation_path(game)
+        get game_invitations_path(game)
 
         expect(response).to be_not_found
       end
     end
 
-    describe "PUT /game_invitations/:channel" do
+    describe "POST /game_invitations/:channel" do
       it "should render 404" do
-        put game_invitation_path(game)
+        post game_invitations_path(game)
 
         expect(response).to be_not_found
       end
@@ -26,13 +26,13 @@ RSpec.describe "GameInvitations", type: :request do
   end
 
   context "with the multiplayer feature turned on" do
-    describe "GET /game_invitations/:channel" do
+    describe "GET /game/:channel/invitations" do
       it "should show a username input"
 
       it "should show a join input"
     end
 
-    describe "PUT /game_invitations/:channel" do
+    describe "POST /game/:channel/invitations" do
       context "when another user has the same username" do
         it "should render a validation error"
       end

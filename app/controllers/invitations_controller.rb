@@ -1,11 +1,11 @@
-class GameInvitationsController < ApplicationController
+class InvitationsController < ApplicationController
   before_action :retrieve_game
   before_action :enable_controller?
 
-  def show
+  def index
   end
 
-  def update
+  def create
   end
 
   private

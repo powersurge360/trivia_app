@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       post :finish
       post :new_round
     end
-  end
 
-  resources :game_invitations, only: [:show, :update], param: :channel
+    resources :invitations, only: [:index, :create]
+  end
 end

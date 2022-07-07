@@ -15,9 +15,9 @@
       <section class="flex flex-col grow justify-center text-center">
         <h1 class="text-accent text-3xl pb-8">Let's Round Up Some Friends</h1>
         <p class="pb-5">Send them a url</p>
-        <%= game_invitation_url(@game, join_code: @game.encode_hash_id) %>
+        <%= game_invitations_url(game_channel: @game, join_code: @game.encode_hash_id) %>
         <p class="pb-5">Or if you're hanging out in person, try a QR code</p>
-        <p class="mx-auto"><%= qr_code(game_invitation_url(@game, join_code: @game.encode_hash_id))%></p>
+        <p class="mx-auto"><%= qr_code(game_invitations_url(game_channel: @game, join_code: @game.encode_hash_id))%></p>
       </div>
     <% else %>
       <p class="text-2xl pb-10">

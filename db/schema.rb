@@ -59,6 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_07_035312) do
     t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["channel", "username"], name: "index_players_on_channel_and_username", unique: true
   end
 
   create_table "questions", id: :string, force: :cascade do |t|

@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :player do
-    name { "MyString" }
-    game { nil }
+    channel { "" }
+    username { "MyString" }
   end
 
   factory :game_question do

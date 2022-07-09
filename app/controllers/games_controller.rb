@@ -9,7 +9,7 @@ class GamesController < ApplicationController
     @game = Game.create(create_game_params)
 
     if @game.valid?
-      redirect_to @game
+      redirect_to game_path(@game)
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       @game.retrieve_trivia_questions
-      format.html { redirect_to @game }
+      format.html { redirect_to game_path(@game) }
       format.turbo_stream
     end
   end
@@ -38,7 +38,7 @@ class GamesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to @game }
+      format.html { redirect_to game_path(@game) }
       format.turbo_stream
     end
   end
@@ -50,7 +50,7 @@ class GamesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to @game }
+      format.html { redirect_to game_path(@game) }
       format.turbo_stream
     end
   end
@@ -62,7 +62,7 @@ class GamesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to @game }
+      format.html { redirect_to game_path(@game) }
       format.turbo_stream
     end
   end
@@ -75,7 +75,7 @@ class GamesController < ApplicationController
 
     if new_game.valid?
       respond_to do |format|
-        format.html { redirect_to @game }
+        format.html { redirect_to game_path(@game) }
         format.turbo_stream
       end
     else

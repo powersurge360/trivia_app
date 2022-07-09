@@ -1,7 +1,13 @@
 FactoryBot.define do
   factory :player do
-    channel { "" }
+    channel { SecureRandom.uuid }
     username { "MyString" }
+
+    after(:build) do |p, values|
+      game = FactoryBot.create(:game, channel: p.channel)
+
+      p.join_code = game.encode_hash_id
+    end
   end
 
   factory :game_question do

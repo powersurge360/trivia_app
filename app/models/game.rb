@@ -5,6 +5,12 @@ class Game < ApplicationRecord
 
   has_many :game_questions
   has_many :questions, through: :game_questions
+  has_many :players,
+    # Players aren't related by ids because players are related to a
+    # series of games, or game rounds, rather than concretely one single
+    # game
+    foreign_key: :channel,
+    primary_key: :channel
 
   # Validation
 

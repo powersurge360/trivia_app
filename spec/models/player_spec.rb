@@ -26,7 +26,7 @@ RSpec.describe Player, type: :model do
 
     describe "failing channel validations" do
       subject do
-        FactoryBot.build(:player, channel: nil).tap do |p|
+        FactoryBot.build(:player, channel: nil, game: nil).tap do |p|
           p.valid?
         end
       end

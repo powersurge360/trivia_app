@@ -2,11 +2,10 @@ FactoryBot.define do
   factory :player do
     channel { SecureRandom.uuid }
     username { "MyString" }
+    game { FactoryBot.create(:game, channel: channel) }
 
     after(:build) do |p, values|
-      game = FactoryBot.create(:game, channel: p.channel)
-
-      p.join_code = game.encode_hash_id
+      p.join_code = p.game.encode_hash_id if p.game.present?
     end
   end
 

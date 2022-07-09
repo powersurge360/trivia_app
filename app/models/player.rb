@@ -7,7 +7,7 @@ class Player < ApplicationRecord
   validate :join_code_matches_game, on: :create
 
   # This describes a relation to a series of games marked off by channel rather
-  # than a specific channel
+  # than a specific game
   belongs_to :game,
     # Only grab the latest game
     -> { limit(1) },

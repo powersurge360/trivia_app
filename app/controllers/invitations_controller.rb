@@ -30,6 +30,6 @@ class InvitationsController < ApplicationController
   end
 
   def enable_controller?
-    return render status: :not_found unless Flipper.enabled?(:multiplayer_games)
+    render status: :not_found unless Flipper.enabled?(:multiplayer_games)
   end
 end

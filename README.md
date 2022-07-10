@@ -16,6 +16,10 @@ This is a simple application that uses Rails 7, Hotwire, and the [OpenTDB](https
 
 * Make sure you have docker installed on your system
 
+### Hybridized
+
+To run the application hybridized, you need the dependencies for native, excluding redis. Postgres is still required for some gems to link against.
+
 ## Installation
 
 * Clone from github
@@ -40,7 +44,6 @@ This is a simple application that uses Rails 7, Hotwire, and the [OpenTDB](https
 This approach runs the database servers in docker, but the application servers locally
 
 * Run `bin/db-restart`
-* Copy `.dotenv` to `.env`
 * Run `bin/setup`
 * Run `bin/dev` to start the local suite of servers
 

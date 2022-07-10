@@ -33,7 +33,7 @@ This is a simple application that uses Rails 7, Hotwire, and the [OpenTDB](https
 
 * Run `bin/docker-setup` to build the images, set up the database, and start the services
 * For future runs you can use `bin/docker-dev` to start the services and attach to view the logs
-  * Optionally run `docker compose run web bin/guard` to start the rspec watcher.
+  * Optionally run `docker compose exec web bin/guard` to start the rspec watcher.
   
 ### Hybridized
 

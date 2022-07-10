@@ -44,7 +44,7 @@ This approach runs the database servers in docker, but the application servers l
 * Run `bin/setup`
 * Run `bin/dev` to start the local suite of servers
 
-Use `docker compose run rails spec` to run specs
+Use `docker compose exec web bin/rails spec` to run specs
 
 To install new dependencies, rebuild the web image with `docker compose build web`
 

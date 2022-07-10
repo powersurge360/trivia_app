@@ -48,6 +48,7 @@ gem "tailwindcss-rails"
 gem "faraday"
 gem "sidekiq"
 gem "heroicon"
+# TODO remove state machine
 gem "aasm"
 gem "hashids"
 gem "flipper"

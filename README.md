@@ -6,7 +6,7 @@ This is a simple application that uses Rails 7, Hotwire, and the [OpenTDB](https
 
 ### Native
 
-* Ruby 3.1.0
+* Ruby 3.1.2
 * Bundler
 * Foreman (installed outside of the project, globally please)
 * Postgres
@@ -23,6 +23,7 @@ This is a simple application that uses Rails 7, Hotwire, and the [OpenTDB](https
 ###  Native
 
 * Copy `dotenv` to `.env`
+* Edit `.env` as necessary to point it at your local development servers
 * Run `bin/setup`
 * Once everything has been installed, use `bin/dev` to run the tailwind build process, the sidekiq job queue, and the rails server in three different processes.
   * Alternatively, you can run these commands directly with `bin/rails s`, `bin/rails tailwindcss:watch`, and `bin/sidekiq` in three separate terminal instances
@@ -30,11 +31,18 @@ This is a simple application that uses Rails 7, Hotwire, and the [OpenTDB](https
 
 ### Docker Compose
 
-* Copy `dotenv` to `.env`
-* Run `docker compose build web` to build the trivia_app image ahead of time (many utilities and tools depend on it)
-* Run `docker compose run web bin/setup` to set up the application
-* Run `docker compose up` to start the suite
+* Run `bin/docker-setup` to build the images, set up the database, and start the services
+* For future runs you can use `bin/docker-dev` to start the services and attach to view the logs
   * Optionally run `docker compose run web bin/guard` to start the rspec watcher.
+  
+### Hybridized
+
+This approach runs the database servers in docker, but the application servers locally
+
+* Run `bin/db-restart`
+* Copy `.dotenv` to `.env`
+* Run `bin/setup`
+* Run `bin/dev` to start the local suite of servers
 
 Use `docker compose run rails spec` to run specs
 

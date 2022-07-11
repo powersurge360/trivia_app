@@ -80,7 +80,6 @@ group :development do
   gem "guard", require: false
   gem "guard-rspec", require: false
   gem "standardrb", require: false
-  gem "solargraph", require: false
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"

@@ -3,8 +3,8 @@ class Player < ApplicationRecord
 
   validates :channel, presence: true
   validates :username, presence: true, uniqueness: {scope: :channel}
-  validates :join_code, presence: true
-  validate :join_code_matches_game, on: :create
+  validates :join_code, presence: true, unless: :host
+  validate :join_code_matches_game, on: :create, unless: :host
 
   # This describes a relation to a series of games marked off by channel rather
   # than a specific game

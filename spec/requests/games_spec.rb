@@ -271,7 +271,7 @@ RSpec.describe "Games workflow", type: :request do
       expect(response).to be_redirect
       expect(Game.where(channel: game.channel).count).to eql(2)
 
-      new_game = Game.where(channel: game.channel).last
+      new_game = Game.latest_round(channel: game.channel).last
 
       expect(new_game.api_attributes.to_json).to eql(game.api_attributes.to_json)
     end
@@ -288,7 +288,7 @@ RSpec.describe "Games workflow", type: :request do
 
       expect(response).to be_redirect
 
-      new_game = Game.where(channel: game.channel).last
+      new_game = Game.latest_round(channel: game.channel).last
 
       expect(new_game.current_round).to eql(1)
     end
@@ -305,7 +305,7 @@ RSpec.describe "Games workflow", type: :request do
 
       expect(response).to be_redirect
 
-      new_game = Game.where(channel: game.channel).last
+      new_game = Game.latest_round(channel: game.channel).last
 
       expect(new_game.game_lifecycle).to eql("configured")
     end

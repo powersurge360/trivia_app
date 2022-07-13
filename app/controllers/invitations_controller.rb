@@ -18,7 +18,9 @@ class InvitationsController < ApplicationController
   private
 
   def retrieve_game
-    @game = Game.where(channel: game_params[:game_channel], game_lifecycle: "lobby_open").last!
+    @game = Game.latest_round(channel: game_params[:game_channel])
+      .where(game_lifecycle: "lobby_open")
+      .last!
   end
 
   def game_params

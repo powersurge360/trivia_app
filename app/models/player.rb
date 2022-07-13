@@ -21,7 +21,7 @@ class Player < ApplicationRecord
       return errors.add(:join_code, "A game matching this join code cannot be found")
     end
 
-    hash_id = Game.where(channel: channel).last.encode_hash_id
+    hash_id = Game.latest_round(channel: channel).last.encode_hash_id
 
     if hash_id != join_code
       errors.add(:join_code, "A game matching this join code cannot be found")

@@ -22,6 +22,8 @@ class Game < ApplicationRecord
 
   before_validation :ensure_channel
 
+  scope :latest_round, ->(channel:) { where(channel: channel).order(created_at: :desc).limit(1) }
+
   # State Machine
 
   aasm column: :game_lifecycle do

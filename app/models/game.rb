@@ -23,6 +23,7 @@ class Game < ApplicationRecord
   before_validation :ensure_channel
 
   scope :latest_round, ->(channel:) { where(channel: channel).order(created_at: :desc).limit(1) }
+  scope :open_lobby, -> { where(game_lifecycle: "lobby_open") }
 
   # State Machine
 
@@ -54,8 +55,13 @@ class Game < ApplicationRecord
       transitions from: :configured, to: :pending
     end
 
-    event :set_host do
-      transitions from: :configured, to: :lobby_open
+    # Open the game in multiplayer
+    event :open_lobby do
+      transitions from: :configured, to: :lobby_open, guard: :multiplayer_enabled?
+    end
+
+    event :close_lobby do
+      transitions from: :lobby_open, to: :pending, guard: :multiplayer_enabled?
     end
 
     event :answer do
@@ -94,6 +100,10 @@ class Game < ApplicationRecord
         end
       end
     end
+  end
+
+  def multiplayer_enabled?
+    Flipper.enabled?(:multiplayer_games)
   end
 
   # Turbo/hotwire

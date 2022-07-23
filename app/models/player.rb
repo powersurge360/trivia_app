@@ -6,6 +6,8 @@ class Player < ApplicationRecord
   validates :join_code, presence: true, unless: :host
   validate :join_code_matches_game, on: :create, unless: :host
 
+  before_validation :ensure_channel, on: :create
+
   # This describes a relation to a series of games marked off by channel rather
   # than a specific game
   belongs_to :game,
@@ -16,15 +18,25 @@ class Player < ApplicationRecord
 
   private
 
+  def ensure_channel
+    return unless join_code.present?
+
+    self.channel = Game
+      .open_lobby
+      .find_by(id: Game.decode_hash_id(join_code))
+      &.channel
+  rescue Hashids::InputError
+  end
+
   def join_code_matches_game
     if channel.nil?
-      return errors.add(:join_code, "A game matching this join code cannot be found")
+      return errors.add(:join_code, "must be valid")
     end
 
-    hash_id = Game.latest_round(channel: channel).last.encode_hash_id
+    hash_id = Game.open_lobby.latest_round(channel: channel).last&.encode_hash_id
 
     if hash_id != join_code
-      errors.add(:join_code, "A game matching this join code cannot be found")
+      errors.add(:join_code, "must be valid")
     end
   end
 end

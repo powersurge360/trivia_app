@@ -1,31 +1,20 @@
 class InvitationsController < ApplicationController
   before_action :enable_controller?
-  before_action :retrieve_game
 
   def index
   end
 
   def create
-    @player = @game.players.create(player_params)
+    @player = Player.create(player_params)
 
     if @player.valid?
-      redirect_to game_path(@game)
+      redirect_to game_path(@player.game)
     else
       render :index, status: :unprocessable_entity
     end
   end
 
   private
-
-  def retrieve_game
-    @game = Game.latest_round(channel: game_params[:game_channel])
-      .where(game_lifecycle: "lobby_open")
-      .last!
-  end
-
-  def game_params
-    params.permit(:join_code, :game_channel)
-  end
 
   def player_params
     params.require(:player).permit(:username, :join_code)

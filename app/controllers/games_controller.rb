@@ -1,5 +1,13 @@
 class GamesController < ApplicationController
-  before_action :retrieve_game, only: [:show, :start, :answer, :continue, :finish, :new_round]
+  before_action :retrieve_game, only: [
+    :show,
+    :start,
+    :answer,
+    :continue,
+    :finish,
+    :new_round,
+    :open_lobby
+  ]
 
   def new
     @game = Game.new
@@ -26,7 +34,7 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       @game.retrieve_trivia_questions
-      format.html { redirect_to game_path(@game) }
+      format.html { redirect_to @game }
       format.turbo_stream
     end
   end
@@ -67,6 +75,13 @@ class GamesController < ApplicationController
     end
   end
 
+  def open_lobby
+    respond_to do |format|
+      format.html { redirect_to game_path(@game) }
+      format.turbo_stream
+    end
+  end
+
   def new_round
     new_game = @game.dup
     new_game.game_lifecycle = "configured"
@@ -97,7 +112,7 @@ class GamesController < ApplicationController
   private
 
   def retrieve_game
-    @game = Game.latest_round(channel: params[:channel]).last!
+    @game = Game.latest_round(channel: params[:channel]).sole
   end
 
   def create_game_params
@@ -110,5 +125,9 @@ class GamesController < ApplicationController
 
   def answer_params
     params.require(:answer)
+  end
+
+  def host_params
+    params.require(:host).params(:username)
   end
 end

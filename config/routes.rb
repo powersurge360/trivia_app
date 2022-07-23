@@ -13,8 +13,9 @@ Rails.application.routes.draw do
       post :continue
       post :finish
       post :new_round
+      post :open_lobby
     end
-
-    resources :invitations, only: [:index, :create]
   end
+
+  resources :invitations, only: [:index, :create]
 end

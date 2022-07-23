@@ -308,16 +308,36 @@ RSpec.describe Game, type: :model do
     end
   end
 
+  context "with multiplayer feature turned off" do
+    before(:each) { Flipper.disable(:multiplayer_games) }
+
+    it "should have the multiplayer feature turned off" do
+      expect(Flipper.enabled?(:multiplayer_games)).to be false
+    end
+
+    describe "open_lobby transition" do
+      subject { create :game, game_lifecycle: :configured }
+
+      it "should not be allowed" do
+        expect { subject.open_lobby }.to raise_error(AASM::InvalidTransition)
+      end
+    end
+
+    describe "close_lobby transition" do
+      subject { create :game, game_lifecycle: :lobby_open }
+
+      it "should not be allowed" do
+        expect { subject.open_lobby }.to raise_error(AASM::InvalidTransition)
+      end
+    end
+  end
+
   context "with multiplayer feature turned on" do
-    before(:each) {
-      Flipper.enable :multiplayer_games
-    }
+    before(:each) { Flipper.enable(:multiplayer_games) }
 
     it "should have the muliplayer games flag enabled" do
       expect(Flipper.enabled?(:multiplayer_games)).to be true
     end
-
-    it "should allow a game to be toggled multiplayer"
 
     describe "#encode_hash_id" do
       let(:game) do
@@ -350,6 +370,14 @@ RSpec.describe Game, type: :model do
 
         expect(id).to eql(game.id)
       end
+    end
+
+    describe "open_lobby transition" do
+      it "should assign a game host"
+
+      it "should progress to the lobby_open state"
+
+      it "should set a host"
     end
   end
 end

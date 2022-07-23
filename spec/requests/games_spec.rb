@@ -341,26 +341,26 @@ RSpec.describe "Games workflow", type: :request do
     end
 
     describe "GET /games/:channel" do
-      context "first game" do
-        it "should ask for a username"
-      end
-
-      context "subsequent game" do
-        it "should show a share info box"
-
-        it "should have the join code displayed"
-      end
-
-      context "joining a game with a host" do
-        context "no username in current session" do
-          it "should ask for a username"
+      context "when the lobby is open" do
+        subject do
+          create :game, game_lifecycle: :lobby_open
         end
 
-        context "already has a username from a previous game" do
-          it "should ask if they would like to join"
+        it "should show a list of connected players"
+
+        context "when the user is a host" do
+          it "should show a share info box"
+
+          it "should have the join code displayed"
+
+          it "should allow the host to continue"
         end
       end
     end
+
+    describe "POST /games/:channel/open_lobby"
+
+    describe "POST /games/:channel/close_lobby"
 
     describe "POST /games/:channel/answer" do
       context "when there are still players who haven't answered" do

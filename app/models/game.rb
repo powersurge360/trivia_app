@@ -166,6 +166,8 @@ class Game < ApplicationRecord
 
   def self.decode_hash_id(hashed_id)
     Hashids.new(Rails.application.config.x.hashids_salt).decode(hashed_id)[0]
+  rescue Hashids::InputError
+    nil
   end
 
   # Presentational

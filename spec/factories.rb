@@ -1,14 +1,13 @@
 FactoryBot.define do
   factory :player do
-    channel { SecureRandom.uuid }
-    username { "MyString" }
+    username { "dark_knight" }
 
     after(:build) do |p, values|
-      p.join_code = p.game.encode_hash_id if p.game
+      p.join_code = values.game.encode_hash_id if values.game
     end
 
     trait :with_game do
-      game { FactoryBot.create(:game, channel: channel, game_lifecycle: "lobby_open") }
+      game { create(:game, :lobby_open, channel: channel) }
     end
   end
 
@@ -36,6 +35,15 @@ FactoryBot.define do
   end
 
   factory :game do
+    number_of_questions { 1 }
+    category { 9 } # General Knowledge, defined in constants initializer
+    game_type { "boolean" }
+    channel { SecureRandom.uuid }
+
+    trait :lobby_open do
+      game_lifecycle { "lobby_open" }
+    end
+
     trait :invalid do
       number_of_questions { 0 }
       difficulty { "difficult" }
@@ -44,10 +52,7 @@ FactoryBot.define do
     end
 
     trait :valid do
-      number_of_questions { 1 }
-      category { 9 } # General Knowledge, defined in constants initializer
-      game_type { "boolean" }
-      channel { SecureRandom.uuid }
+      # To be removed, unnecessary
     end
   end
 end

@@ -25,7 +25,6 @@ class Player < ApplicationRecord
       .open_lobby
       .find_by(id: Game.decode_hash_id(join_code))
       &.channel
-  rescue Hashids::InputError
   end
 
   def join_code_matches_game

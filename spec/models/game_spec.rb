@@ -365,10 +365,20 @@ RSpec.describe Game, type: :model do
           id: 90
       end
 
+      let(:sample_hash_id) { game.encode_hash_id }
+
+      subject { Game.decode_hash_id(sample_hash_id) }
+
       it "should decode the correct id" do
         id = Game.decode_hash_id(game.encode_hash_id)
 
         expect(id).to eql(game.id)
+      end
+
+      context "when given garbage" do
+        let(:sample_hash_id) { "-invalid-code" }
+
+        it { is_expected.to be nil }
       end
     end
 

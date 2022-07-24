@@ -49,7 +49,6 @@ RSpec.describe Player, type: :model do
         context "when creating players without a join_code" do
           subject do
             build(:player).tap do |p|
-              p.join_code = nil
               p.valid?
             end
           end
@@ -103,8 +102,102 @@ RSpec.describe Player, type: :model do
   end
 
   describe "#ensure_channel" do
+    context "on create" do
+      let(:player) { build(:player) }
+
+      it "should run" do
+        expect(player).to receive(:ensure_channel)
+        player.save
+      end
+    end
+
+    context "on update" do
+      let(:player) { create(:player, :with_game) }
+
+      it "should not run" do
+        expect(player).to_not receive(:ensure_channel)
+
+        player.update(username: "Some change")
+      end
+    end
+
+    context "when there is a join code" do
+      context "and it is valid" do
+        let(:player) { build(:player, :with_game, channel: nil) }
+
+        it "should populate a channel" do
+          expect(player.channel).to be nil
+
+          player.send(:ensure_channel)
+
+          expect(player.channel).to eql(player.game.channel)
+        end
+      end
+
+      context "and it is invalid" do
+        let(:player) { build(:player) }
+
+        it "should not populate a join code" do
+          expect(player.channel).to be nil
+
+          player.send(:ensure_channel)
+
+          expect(player.channel).to be nil
+        end
+      end
+
+      context "and it refers to a game that is not in the correct state" do
+        let(:game) { create(:game) }
+
+        let(:player) { build(:player, join_code: game.encode_hash_id) }
+
+        it "should set the channel to nil" do
+          expect(player.channel).to be nil
+
+          player.send(:ensure_channel)
+
+          expect(player.channel).to be nil
+        end
+      end
+    end
   end
 
   describe "#join_code_matches_game" do
+    context "player is a host" do
+      let(:player) { build(:player, host: true) }
+
+      it "should not be called" do
+        expect(player).to_not receive(:join_code_matches_game)
+
+        player.valid?
+      end
+    end
+
+    context "player is not a host" do
+      let(:player) { build(:player, host: false) }
+      let(:game) { create(:game, :lobby_open) }
+
+      context "join_code matches game" do
+        before(:each) do
+          player.join_code = game.encode_hash_id
+          player.channel = game.channel
+        end
+
+        it "should set no errors on join_code" do
+          expect { player.send(:join_code_matches_game) }.to_not change { player.errors[:join_code].count }
+        end
+      end
+
+      context "join_code does not match game" do
+        before(:each) do
+          player.join_code = game.encode_hash_id
+          player.channel = "nonsense"
+        end
+
+        it "should set errors on join_code" do
+          expect { player.send(:join_code_matches_game) }.to change { player.errors[:join_code].count }
+        end
+      end
+    end
   end
 end

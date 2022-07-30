@@ -58,6 +58,10 @@ class Game < ApplicationRecord
     # Open the game in multiplayer
     event :open_lobby do
       transitions from: :configured, to: :lobby_open, guard: :multiplayer_enabled?
+
+      after do |*args|
+        open_lobby_for(*args)
+      end
     end
 
     event :close_lobby do
@@ -103,7 +107,9 @@ class Game < ApplicationRecord
   end
 
   def multiplayer_enabled?
-    Flipper.enabled?(:multiplayer_games)
+    return false unless Flipper.enabled?(:multiplayer_games)
+
+    multiplayer
   end
 
   # Turbo/hotwire
@@ -142,6 +148,10 @@ class Game < ApplicationRecord
     else
       current_answer.update(correctly_answered: false)
     end
+  end
+
+  def open_lobby_for(username)
+    players.create(username: username, host: true)
   end
 
   # General Methods

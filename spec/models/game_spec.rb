@@ -224,6 +224,16 @@ RSpec.describe Game, type: :model do
     end
   end
 
+  describe "#open_lobby_for" do
+    let(:game) { create(:game) }
+
+    subject { game.open_lobby_for("batman") }
+
+    it { expect { subject }.to change { Player.count }.from(0).to(1) }
+
+    it { expect(subject.host).to be true }
+  end
+
   describe "state machine" do
     context "answer transition" do
       # After is handled by #answer_with
@@ -243,6 +253,74 @@ RSpec.describe Game, type: :model do
           expect {
             game.answer("beavers can be fooled by running a pipe through a dam, called a beaver deceiver")
           }.to raise_error(AASM::InvalidTransition)
+        end
+      end
+    end
+
+    context "open_lobby transition" do
+      let(:game) do
+        create(
+          :game,
+          game_lifecycle: :configured
+        )
+      end
+
+      subject { game.open_lobby("dark_knight") }
+
+      context "guard" do
+        context "when the multiplayer flag is disabled" do
+          before(:each) { Flipper.disable(:multiplayer_games) }
+
+          it { expect { subject }.to raise_error { AASM::InvalidTransition } }
+        end
+
+        context "when the multiplayer flag is enabled" do
+          before(:each) do
+            Flipper.enable(:multiplayer_games)
+          end
+
+          context "and the game is multiplayer" do
+            before(:each) { game.update(multiplayer: true) }
+
+            it { expect { subject }.to change { game.game_lifecycle }.from("configured").to("lobby_open") }
+          end
+
+          context "and the game is singleplayer" do
+            it { expect { subject }.to raise_error(AASM::InvalidTransition) }
+          end
+        end
+      end
+    end
+
+    context "close_lobby transition" do
+      let(:game) do
+        create(
+          :game,
+          game_lifecycle: :lobby_open
+        )
+      end
+
+      subject { game.close_lobby }
+
+      context "guard" do
+        context "when the multiplayer flag is disabled" do
+          before(:each) { Flipper.disable(:multiplayer_games) }
+
+          it { expect { subject }.to raise_error { AASM::InvalidTransition } }
+        end
+
+        context "when the multiplayer flag is enabled" do
+          before(:each) { Flipper.enable(:multiplayer_games) }
+
+          context "and the game is singleplayer" do
+            it { expect { subject }.to raise_error(AASM::InvalidTransition) }
+          end
+
+          context "and the game is multiplayer" do
+            before(:each) { game.update(multiplayer: true) }
+
+            it { expect { subject }.to change { game.game_lifecycle }.from("lobby_open").to("pending") }
+          end
         end
       end
     end
@@ -380,14 +458,6 @@ RSpec.describe Game, type: :model do
 
         it { is_expected.to be nil }
       end
-    end
-
-    describe "open_lobby transition" do
-      it "should assign a game host"
-
-      it "should progress to the lobby_open state"
-
-      it "should set a host"
     end
   end
 end
